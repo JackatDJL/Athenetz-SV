@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     url: "https://athenetz-sv.vercel.app/",
     siteName: "Athenetz-SV",
     title: "Athenetz-SV",
-    description: "Web Frontend for NoPlus",
+    description: "Web Frontend for Athenetz-SV",
     images: [
       {
         url: "/brand/main/icon-512x512.png",
