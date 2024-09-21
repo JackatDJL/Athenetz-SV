@@ -1,0 +1,16 @@
+{
+  "extends": "@util/typescript-config/react-library.json",
+  "compilerOptions": {
+    "outDir": "dist"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"],
+  "paths": {
+    "@/*": ["./src/*"],
+    "@components/*": ["./src/*"],
+    "@ui/*": ["./src/ui/*"],
+    "@layout/*": ["./src/layout/*"],
+    "@pre/*": ["./src/presets/*"],
+    "@fx/*": ["./src/effects/*"],
+  }
+}

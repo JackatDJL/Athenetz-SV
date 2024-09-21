@@ -1,0 +1,10 @@
+{
+  "name": "api",
+  "packageManager": "yarn@4.5.0",
+  "dependencies": {
+    "@octokit/graphql": "^8.1.1",
+    "@util/eslint-config": "workspace:^",
+    "@util/typescript-config": "workspace:^",
+    "typescript": "^5.6.2"
+  }
+}
