@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
 "use client"
 
+// eslint-disable-next-line no-redeclare
 import React, { useEffect, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import { Check, ChevronDown } from "react-feather"
@@ -87,7 +89,6 @@ export function ColorPicker({
 
   useEffect(() => {
     handleColorChange(color)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [color])
 
   const handleColorChange = (newColor: string) => {
@@ -156,7 +157,7 @@ export function ColorPicker({
 
   return (
     <Popup.Wrapper open={isOpen} onOpenChange={setIsOpen}>
-      <Popup.Trigger variant="nothing" className="bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent" asChild>
+      <Popup.Trigger variant="ghost" className="bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent" asChild>
         <Button
           variant="outline"
           className="w-[200px] justify-start text-left font-normal"

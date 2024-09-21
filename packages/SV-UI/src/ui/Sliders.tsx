@@ -1,5 +1,6 @@
 "use client"
 
+// eslint-disable-next-line no-redeclare
 import * as React from "react"
 import * as SliderPrimitive from "@radix-ui/react-slider"
 
@@ -26,19 +27,8 @@ const Slider = React.forwardRef<
 Slider.displayName = SliderPrimitive.Root.displayName
 
 
-interface Props {
-  max: number;
-  value: number;
-  min: number;
-  className?: string;
-}
 
-function GaugeCircle({
-  max = 100,
-  min = 0,
-  value = 0,
-  className,
-}:{max?: number, min?: number, value?: number, className?: string}) {
+function GaugeCircle({ max = 100, min = 0, value = 0, className = "" }: { max?: number, min?: number, value?: number, className?: string }) {
   const circumference = 2 * Math.PI * 45;
   const percentPx = circumference / 100;
   const currentPercent = ((value - min) / (max - min)) * 100;

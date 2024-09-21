@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
 "use client"
 
+// eslint-disable-next-line no-redeclare
 import React, {
   createContext,
   useContext,

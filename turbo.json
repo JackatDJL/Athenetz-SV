@@ -3,16 +3,39 @@
   "ui": "tui",
   "tasks": {
     "build": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["lint","^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "env": [
+        "NEXT_PUBLIC_FB_APIKEY",
+        "NEXT_PUBLIC_FB_AUTHDOMAIN",
+        "NEXT_PUBLIC_FB_PROJECTID",
+        "NEXT_PUBLIC_FB_STORAGEBUCKET",
+        "NEXT_PUBLIC_FB_MESSAGINGSENDERID",
+        "NEXT_PUBLIC_FB_APPID",
+        "NEXT_PUBLIC_FB_MEASUREMENTID",
+        "NEXT_PUBLIC_GH_PFP_TOKEN"
+      ],
       "outputs": [".next/**", "!.next/cache/**"]
     },
     "lint": {
-      "dependsOn": ["^lint"]
+      "cache": true,
+      "persistent": false,
+      "dependsOn": ["compile","^lint"]
     },
     "dev": {
+      "dependsOn": ["lint","watch","dev"],
       "cache": false,
       "persistent": true
+    },
+    "watch": {
+      "cache": false,
+      "persistent": true
+    },
+    "compile": {
+      "dependsOn": ["^compile"],
+      "inputs": ["tsconfig.json"],
+      "outputs": ["dist/**"]
     }
-  }
+  },
+  "globalEnv": [".env.local"]
 }

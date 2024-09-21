@@ -1,10 +1,29 @@
 {
   "name": "api",
+  "private": true,
+  "version": "0.1.1",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "lint": "eslint src --max-warnings 2 --color --cache",
+    "compile": "tsc --build --clean",
+    "watch": "tsc -w "
+  },
   "packageManager": "yarn@4.5.0",
   "dependencies": {
     "@octokit/graphql": "^8.1.1",
     "@util/eslint-config": "workspace:^",
     "@util/typescript-config": "workspace:^",
     "typescript": "^5.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "tsconfig-paths-webpack-plugin": "^4.1.0"
   }
 }

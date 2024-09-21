@@ -6478,8 +6478,15 @@ __metadata:
   resolution: "api@workspace:packages/API"
   dependencies:
     "@octokit/graphql": "npm:^8.1.1"
+    "@types/node": "npm:^20"
+    "@types/react": "npm:^18"
+    "@types/react-dom": "npm:^18"
     "@util/eslint-config": "workspace:^"
     "@util/typescript-config": "workspace:^"
+    eslint: "npm:^8"
+    jest: "npm:^29.7.0"
+    ts-jest: "npm:^29.1.2"
+    tsconfig-paths-webpack-plugin: "npm:^4.1.0"
     typescript: "npm:^5.6.2"
   languageName: unknown
   linkType: soft

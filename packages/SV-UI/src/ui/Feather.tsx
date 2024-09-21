@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-redeclare
 import React from "react";
 import * as Feather from "react-feather";
 import { BadgedIcon } from "./Badge";
@@ -11,7 +12,7 @@ const Icon = React.forwardRef<HTMLSpanElement, React.HTMLAttributes<HTMLSpanElem
     badged?: boolean;
     className?: string;
     type?: "primary" | "secondary" | "accent" | "success" | "danger" | "warning" | "info";
-}>(({ size = "sm", color="#CDAE23", badged=false, icon, opacity=false, shadow, type="secondary", ...props}, ref) => {
+}>(({ size = "sm", color="#CDAE23", badged=false, icon, opacity=false, shadow, type="secondary", ...props}) => {
     const siteinpx = size === "sm" ? 30 : size === "md" ? 45 : size === "lg" ? 60 : 30;
     
     if (!badged) {

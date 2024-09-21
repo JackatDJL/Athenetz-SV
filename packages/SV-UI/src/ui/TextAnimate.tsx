@@ -1,6 +1,6 @@
 "use client"
 
-import { FC, useEffect, useRef } from "react"
+import { FC, useRef } from "react"
 import { HTMLMotionProps, motion, useAnimation, useInView } from "framer-motion"
 import { DefaultText } from "../presets/className"
 import { cn } from "../twm"
@@ -206,11 +206,13 @@ const TextAnimate: FC<Props> = ({
   //   });
 
   const ref = useRef(null)
+  // eslint-disable-next-line no-unused-vars
   const isInView = useInView(ref, { once: true })
 
   const letters = Array.from(text)
   const { container, child } = animationVariants[type]
 
+  // eslint-disable-next-line no-unused-vars
   const ctrls = useAnimation()
 
   //   useEffect(() => {

@@ -1,5 +1,6 @@
 "use client"
 
+// eslint-disable-next-line no-redeclare
 import * as React from "react"
 import * as RawTooltipPrimitive from "@radix-ui/react-tooltip"
 
@@ -18,6 +19,7 @@ const RawTooltipContent = React.forwardRef<
 >(({ className, sideOffset = 4, side = "top", ...props }, ref) => (
   <RawTooltipPrimitive.Content
     ref={ref}
+    side={side}
     sideOffset={sideOffset}
     className={cn(
       "z-50 overflow-hidden rounded-md border border-l-bg dark:border-d-bg bg-l-bg/20 dark:bg-d-bg/20 glassblur duration-700 px-3 py-1.5 text-sm text-l-txt dark:text-d-txt shadow-md animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
@@ -39,7 +41,7 @@ const Tooltip = React.forwardRef<
             <RawTooltipTrigger className={DefaultText} >
                 {children}
             </RawTooltipTrigger>
-            <RawTooltipContent {...props} ref={ref} >{tips}</RawTooltipContent>
+            <RawTooltipContent  {...props} ref={ref} >{tips}</RawTooltipContent>
         </RawTooltip>
     </RawTooltipProvider>
 ))

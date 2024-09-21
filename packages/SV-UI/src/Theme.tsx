@@ -1,9 +1,10 @@
 "use client"
 
-import React, { useEffect, useState } from 'react';
-import { cn } from './twm';
+import { useEffect } from 'react';
 import "@theme-toggles/react/css/Within.css"
 import { Within } from "@theme-toggles/react"
+// eslint-disable-next-line no-redeclare
+import React from 'react';
 
 const ThemeToggleButton: React.FC<{ size?: number }> = ({ size = 5 }) => {
     const storedTheme = typeof localStorage !== 'undefined' ? localStorage.getItem('theme') : null;

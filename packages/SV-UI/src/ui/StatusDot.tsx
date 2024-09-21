@@ -1,7 +1,7 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable @next/next/no-img-element */
+
 
 import { Tooltip } from "../layout/Tooltip";
+// eslint-disable-next-line no-redeclare
 import React from "react";
 import { cva } from "cva";
 import { cn } from "../twm";
@@ -53,7 +53,7 @@ const StatusDot: React.FC<StatusDotProps> = ({ status, label, tip, size, classNa
         return (
             <div className="flex items-center">
                 <img  className={cn(StatusDots({size, status}), className)} />
-                <p className="p-2 text-l-txt duration-700 dark:text-d-txt">
+                <p className="p-2 text-l-txt duration-700 dark:text-d-txt" {...props}>
                     {description}
                 </p>
             </div>
@@ -61,7 +61,7 @@ const StatusDot: React.FC<StatusDotProps> = ({ status, label, tip, size, classNa
     } else {
         return (
             <Tooltip tips={description}>
-                <img className={cn(StatusDots({size, status}), className)} />
+                <img className={cn(StatusDots({size, status}), className)} {...props}/>
             </Tooltip>
         )
     }

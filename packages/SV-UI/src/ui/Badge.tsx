@@ -1,5 +1,6 @@
 import { cva, type VariantProps } from "cva";
 import { cn } from "../twm";
+// eslint-disable-next-line no-redeclare
 import React from "react";
 import * as Feather from "react-feather";
 
@@ -135,7 +136,7 @@ const BadgedIcon = React.forwardRef<HTMLSpanElement, React.HTMLAttributes<HTMLSp
     const Icon = Feather[icon] ? Feather[icon] : Feather['Code'];
     const IconSize = size === "sm" ? 30 : size === "md" ? 45 : size === "lg" ? 60 : 30;
     return (
-        <span className={cn(BadgeVariants({ variant, size, shadouu }), className)} style={{ display: 'inline-flex', alignItems: 'center', width: 'auto' }} ref={ref}>
+        <span className={cn(BadgeVariants({ variant, size, shadouu }), className)} style={{ display: 'inline-flex', alignItems: 'center', width: 'auto' }} ref={ref} {...props}>
             {Icon && <Icon size={IconSize} color={color} />}
         </span>
     )

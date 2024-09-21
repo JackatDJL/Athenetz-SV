@@ -1,4 +1,5 @@
 import { cva , type VariantProps} from "cva";
+// eslint-disable-next-line no-redeclare
 import React, { FC } from "react";
 
 const ContainerVariants = cva(

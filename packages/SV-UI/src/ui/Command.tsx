@@ -1,5 +1,6 @@
 "use client"
 
+// eslint-disable-next-line no-redeclare
 import * as React from "react"
 import { type DialogProps } from "@radix-ui/react-dialog"
 import { Command as CommandPrimitive } from "cmdk"
@@ -12,7 +13,7 @@ import { Preset } from "../layout/Popup"
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive> & { passthrough?: boolean }
->(({ className, passthrough=false, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <CommandPrimitive
     ref={ref}
     className={cn(
@@ -27,7 +28,7 @@ Command.displayName = CommandPrimitive.displayName
 
 interface CommandDialogProps extends DialogProps {
   trigger: string
-  triggervariant?: "text" | "primary" | "secondary" | "tertiary" | "soft"
+  triggervariant?: "default" | "secondary" | "destructive" | "outline" | "ghost"
 }
 
 const asDialog = ({ children, trigger, triggervariant, ...props }: CommandDialogProps) => {
@@ -45,7 +46,7 @@ const asDialog = ({ children, trigger, triggervariant, ...props }: CommandDialog
 const asPopup = ({ children, trigger, triggervariant, ...props}: CommandDialogProps) => {
   return (
     <Preset trigger={trigger} triggervariant={triggervariant}>
-      <Command passthrough className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium duration-700 [&_[cmdk-group-heading]]:text-l-prim dark:[&_[cmdk-group-heading]]:text-d-prim [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5">
+      <Command passthrough className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium duration-700 [&_[cmdk-group-heading]]:text-l-prim dark:[&_[cmdk-group-heading]]:text-d-prim [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5" {...props}>
             {children}
       </Command>
     </Preset>

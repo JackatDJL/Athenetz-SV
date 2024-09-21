@@ -1,5 +1,6 @@
 "use client"
 
+// eslint-disable-next-line no-redeclare
 import * as React from "react"
 import * as RawAlertRawDialogPrimitive from "@radix-ui/react-alert-dialog"
 import * as RawDialogPrimitive from "@radix-ui/react-dialog"
@@ -15,7 +16,7 @@ const ModalDialogWrapper = RawAlertRawDialogPrimitive.Root
 const RawAlertRawDialogTrigger = React.forwardRef<
   React.ElementRef<typeof RawAlertRawDialogPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof RawAlertRawDialogPrimitive.Trigger> & {
-    triggervariant?: "primary" | "secondary" | "tertiary" | "soft" | "text"
+    triggervariant?: "default" | "secondary" | "destructive" | "outline" | "ghost"
   }
 >(({ className, triggervariant, children, ...props }, ref) => (
   <RawAlertRawDialogPrimitive.Trigger
@@ -27,7 +28,7 @@ const RawAlertRawDialogTrigger = React.forwardRef<
     ref={ref}
     asChild
   >
-    <Button >{children}</Button>
+    <Button variant={triggervariant}>{children}</Button>
   </RawAlertRawDialogPrimitive.Trigger>
 ))
 RawAlertRawDialogTrigger.displayName = RawAlertRawDialogPrimitive.Trigger.displayName
@@ -123,7 +124,7 @@ RawAlertRawDialogDescription.displayName =
 const RawModalDialogAction = React.forwardRef<
   React.ElementRef<typeof RawAlertRawDialogPrimitive.Action>,
   React.ComponentPropsWithoutRef<typeof RawAlertRawDialogPrimitive.Action> & {
-    actionvariant?: "primary" | "secondary" | "tertiary" | "soft" | "text"
+    actionvariant?: "default" | "secondary" | "destructive" | "outline" | "ghost"
   }
 >(({ className, children, actionvariant, ...props }, ref) => (
   <RawAlertRawDialogPrimitive.Action
@@ -131,7 +132,7 @@ const RawModalDialogAction = React.forwardRef<
     className={cn("", className)}
     {...props} asChild
   >
-    <Button >{children}</Button>
+    <Button variant={actionvariant}>{children}</Button>
   </RawAlertRawDialogPrimitive.Action>
 ))
 RawModalDialogAction.displayName = RawAlertRawDialogPrimitive.Action.displayName
@@ -139,7 +140,7 @@ RawModalDialogAction.displayName = RawAlertRawDialogPrimitive.Action.displayName
 const RawAlertRawDialogCancel = React.forwardRef<
   React.ElementRef<typeof RawAlertRawDialogPrimitive.Cancel>,
   React.ComponentPropsWithoutRef<typeof RawAlertRawDialogPrimitive.Cancel> & {
-    closevariant?: "primary" | "secondary" | "tertiary" | "soft" | "text"
+    closevariant?: "default" | "secondary" | "destructive" | "outline" | "ghost"
   }
 >(({ className, closevariant, children, ...props }, ref) => (
   <RawAlertRawDialogPrimitive.Cancel
@@ -148,24 +149,23 @@ const RawAlertRawDialogCancel = React.forwardRef<
     )}
     {...props} asChild
   >
-    <Button variant="outline" >{children}</Button>
+    <Button variant={closevariant} >{children}</Button>
   </RawAlertRawDialogPrimitive.Cancel>
 ))
 RawAlertRawDialogCancel.displayName = RawAlertRawDialogPrimitive.Cancel.displayName
 
 interface AlertRawDialogProps {
   trigger?: string
-  triggervariant?: "primary" | "secondary" | "tertiary" | "soft" | "text"
+  triggervariant?: "default" | "secondary" | "destructive" | "outline" | "ghost"
   title: string
   titlestyle?: string
   description?: string
   descriptionstyle?: string
   plusheader?: React.ReactNode // falls noch zum header was dazu
-  extracontent?: React.ReactNode
   close?: string
-  closevariant?: "primary" | "secondary" | "tertiary" | "soft" | "text"
+  closevariant?: "default" | "secondary" | "destructive" | "outline" | "ghost"
   action?: string
-  actionvariant?: "primary" | "secondary" | "tertiary" | "soft" | "text"
+  actionvariant?: "default" | "secondary" | "destructive" | "outline" | "ghost"
   onClose?: () => void
   onAction?: () => void
   onOpen?: () => void
@@ -185,7 +185,7 @@ const ModalDialog: React.FC<AlertRawDialogProps & React.HTMLAttributes<HTMLEleme
         </RawAlertRawDialogDescription>
         {props.plusheader}
       </RawAlertRawDialogHeader>
-      {props.extracontent}
+      {children}
       <RawAlertRawDialogFooter>
         <RawAlertRawDialogCancel closevariant={closevariant} onClick={onClose}> 
           {close !== "hide*" ? (close ? close : "Cancel") : ""}
@@ -206,15 +206,15 @@ const RawDialog = RawDialogPrimitive.Root
 const RawDialogTrigger = React.forwardRef<
   React.ElementRef<typeof RawDialogPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof RawDialogPrimitive.Trigger> & {
-    triggervariant?: "primary" | "secondary" | "tertiary" | "soft" | "text"
+    triggervariant?: "default" | "secondary" | "destructive" | "outline" | "ghost"
   }
->(({ className, triggervariant="primary", children, ...props }, ref) => (
+>(({ className, triggervariant="default", children, ...props }, ref) => (
   <RawDialogPrimitive.Trigger
     ref={ref}
     className={cn("mt-2 sm:mt-0", className)}
     {...props}
   >
-    <Button>{children}</Button>
+    <Button variant={triggervariant}>{children}</Button>
   </RawDialogPrimitive.Trigger>
 ))
 RawDialogTrigger.displayName = RawDialogPrimitive.Trigger.displayName
@@ -224,7 +224,7 @@ const RawDialogPortal = RawDialogPrimitive.Portal
 const RawDialogClose = React.forwardRef<
   React.ElementRef<typeof RawDialogPrimitive.Close>,
   React.ComponentPropsWithoutRef<typeof RawDialogPrimitive.Close> & {
-    closevariant?: "primary" | "secondary" | "tertiary" | "soft" | "text"
+    closevariant?: "default" | "secondary" | "destructive" | "outline" | "ghost"
   }
 >(({ className, closevariant="secondary", children, ...props }, ref) => (
   <RawDialogPrimitive.Close
@@ -232,7 +232,7 @@ const RawDialogClose = React.forwardRef<
     className={cn("mt-2 sm:mt-0", className)}
     {...props}
   >
-    {children && <Button>{children}</Button>}
+    {children && <Button variant={closevariant}>{children}</Button>}
   </RawDialogPrimitive.Close>
 ))
 RawDialogClose.displayName = RawDialogPrimitive.Close.displayName
@@ -335,7 +335,7 @@ const DialogWrapper: React.FC<React.HTMLAttributes<HTMLElement> & {
   triggeraschild?: React.ReactNode
   trigger?: string
   before?: React.ReactNode
-  triggervariant?: "primary" | "secondary" | "tertiary" | "soft" | "text"
+  triggervariant?: "default" | "secondary" | "destructive" | "outline" | "ghost"
 }> = ({ children, triggeraschild, trigger, triggervariant, ...props }) => {
   if (triggeraschild) {
     return (
@@ -361,14 +361,14 @@ interface DialogProps {
   description?: string
   close?: string
   closeaschild?: React.ReactNode
-  closevariant?: "primary" | "secondary" | "tertiary" | "soft" | "text"
+  closevariant?: "default" | "secondary" | "destructive" | "outline" | "ghost"
   footer?: React.ReactNode
 }
 
 const Dialog: React.FC<DialogProps & React.HTMLAttributes<HTMLElement>> = ({ children, title, description, close, closeaschild, footer, closevariant, ...props }) => {
   if (closeaschild) {
     return (
-      <RawDialogContent>
+      <RawDialogContent {...props}>
         <RawDialogHeader>
           <RawDialogTitle>{title}</RawDialogTitle>
           <RawDialogDescription>{description}</RawDialogDescription>

@@ -1,27 +1,27 @@
 "use client"
-
-import * as React from "react"
 import * as PopoverPrimitive from "@radix-ui/react-popover"
-import { Button } from "@ui/Button"
+import { Button } from "../ui/Button"
 import * as Feather from "react-feather"
 
 import { cn } from "../twm"
+// eslint-disable-next-line no-redeclare
+import React from "react"
 
 const Popover = PopoverPrimitive.Root
 
 const PopoverTrigger = React.forwardRef<
 React.ElementRef<typeof PopoverPrimitive.Trigger>,
-React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Trigger> & { variant?: "primary" | "secondary" | "tertiary" | "soft" | "text" | "nothing"
+React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Trigger> & { variant?: "default" | "secondary" | "destructive" | "outline" | "ghost"
     prefix?: keyof typeof Feather
 }
->(({ className, children,variant, prefix, ...props }, ref) => (
+>(({ className, children, variant, ...props }, ref) => (
 <PopoverPrimitive.Trigger
     ref={ref}
     className={cn(" w-auto h-auto", className)}
     asChild
     {...props}
 >
-  <Button>{children}</Button>
+  <Button variant={variant} >{children}</Button>
 </PopoverPrimitive.Trigger>
 ))
 PopoverTrigger.displayName = PopoverPrimitive.Trigger.displayName
@@ -51,7 +51,7 @@ const Popup: React.FC<React.ComponentProps<typeof Popover> & {
     prefix?: keyof typeof Feather
     align?: "center" | "start" | "end"
     sideOffset?: number
-    triggervariant?: "primary" | "secondary" | "tertiary" | "soft" | "text"
+    triggervariant?: "default" | "secondary" | "destructive" | "outline" | "ghost"
 }> = ({ children, trigger, prefix, align, sideOffset, triggervariant, ...props }) => {
   return (
     <Popover>

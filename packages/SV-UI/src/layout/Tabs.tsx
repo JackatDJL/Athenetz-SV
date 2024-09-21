@@ -22,6 +22,7 @@ interface OgImageSectionProps {
   rounded?: string
   onChange?: () => void
   activeTab: number
+  // eslint-disable-next-line no-unused-vars
   setActiveTab: (tabId: number) => void
 }
 

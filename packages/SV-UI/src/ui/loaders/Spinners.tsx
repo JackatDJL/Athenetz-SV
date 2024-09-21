@@ -1,4 +1,5 @@
 import * as loaders from 'react-spinners';
+// eslint-disable-next-line no-redeclare
 import React from 'react';
 
 interface LoaderProps {

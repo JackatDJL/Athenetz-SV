@@ -10,6 +10,7 @@ interface AnimatedNumberProps {
   stiffness?: number
   damping?: number
   precision?: number
+  // eslint-disable-next-line no-unused-vars
   format?: (value: number) => string
   onAnimationStart?: () => void
   onAnimationComplete?: () => void

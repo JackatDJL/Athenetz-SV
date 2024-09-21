@@ -1,5 +1,5 @@
-import { useRef, useEffect, useState, Ref, RefObject } from 'react';
-import { cn } from "@components/twm";
+import { useRef, useEffect, useState, RefObject } from 'react';
+import { cn } from "../twm";
 
 
 function useDimensions(ref: RefObject<HTMLElement>, options = {debounce: 0}) {

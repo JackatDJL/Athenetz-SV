@@ -1,3 +1,4 @@
+/* eslint-disable-next-line no-redeclare */
 import * as React from "react"
 
 import { cn } from "../twm"
@@ -35,7 +36,7 @@ const CardTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <h3
     ref={ref}
-    className="text-2xl px-3 pt-2 font-semibold leading-none tracking-tight"
+    className={cn("text-2xl px-3 pt-2 font-semibold leading-none tracking-tight", className)}
     {...props}
   />
 ))
@@ -109,7 +110,7 @@ const Preset: React.FC<React.HTMLAttributes<HTMLElement> & {
           {!nodivider && <CardDivider />}
         </CardHeader>
       }
-      {children && <CardContent>{children}</CardContent>}
+      {children && <CardContent {...props}>{children}</CardContent>}
       {Footer && <CardFooter>{Footer}</CardFooter>}
     </Card>
   )

@@ -1,8 +1,11 @@
-import { toast } from "sonner";
-import { fbauth } from "api/src/other/firebase";
-import { useAuthState } from "react-firebase-hooks/auth";
 
-export default function WelcomeUser() {
+"use client"
+
+import { useAuthState } from "react-firebase-hooks/auth";
+import { fbauth } from "api/fb/firebase";
+
+export default async function WelcomeUser() {
+    const { toast } = await import("sonner");
     const [user, loading, error] = useAuthState(fbauth);
     const helloToast = typeof toast
     if (!loading) {
@@ -17,5 +20,12 @@ export default function WelcomeUser() {
         toast.loading("Loading your Data", {
             id: helloToast
         })
+    } 
+    if (error) {
+        toast.error("An error occured: " + error, {
+            id: helloToast
+        })
+        console.error(error)
+        throw new Error("An error occured: " + error)
     }
 }

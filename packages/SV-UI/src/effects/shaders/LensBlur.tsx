@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
 import { atom, useAtom } from "jotai"
 import { useTheme } from "next-themes"
@@ -181,7 +181,9 @@ export function ShaderLensBlur() {
     cameraRef.current.updateProjectionMatrix()
 
     rendererRef.current.setSize(w, h)
-    materialRef.current.uniforms.u_resolution.value.set(w, h)
+    if (materialRef.current.uniforms.u_resolution) {
+      materialRef.current.uniforms.u_resolution.value.set(w, h)
+    }
   }, [])
 
   const updateMousePosition = useCallback(
@@ -191,10 +193,12 @@ export function ShaderLensBlur() {
       const mouseX = x - rect.left
       const mouseY = y - rect.top
       if (isInteracting || config.enableHover) {
-        materialRef.current.uniforms.u_mouse.value.set(
-          mouseX,
-          rect.height - mouseY
-        )
+        if (materialRef.current.uniforms.u_mouse) {
+          materialRef.current.uniforms.u_mouse.value.set(
+            mouseX,
+            rect.height - mouseY
+          )
+        }
       }
     },
     [isInteracting, config.enableHover]
@@ -210,9 +214,13 @@ export function ShaderLensBlur() {
       )
         return
 
-      materialRef.current.uniforms.u_time.value = time * 0.001
-      materialRef.current.uniforms.u_hoverStrength.value =
-        isInteracting || config.enableHover ? 0.3 : 0
+      if (materialRef.current.uniforms.u_time) {
+        materialRef.current.uniforms.u_time.value = time * 0.001
+      }
+      if (materialRef.current.uniforms.u_hoverStrength) {
+        materialRef.current.uniforms.u_hoverStrength.value =
+          isInteracting || config.enableHover ? 0.3 : 0
+      }
 
       rendererRef.current.render(sceneRef.current, cameraRef.current)
       rafRef.current = requestAnimationFrame(animate)
@@ -282,7 +290,6 @@ export function ShaderLensBlur() {
     return () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current)
       if (rendererRef.current) rendererRef.current.dispose()
-      // eslint-disable-next-line react-hooks/exhaustive-deps
       if (containerRef.current) resizeObserver.unobserve(containerRef.current)
     }
   }, [config, updateSize, animate, theme])
@@ -298,7 +305,9 @@ export function ShaderLensBlur() {
     const handleTouchMove = (event: TouchEvent) => {
       if (event.touches.length > 0) {
         const touch = event.touches[0]
-        updateMousePosition(touch.clientX, touch.clientY)
+        if (touch) {
+          updateMousePosition(touch.clientX, touch.clientY)
+        }
       }
     }
 
@@ -321,12 +330,16 @@ export function ShaderLensBlur() {
 
   useEffect(() => {
     if (materialRef.current) {
-      materialRef.current.uniforms.u_color1.value.set(config.color1)
-      materialRef.current.uniforms.u_color2.value.set(config.color2)
-      materialRef.current.uniforms.u_color3.value.set(config.color3)
-      materialRef.current.uniforms.u_color4.value.set(config.color4)
-      materialRef.current.uniforms.u_invertMouse.value = config.invertMouse
-      materialRef.current.uniforms.u_isDarkMode.value = theme === "dark"
+      materialRef.current.uniforms.u_color1?.value.set(config.color1)
+      materialRef.current.uniforms.u_color2?.value.set(config.color2)
+      materialRef.current.uniforms.u_color3?.value.set(config.color3)
+      materialRef.current.uniforms.u_color4?.value.set(config.color4)
+      if (materialRef.current.uniforms.u_invertMouse) {
+        materialRef.current.uniforms.u_invertMouse.value = config.invertMouse
+      }
+      if (materialRef.current.uniforms.u_isDarkMode) {
+        materialRef.current.uniforms.u_isDarkMode.value = theme === "dark"
+      }
       materialRef.current.defines.VAR = config.variation
       materialRef.current.needsUpdate = true
     }

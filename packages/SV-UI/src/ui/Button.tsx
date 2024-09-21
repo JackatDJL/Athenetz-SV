@@ -1,4 +1,6 @@
+// eslint-disable-next-line no-redeclare
 import * as React from "react";
+// eslint-disable-next-line no-redeclare
 import { Slot, Slottable } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "cva";
 import { cn } from "../twm";

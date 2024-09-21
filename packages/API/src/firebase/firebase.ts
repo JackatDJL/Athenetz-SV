@@ -1,9 +1,13 @@
+/* eslint-disable */
 "use client"
 
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 import { getAnalytics, isSupported } from "firebase/analytics";
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FB_APIKEY,

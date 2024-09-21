@@ -1,5 +1,6 @@
 "use client"
 
+// eslint-disable-next-line no-redeclare
 import * as React from "react"
 import * as CollapsePrimitive from "@radix-ui/react-accordion"
 import { ChevronDown } from "react-feather"

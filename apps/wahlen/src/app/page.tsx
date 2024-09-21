@@ -1,6 +1,5 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable @next/next/no-img-element */
 "use client"
+/* eslint-disable @next/next/no-img-element */
 
 import { ThemeToggleButton } from 'sv-ui/Theme.jsx';
 import WelcomeUser from 'sv-ui/presets/functions/welcomeUser.jsx';
