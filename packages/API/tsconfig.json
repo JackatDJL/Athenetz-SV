@@ -1,0 +1,13 @@
+{
+  "extends": "@util/typescript-config/react-library.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "baseUrl": "src",
+    "paths": {
+        "github/*": ["other/gh/*"],
+        "fb/*": ["firebase/*"],
+    },
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}
