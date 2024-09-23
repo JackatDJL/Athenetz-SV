@@ -1,12 +1,12 @@
 "use client"
 /* eslint-disable @next/next/no-img-element */
 
-import { ThemeToggleButton } from 'sv-ui/Theme.jsx';
-import WelcomeUser from 'sv-ui/presets/functions/welcomeUser.jsx';
-import { DefaultText, DefaultWrapper } from 'sv-ui/presets/className.jsx';
-import { FloatingPanelRoot, FloatingPanelTrigger, FloatingPanelContent, FloatingPanelForm, FloatingPanelTextarea, FloatingPanelFooter, FloatingPanelCloseButton, FloatingPanelSubmitButton } from 'sv-ui/layout/FloatingPanel.jsx';
-import { Tooltip } from 'sv-ui/layout/Tooltip.jsx';
-import * as Toggle from 'sv-ui/ui/Toggle';
+import { ThemeToggleButton } from 'sv-ui/Theme.js';
+import WelcomeUser from 'sv-ui/presets/functions/welcomeUser.js';
+import { DefaultText, DefaultWrapper } from 'sv-ui/presets/className.js';
+import { FloatingPanelRoot, FloatingPanelTrigger, FloatingPanelContent, FloatingPanelForm, FloatingPanelTextarea, FloatingPanelFooter, FloatingPanelCloseButton, FloatingPanelSubmitButton } from 'sv-ui/layout/FloatingPanel.js';
+import { Tooltip } from 'sv-ui/layout/Tooltip.js';
+import * as Toggle from 'sv-ui/ui/Toggle.js';
 import React from 'react';
 import { toast } from 'sonner';
 

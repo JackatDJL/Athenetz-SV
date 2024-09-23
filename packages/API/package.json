@@ -1,13 +1,20 @@
 {
-  "name": "api",
+  "name": "sv-api",
   "private": true,
-  "version": "0.1.1",
+  "version": "0.1.2",
   "files": [
     "dist"
   ],
+  "exports": {
+    "./*": "./dist/*"
+  },
   "scripts": {
     "lint": "eslint src --max-warnings 2 --color --cache",
-    "compile": "tsc --build --clean",
+    "cleardist": "echo \"Running ClearDist\" && rimraf dist",
+    "clearmodules": "echo \"Running ClearModules\" && rimraf ../../node_modules/api",
+    "re-yarn": "echo \"Running Install&Dedupe\" && yarn install && yarn dedupe",
+    "tsc": "echo \"Running Typescript Compiler\" && tsc --build",
+    "compile": "run cleardist && run tsc && run clearmodules && run re-yarn",
     "watch": "tsc -w "
   },
   "packageManager": "yarn@4.5.0",

@@ -2,7 +2,7 @@
 
 // eslint-disable-next-line no-redeclare
 import * as React from "react"
-import { ChevronLeft, ChevronRight } from "react-feather"
+// import { ChevronLeft, ChevronRight } from "react-feather"
 import { DayPicker } from "react-day-picker"
 
 import { cn } from "../twm"
@@ -63,10 +63,10 @@ function Calendar({
         day_hidden: "invisible",
         ...classNames,
       }}
-      components={{
-        IconLeft: () => <ChevronLeft className="h-4 w-4" />,
-        IconRight: () => <ChevronRight className="h-4 w-4" />,
-      }}
+      // components={{
+      //   IconLeft: () => <ChevronLeft className="h-4 w-4" />,
+      //   IconRight: () => <ChevronRight className="h-4 w-4" />,
+      // }}
       {...props}
     />
   )

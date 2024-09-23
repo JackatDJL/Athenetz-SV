@@ -3,7 +3,7 @@ import * as React from "react"
 import { cn } from "../twm"
 // eslint-disable-next-line no-redeclare
 import Image from "next/image"
-import { parseGitAvatar } from "api/gh/GitAvatar"
+import { parseGitAvatar } from "sv-api/other/gh/GitAvatar.js"
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 interface AvatarProps extends React.HTMLAttributes<HTMLImageElement> {

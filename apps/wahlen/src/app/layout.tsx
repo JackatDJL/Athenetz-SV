@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Toaster } from "sv-ui/src/ui/toaster";
+import { Toaster } from "sv-ui/ui/Toast.js";
 import { Oxanium, Bungee_Spice } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"

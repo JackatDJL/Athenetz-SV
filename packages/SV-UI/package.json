@@ -1,35 +1,22 @@
 {
   "name": "sv-ui",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "files": [
     "dist"
   ],
+  "exports": {
+    "./*": "./dist/*"
+  },
   "scripts": {
     "lint": "eslint src --max-warnings 10 --color --cache",
     "generate:component": "turbo gen react-component",
-    "compile": "tsc --build --clean",
+    "cleardist": "echo \"Running ClearDist\" && rimraf dist",
+    "clearmodules": "echo \"Running ClearModules\" && rimraf ../../node_modules/sv-ui",
+    "re-yarn": "echo \"Running Install&Dedupe\" && yarn install && yarn dedupe",
+    "tsc": "echo \"Running Typescript Compiler\" && tsc --build",
+    "compile": "run cleardist && run tsc && run clearmodules && run re-yarn",
     "watch": "tsc -w "
-  },
-  "paths": {
-    "@/*": [
-      "./src/*"
-    ],
-    "@components/*": [
-      "./src/*"
-    ],
-    "@ui/*": [
-      "./src/ui/*"
-    ],
-    "@layout/*": [
-      "./src/layout/*"
-    ],
-    "@pre/*": [
-      "./src/presets/*"
-    ],
-    "@fx/*": [
-      "./src/effects/*"
-    ]
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.24.1",
@@ -73,7 +60,6 @@
     "@radix-ui/react-toggle-group": "^1.1.0",
     "@radix-ui/react-tooltip": "^1.1.2",
     "@theme-toggles/react": "^4.1.0",
-    "api": "workspace:^",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
     "cva": "1.0.0-beta.1",
@@ -92,6 +78,7 @@
     "react-spinners": "^0.14.1",
     "react-use-measure": "^2.1.1",
     "sonner": "^1.5.0",
+    "sv-api": "workspace:^",
     "tailwind-merge": "^2.5.2",
     "three": "^0.168.0",
     "vaul": "^0.9.4"

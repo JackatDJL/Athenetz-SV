@@ -2,7 +2,7 @@
 "use client"
 
 import { useAuthState } from "react-firebase-hooks/auth";
-import { fbauth } from "api/fb/firebase";
+import { fbauth } from "sv-api/firebase/firebase.js";
 
 export default async function WelcomeUser() {
     const { toast } = await import("sonner");
