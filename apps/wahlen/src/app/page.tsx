@@ -13,12 +13,12 @@ import { toast } from 'sonner';
 export default function Home() {
   WelcomeUser()
   return (
-    <main className={DefaultWrapper} >
+    <main className="bg-l-bg dark:bg-d-bg border border-l-acc" >
       <section className='flex flex-col items-center justify-center w-screen h-screen'>
         <div className='flex py-2'><h1>Hello, This Website is Currently under Construction!</h1></div>
         <div className='flex flex-row'>
-          <p className={DefaultText}>By</p>
-          <p className={DefaultText}>Jack@DJL</p>
+          <p className="">By</p>
+          <p className="">Jack@DJL</p>
         </div>
         <div className='flex items-center justify-center'>
           <FloatingPanelExample2Pre />
