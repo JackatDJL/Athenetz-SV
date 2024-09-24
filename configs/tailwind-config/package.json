@@ -1,5 +1,6 @@
 {
   "name": "@jackatdjl/athenetz-sv-util-tailwind-config",
+  "private": true,
   "version": "0.1.0",
   "packageManager": "yarn@4.5.0",
   "scripts": {

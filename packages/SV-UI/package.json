@@ -43,10 +43,10 @@
     "typescript": "^5"
   },
   "dependencies": {
-    "@jackatdjl/athenetz-sv-api": "workspace:^",
-    "@jackatdjl/athenetz-sv-util-eslint-config": "workspace:^",
-    "@jackatdjl/athenetz-sv-util-tailwind-config": "workspace:^",
-    "@jackatdjl/athenetz-sv-util-typescript-config": "workspace:^",
+    "@jackatdjl/athenetz-sv-api": "link:https://github.com/JackatDJL/Athenetz-SV/tree/v0.0.1-dev/configs/packages/api",
+    "@jackatdjl/athenetz-sv-util-eslint-config": "link:https://github.com/JackatDJL/Athenetz-SV/tree/v0.0.1-dev/configs/eslint-config",
+    "@jackatdjl/athenetz-sv-util-tailwind-config": "link:https://github.com/JackatDJL/Athenetz-SV/tree/v0.0.1-dev/configs/tailwind-config",
+    "@jackatdjl/athenetz-sv-util-typescript-config": "link:https://github.com/JackatDJL/Athenetz-SV/tree/v0.0.1-dev/configs/typescript-config",
     "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-alert-dialog": "^1.1.1",
     "@radix-ui/react-aspect-ratio": "^1.1.0",

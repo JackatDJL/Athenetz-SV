@@ -19,8 +19,8 @@
   },
   "packageManager": "yarn@4.5.0",
   "dependencies": {
-    "@jackatdjl/athenetz-sv-util-eslint-config": "workspace:^",
-    "@jackatdjl/athenetz-sv-util-typescript-config": "workspace:^",
+    "@jackatdjl/athenetz-sv-util-eslint-config": "link:https://github.com/JackatDJL/Athenetz-SV/tree/v0.0.1-dev/configs/eslint-config",
+    "@jackatdjl/athenetz-sv-util-typescript-config": "link:https://github.com/JackatDJL/Athenetz-SV/tree/v0.0.1-dev/configs/typescript-config",
     "@octokit/graphql": "^8.1.1",
     "typescript": "^5.6.2"
   },
