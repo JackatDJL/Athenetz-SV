@@ -1,12 +1,12 @@
 "use client"
 /* eslint-disable @next/next/no-img-element */
 
-import { ThemeToggleButton } from 'sv-ui/Theme.js';
-import WelcomeUser from 'sv-ui/presets/functions/welcomeUser.js';
-import { DefaultText, DefaultWrapper } from 'sv-ui/presets/className.js';
-import { FloatingPanelRoot, FloatingPanelTrigger, FloatingPanelContent, FloatingPanelForm, FloatingPanelTextarea, FloatingPanelFooter, FloatingPanelCloseButton, FloatingPanelSubmitButton } from 'sv-ui/layout/FloatingPanel.js';
-import { Tooltip } from 'sv-ui/layout/Tooltip.js';
-import * as Toggle from 'sv-ui/ui/Toggle.js';
+import { ThemeToggleButton } from '@jackatdjl/athenetz-sv-ui/Theme.js';
+import WelcomeUser from '@jackatdjl/athenetz-sv-ui/presets/functions/welcomeUser.js';
+import { DefaultText, DefaultWrapper } from '@jackatdjl/athenetz-sv-ui/presets/className.js';
+import { FloatingPanelRoot, FloatingPanelTrigger, FloatingPanelContent, FloatingPanelForm, FloatingPanelTextarea, FloatingPanelFooter, FloatingPanelCloseButton, FloatingPanelSubmitButton } from '@jackatdjl/athenetz-sv-ui/layout/FloatingPanel.js';
+import { Tooltip } from '@jackatdjl/athenetz-sv-ui/layout/Tooltip.js';
+import * as Toggle from '@jackatdjl/athenetz-sv-ui/ui/Toggle.js';
 import React from 'react';
 import { toast } from 'sonner';
 

@@ -1,5 +1,5 @@
 {
-  "name": "sv-ui",
+  "name": "@jackatdjl/athenetz-sv-ui",
   "version": "0.1.2",
   "private": true,
   "files": [
@@ -9,14 +9,14 @@
     "./*": "./dist/*"
   },
   "scripts": {
-    "lint": "eslint src --max-warnings 10 --color --cache",
-    "generate:component": "turbo gen react-component",
-    "cleardist": "echo \"Running ClearDist\" && rimraf dist",
-    "clearmodules": "echo \"Running ClearModules\" && rimraf ../../node_modules/sv-ui",
-    "re-yarn": "echo \"Running Install&Dedupe\" && yarn install && yarn dedupe",
-    "tsc": "echo \"Running Typescript Compiler\" && tsc --build",
-    "compile": "run cleardist && run tsc && run clearmodules && run re-yarn",
-    "watch": "tsc -w "
+    "compile": "echo \"┏━━ Compiling UI\" && run lint && run cleardist && run tsc && run clearmodules && run re-yarn && echo \"┗━━ Done\"",
+    "lint": "echo \"┣┳━ Running Lint\n┃┠─ run lint {options}\" && eslint src --max-warnings 10 --color --cache && echo \"┃┗━ Done\"",
+    "cleardist": "echo \"┣┳━ Running ClearDist\n┃┠─ run rimraf dist\" && rimraf dist && echo \"┃┗━ Done\"",
+    "tsc": "echo \"┣┳━ Running Typescript Compiler\n┃┠─ run tsc --build\" && tsc --build && echo \"┃┗━ Done\"",
+    "clearmodules": "echo \"┣┳━ Running ClearModules\n┃┠─ run rimraf ../../node_modules/@jackatdjl/athenetz-sv-ui\" && rimraf ../../node_modules/@jackatdjl/athenetz-sv-ui && echo \"┃┗━ Done\"",
+    "re-yarn": "echo \"┣┳━ Running Re-Yarn\n┃┠─ run yarn install\" && yarn install && echo \"┃┠─ run yarn dedupe\" && yarn dedupe && echo \"┃┗━ Done\"",
+    "watch": "tsc -w ",
+    "generate:component": "turbo gen react-component"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.24.1",
@@ -43,6 +43,10 @@
     "typescript": "^5"
   },
   "dependencies": {
+    "@jackatdjl/athenetz-sv-api": "workspace:^",
+    "@jackatdjl/athenetz-sv-util-eslint-config": "workspace:^",
+    "@jackatdjl/athenetz-sv-util-tailwind-config": "workspace:^",
+    "@jackatdjl/athenetz-sv-util-typescript-config": "workspace:^",
     "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-alert-dialog": "^1.1.1",
     "@radix-ui/react-aspect-ratio": "^1.1.0",
@@ -78,7 +82,6 @@
     "react-spinners": "^0.14.1",
     "react-use-measure": "^2.1.1",
     "sonner": "^1.5.0",
-    "sv-api": "workspace:^",
     "tailwind-merge": "^2.5.2",
     "three": "^0.168.0",
     "vaul": "^0.9.4"

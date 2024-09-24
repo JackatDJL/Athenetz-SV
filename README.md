@@ -16,11 +16,11 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `sv-ui`: a stub React component library shared by both `web` and `docs` applications
-- `@util/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@util/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- `web`: a [Next.js](https://nextjs.org/) app
+- `wahlen`: another [Next.js](https://nextjs.org/) app
+- `@jackatdjl/athenetz-sv-ui`: a stub React component library shared by both `web` and `docs` applications
+- `@jackatdjl/util-eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+- `@jackatdjl/util-typescript-config`: `tsconfig.json`s used throughout the monorepo
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
