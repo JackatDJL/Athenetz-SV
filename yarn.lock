@@ -15302,7 +15302,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"sv-ui@workspace:*, sv-ui@workspace:packages/SV-UI":
+"sv-ui@workspace:*, sv-ui@workspace:^, sv-ui@workspace:packages/SV-UI":
   version: 0.0.0-use.local
   resolution: "sv-ui@workspace:packages/SV-UI"
   dependencies:
@@ -16336,8 +16336,8 @@ __metadata:
     react: "npm:^18"
     react-dom: "npm:^18"
     storybook: "npm:^8.2.4"
-    sv-api: "workspace:*"
-    sv-ui: "workspace:*"
+    sv-api: "workspace:^"
+    sv-ui: "workspace:^"
     tailwindcss: "npm:^3.4.1"
     ts-jest: "npm:^29.1.2"
     tsconfig-paths-webpack-plugin: "npm:^4.1.0"

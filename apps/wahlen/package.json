@@ -18,8 +18,8 @@
     "next": "14.2.12",
     "react": "^18",
     "react-dom": "^18",
-    "sv-api": "workspace:*",
-    "sv-ui": "workspace:*",
+    "sv-api": "workspace:^",
+    "sv-ui": "workspace:^",
     "tailwindcss": "^3.4.12"
   },
   "devDependencies": {
