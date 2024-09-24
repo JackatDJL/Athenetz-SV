@@ -1,5 +1,6 @@
 {
   "name": "@util/tailwind-config",
+  "version": "1.0.0",
   "packageManager": "yarn@4.5.0",
   "dependencies": {
     "tailwindcss": "^3.4.12"
