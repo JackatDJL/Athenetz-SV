@@ -1,7 +1,6 @@
 {
   "name": "@jackatdjl/athenetz-sv-util-eslint-config",
   "version": "0.1.0",
-  "private": true,
   "files": [
     "library.js",
     "next.js",
@@ -13,7 +12,7 @@
     "cleardist": "echo \"┣┳━ Running ClearDist\n┃┠─ run rimraf dist\" && rimraf dist && echo \"┃┗━ Done\"",
     "jsc": "echo \"┣┳━ Running Javascript Compiler\n┃┣━ Abort \n┃┗━ No need to Compile\"",
     "clearmodules": "echo \"┣┳━ Running ClearModules\n┃┠─ run rimraf ../../node_modules/@jackatdjl/athenetz-sv-util-eslint-config\" && rimraf ../../node_modules/@jackatdjl/athenetz-sv-util-eslint-config && echo \"┃┗━ Done\"",
-    "re-yarn": "echo \"┣┳━ Running Re-Yarn\n┃┠─ run yarn install\" && yarn install && echo \"┃┠─ run yarn dedupe\" && yarn dedupe && echo \"┃┗━ Done\""
+    "re-yarn": "echo \"┣┳━ Running Re-Yarn\n┃┠─ run yarn\" && yarn && echo \"┃┠─ run yarn dedupe\" && yarn dedupe && echo \"┃┗━ Done\""
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.1.0",

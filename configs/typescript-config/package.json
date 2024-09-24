@@ -1,7 +1,6 @@
 {
   "name": "@jackatdjl/athenetz-sv-util-typescript-config",
   "version": "0.1.0",
-  "private": true,
   "license": "MIT",
   "scripts": {
     "compile": "echo \"┏━━ Compiling Typescript-Config\" && run lint && run cleardist && run jsc && run clearmodules && run re-yarn && echo \"┗━━ Done\"",
@@ -9,7 +8,7 @@
     "cleardist": "echo \"┣┳━ Running ClearDist\n┃┠─ run rimraf dist\" && rimraf dist && echo \"┃┗━ Done\"",
     "jsc": "echo \"┣┳━ Running Javascript Compiler\n┃┣━ Abort \n┃┗━ No need to Compile\"",
     "clearmodules": "echo \"┣┳━ Running ClearModules\n┃┠─ run rimraf ../../node_modules/@jackatdjl/athenetz-sv-util-typescript-config\" && rimraf ../../node_modules/@jackatdjl/athenetz-sv-util-typescript-config && echo \"┃┗━ Done\"",
-    "re-yarn": "echo \"┣┳━ Running Re-Yarn\n┃┠─ run yarn install\" && yarn install && echo \"┃┠─ run yarn dedupe\" && yarn dedupe && echo \"┃┗━ Done\""
+    "re-yarn": "echo \"┣┳━ Running Re-Yarn\n┃┠─ run yarn\" && yarn && echo \"┃┠─ run yarn dedupe\" && yarn dedupe && echo \"┃┗━ Done\""
   },
   "publishConfig": {
     "access": "public"

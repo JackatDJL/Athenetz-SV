@@ -2569,12 +2569,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jackatdjl/athenetz-sv-api@workspace:*, @jackatdjl/athenetz-sv-api@workspace:^, @jackatdjl/athenetz-sv-api@workspace:packages/API":
+"@jackatdjl/athenetz-sv-api@workspace:*, @jackatdjl/athenetz-sv-api@workspace:packages/API":
   version: 0.0.0-use.local
   resolution: "@jackatdjl/athenetz-sv-api@workspace:packages/API"
   dependencies:
-    "@jackatdjl/athenetz-sv-util-eslint-config": "workspace:^"
-    "@jackatdjl/athenetz-sv-util-typescript-config": "workspace:^"
+    "@jackatdjl/athenetz-sv-util-eslint-config": "workspace:*"
+    "@jackatdjl/athenetz-sv-util-typescript-config": "workspace:*"
     "@octokit/graphql": "npm:^8.1.1"
     "@types/node": "npm:^20"
     "@types/react": "npm:^18"
@@ -2592,10 +2592,10 @@ __metadata:
   resolution: "@jackatdjl/athenetz-sv-ui@workspace:packages/SV-UI"
   dependencies:
     "@babel/preset-typescript": "npm:^7.24.1"
-    "@jackatdjl/athenetz-sv-api": "workspace:^"
-    "@jackatdjl/athenetz-sv-util-eslint-config": "workspace:^"
-    "@jackatdjl/athenetz-sv-util-tailwind-config": "workspace:^"
-    "@jackatdjl/athenetz-sv-util-typescript-config": "workspace:^"
+    "@jackatdjl/athenetz-sv-api": "workspace:*"
+    "@jackatdjl/athenetz-sv-util-eslint-config": "workspace:*"
+    "@jackatdjl/athenetz-sv-util-tailwind-config": "workspace:*"
+    "@jackatdjl/athenetz-sv-util-typescript-config": "workspace:*"
     "@radix-ui/react-accordion": "npm:^1.2.0"
     "@radix-ui/react-alert-dialog": "npm:^1.1.1"
     "@radix-ui/react-aspect-ratio": "npm:^1.1.0"
@@ -2658,7 +2658,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jackatdjl/athenetz-sv-util-eslint-config@workspace:^, @jackatdjl/athenetz-sv-util-eslint-config@workspace:configs/eslint-config":
+"@jackatdjl/athenetz-sv-util-eslint-config@workspace:*, @jackatdjl/athenetz-sv-util-eslint-config@workspace:^, @jackatdjl/athenetz-sv-util-eslint-config@workspace:configs/eslint-config":
   version: 0.0.0-use.local
   resolution: "@jackatdjl/athenetz-sv-util-eslint-config@workspace:configs/eslint-config"
   dependencies:
@@ -2673,7 +2673,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jackatdjl/athenetz-sv-util-tailwind-config@workspace:^, @jackatdjl/athenetz-sv-util-tailwind-config@workspace:configs/tailwind-config":
+"@jackatdjl/athenetz-sv-util-tailwind-config@workspace:*, @jackatdjl/athenetz-sv-util-tailwind-config@workspace:^, @jackatdjl/athenetz-sv-util-tailwind-config@workspace:configs/tailwind-config":
   version: 0.0.0-use.local
   resolution: "@jackatdjl/athenetz-sv-util-tailwind-config@workspace:configs/tailwind-config"
   dependencies:
@@ -2683,7 +2683,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jackatdjl/athenetz-sv-util-typescript-config@workspace:^, @jackatdjl/athenetz-sv-util-typescript-config@workspace:configs/typescript-config":
+"@jackatdjl/athenetz-sv-util-typescript-config@workspace:*, @jackatdjl/athenetz-sv-util-typescript-config@workspace:^, @jackatdjl/athenetz-sv-util-typescript-config@workspace:configs/typescript-config":
   version: 0.0.0-use.local
   resolution: "@jackatdjl/athenetz-sv-util-typescript-config@workspace:configs/typescript-config"
   dependencies:
@@ -2699,9 +2699,9 @@ __metadata:
     "@chromatic-com/storybook": "npm:^1.4.0"
     "@jackatdjl/athenetz-sv-api": "workspace:*"
     "@jackatdjl/athenetz-sv-ui": "workspace:*"
-    "@jackatdjl/athenetz-sv-util-eslint-config": "workspace:^"
-    "@jackatdjl/athenetz-sv-util-tailwind-config": "workspace:^"
-    "@jackatdjl/athenetz-sv-util-typescript-config": "workspace:^"
+    "@jackatdjl/athenetz-sv-util-eslint-config": "workspace:*"
+    "@jackatdjl/athenetz-sv-util-tailwind-config": "workspace:*"
+    "@jackatdjl/athenetz-sv-util-typescript-config": "workspace:*"
     "@storybook/addon-essentials": "npm:^8.2.4"
     "@storybook/addon-interactions": "npm:^8.2.4"
     "@storybook/addon-links": "npm:^8.2.4"

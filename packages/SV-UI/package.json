@@ -1,7 +1,6 @@
 {
   "name": "@jackatdjl/athenetz-sv-ui",
   "version": "0.1.2",
-  "private": true,
   "files": [
     "dist"
   ],
@@ -14,7 +13,7 @@
     "cleardist": "echo \"┣┳━ Running ClearDist\n┃┠─ run rimraf dist\" && rimraf dist && echo \"┃┗━ Done\"",
     "tsc": "echo \"┣┳━ Running Typescript Compiler\n┃┠─ run tsc --build\" && tsc --build && echo \"┃┗━ Done\"",
     "clearmodules": "echo \"┣┳━ Running ClearModules\n┃┠─ run rimraf ../../node_modules/@jackatdjl/athenetz-sv-ui\" && rimraf ../../node_modules/@jackatdjl/athenetz-sv-ui && echo \"┃┗━ Done\"",
-    "re-yarn": "echo \"┣┳━ Running Re-Yarn\n┃┠─ run yarn install\" && yarn install && echo \"┃┠─ run yarn dedupe\" && yarn dedupe && echo \"┃┗━ Done\"",
+    "re-yarn": "echo \"┣┳━ Running Re-Yarn\n┃┠─ run yarn\" && yarn && echo \"┃┠─ run yarn dedupe\" && yarn dedupe && echo \"┃┗━ Done\"",
     "watch": "tsc -w ",
     "generate:component": "turbo gen react-component"
   },
@@ -43,10 +42,10 @@
     "typescript": "^5"
   },
   "dependencies": {
-    "@jackatdjl/athenetz-sv-api": "link:https://github.com/JackatDJL/Athenetz-SV/tree/v0.0.1-dev/configs/packages/api",
-    "@jackatdjl/athenetz-sv-util-eslint-config": "link:https://github.com/JackatDJL/Athenetz-SV/tree/v0.0.1-dev/configs/eslint-config",
-    "@jackatdjl/athenetz-sv-util-tailwind-config": "link:https://github.com/JackatDJL/Athenetz-SV/tree/v0.0.1-dev/configs/tailwind-config",
-    "@jackatdjl/athenetz-sv-util-typescript-config": "link:https://github.com/JackatDJL/Athenetz-SV/tree/v0.0.1-dev/configs/typescript-config",
+    "@jackatdjl/athenetz-sv-api": "workspace:*",
+    "@jackatdjl/athenetz-sv-util-eslint-config": "workspace:*",
+    "@jackatdjl/athenetz-sv-util-tailwind-config": "workspace:*",
+    "@jackatdjl/athenetz-sv-util-typescript-config": "workspace:*",
     "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-alert-dialog": "^1.1.1",
     "@radix-ui/react-aspect-ratio": "^1.1.0",
