@@ -18,8 +18,8 @@
     "generate:component": "turbo gen react-component"
   },
   "devDependencies": {
-    "@athenetz-sv/util-eslint-config": "workspace:*",
-    "@athenetz-sv/util-tailwind-config": "workspace:*",
+    "@athenetz-sv/util-eslint-config":"workspace:^0.1.0",
+    "@athenetz-sv/util-tailwind-config":"workspace:^0.1.0",
     "@babel/preset-typescript": "^7.24.1",
     "@eslint/eslintrc": "^3.1.0",
     "@eslint/js": "^9.11.1",
@@ -46,8 +46,8 @@
     "typescript": "^5"
   },
   "dependencies": {
-    "@athenetz-sv/api": "workspace:*",
-    "@athenetz-sv/util-typescript-config": "workspace:*",
+    "@athenetz-sv/api":"workspace:^0.1.2",
+    "@athenetz-sv/util-typescript-config":"workspace:^0.1.0",
     "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-alert-dialog": "^1.1.1",
     "@radix-ui/react-aspect-ratio": "^1.1.0",
