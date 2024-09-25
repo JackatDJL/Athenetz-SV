@@ -1,6 +1,6 @@
 {
-  "name": "@jackatdjl/athenetz-sv-ui",
-  "version": "0.1.2",
+  "name": "@athenetz-sv/ui",
+  "version": "0.1.3",
   "files": [
     "dist"
   ],
@@ -12,13 +12,17 @@
     "lint": "echo \"┣┳━ Running Lint\n┃┠─ run lint {options}\" && eslint src --max-warnings 10 --color --cache && echo \"┃┗━ Done\"",
     "cleardist": "echo \"┣┳━ Running ClearDist\n┃┠─ run rimraf dist\" && rimraf dist && echo \"┃┗━ Done\"",
     "tsc": "echo \"┣┳━ Running Typescript Compiler\n┃┠─ run tsc --build\" && tsc --build && echo \"┃┗━ Done\"",
-    "clearmodules": "echo \"┣┳━ Running ClearModules\n┃┠─ run rimraf ../../node_modules/@jackatdjl/athenetz-sv-ui\" && rimraf ../../node_modules/@jackatdjl/athenetz-sv-ui && echo \"┃┗━ Done\"",
+    "clearmodules": "echo \"┣┳━ Running ClearModules\n┃┠─ run rimraf ../../node_modules/@athenetz-sv/ui\" && rimraf ../../node_modules/@athenetz-sv/ui && echo \"┃┗━ Done\"",
     "re-yarn": "echo \"┣┳━ Running Re-Yarn\n┃┠─ run yarn\" && yarn && echo \"┃┠─ run yarn dedupe\" && yarn dedupe && echo \"┃┗━ Done\"",
     "watch": "tsc -w ",
     "generate:component": "turbo gen react-component"
   },
   "devDependencies": {
+    "@athenetz-sv/util-eslint-config": "workspace:*",
+    "@athenetz-sv/util-tailwind-config": "workspace:*",
     "@babel/preset-typescript": "^7.24.1",
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.11.1",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.1",
     "@types/jest": "^29.5.12",
@@ -29,8 +33,8 @@
     "autoprefixer": "^10.4.17",
     "chromatic": "^11.0.8",
     "concurrently": "^8.2.2",
-    "eslint": "^8",
-    "eslint-config-next": "14.1.0",
+    "eslint": "^9",
+    "eslint-config-next": "^14.2.0",
     "eslint-plugin-storybook": "^0.8.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
@@ -42,10 +46,8 @@
     "typescript": "^5"
   },
   "dependencies": {
-    "@jackatdjl/athenetz-sv-api": "workspace:*",
-    "@jackatdjl/athenetz-sv-util-eslint-config": "workspace:*",
-    "@jackatdjl/athenetz-sv-util-tailwind-config": "workspace:*",
-    "@jackatdjl/athenetz-sv-util-typescript-config": "workspace:*",
+    "@athenetz-sv/api": "workspace:*",
+    "@athenetz-sv/util-typescript-config": "workspace:*",
     "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-alert-dialog": "^1.1.1",
     "@radix-ui/react-aspect-ratio": "^1.1.0",

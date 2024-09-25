@@ -1,29 +1,26 @@
-"use client"
+"use client";
 
-import { ReactNode, useMemo, useState } from "react"
-import { AnimatePresence, MotionConfig, motion } from "framer-motion"
-import useMeasure from "react-use-measure"
+import { ReactNode, useMemo, useState } from "react";
+import { AnimatePresence, MotionConfig, motion } from "framer-motion";
+import useMeasure from "react-use-measure";
 
-import { cn } from "../twm"
-
-
-
+import { cn } from "../twm";
 
 // Direction Aware Tabs
 type Tab = {
-  id: number
-  label: string
-  content: ReactNode
-}
+  id: number;
+  label: string;
+  content: ReactNode;
+};
 
 interface OgImageSectionProps {
-  tabs: Tab[]
-  className?: string
-  rounded?: string
-  onChange?: () => void
-  activeTab: number
+  tabs: Tab[];
+  className?: string;
+  rounded?: string;
+  onChange?: () => void;
+  activeTab: number;
   // eslint-disable-next-line no-unused-vars
-  setActiveTab: (tabId: number) => void
+  setActiveTab: (tabId: number) => void;
 }
 
 function CustomDirectionAwareTabs({
@@ -34,24 +31,24 @@ function CustomDirectionAwareTabs({
   activeTab,
   setActiveTab,
 }: OgImageSectionProps) {
-  [activeTab, setActiveTab] = useState(1)
-  const [direction, setDirection] = useState(0)
-  const [isAnimating, setIsAnimating] = useState(false)
-  const [ref, bounds] = useMeasure()
+  [activeTab, setActiveTab] = useState(1);
+  const [direction, setDirection] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [ref, bounds] = useMeasure();
 
   const content = useMemo(() => {
-    const activeTabContent = tabs.find((tab) => tab.id === activeTab)?.content
-    return activeTabContent || null
-  }, [activeTab, tabs])
+    const activeTabContent = tabs.find((tab) => tab.id === activeTab)?.content;
+    return activeTabContent || null;
+  }, [activeTab, tabs]);
 
   const handleTabClick = (newTabId: number) => {
     if (newTabId !== activeTab && !isAnimating) {
-      const newDirection = newTabId > activeTab ? 1 : -1
-      setDirection(newDirection)
-      setActiveTab(newTabId)
-      onChange ? onChange() : null
+      const newDirection = newTabId > activeTab ? 1 : -1;
+      setDirection(newDirection);
+      setActiveTab(newTabId);
+      onChange ? onChange() : null;
     }
-  }
+  };
 
   const variants = {
     initial: (direction: number) => ({
@@ -69,7 +66,7 @@ function CustomDirectionAwareTabs({
       opacity: 0,
       filter: "blur(4px)",
     }),
-  }
+  };
 
   return (
     <div className=" flex flex-col items-center w-full">
@@ -77,7 +74,7 @@ function CustomDirectionAwareTabs({
         className={cn(
           "flex space-x-1 border border-none border-l-acc dark:border-d-acc rounded-full cursor-pointer bg-l-bg-400 dark:bg-d-bg-900 opacity-90 glassblur px-[3px] py-[3.2px] shadow-inner-shadow",
           className,
-          rounded
+          rounded,
         )}
       >
         {tabs.map((tab) => (
@@ -90,7 +87,7 @@ function CustomDirectionAwareTabs({
               activeTab === tab.id
                 ? "text-white"
                 : "hover:text-neutral-300/60  text-neutral-200/80",
-              rounded
+              rounded,
             )}
             style={{ WebkitTapHighlightColor: "transparent" }}
           >
@@ -137,17 +134,21 @@ function CustomDirectionAwareTabs({
         </motion.div>
       </MotionConfig>
     </div>
-  )
+  );
 }
-import { Wrapper } from "../layout/Card"
-import { DefaultText } from "../presets/className"
+import { Wrapper } from "../layout/Card";
+import { DefaultText } from "../presets/className";
 
 function PresetDirectionAwareTabs(props: OgImageSectionProps) {
-  const [activeTabs, setActiveTabs] = useState(0)
-    return (
-        <Wrapper className="border-l-acc dark:border-d-acc">
-            <CustomDirectionAwareTabs {...props} activeTab={activeTabs} setActiveTab={setActiveTabs} />
-        </Wrapper>
-    )
+  const [activeTabs, setActiveTabs] = useState(0);
+  return (
+    <Wrapper className="border-l-acc dark:border-d-acc">
+      <CustomDirectionAwareTabs
+        {...props}
+        activeTab={activeTabs}
+        setActiveTab={setActiveTabs}
+      />
+    </Wrapper>
+  );
 }
-export { CustomDirectionAwareTabs, PresetDirectionAwareTabs}
+export { CustomDirectionAwareTabs, PresetDirectionAwareTabs };

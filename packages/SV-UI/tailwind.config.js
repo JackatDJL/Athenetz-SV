@@ -1,1 +1,1 @@
-module.exports = require("@jackatdjl/athenetz-sv-util-tailwind.config.js");
+module.exports = require("@athenetz-sv/util-tailwind.config.js");

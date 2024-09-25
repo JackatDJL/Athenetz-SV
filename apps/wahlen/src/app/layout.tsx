@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Toaster } from "@jackatdjl/athenetz-sv-ui/ui/Toast.js";
+import { Toaster } from "@athenetz-sv/ui/ui/Toast.js";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Oxanium, Bungee_Spice } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
@@ -16,20 +16,21 @@ const bungeeSpice = Bungee_Spice({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-bungee-spice",
-})
+});
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://noplus.vercel.app'),
+  metadataBase: new URL("https://noplus.vercel.app"),
   title: "NoPlus Web-App",
   description: "Web Frontend for NoPlus",
-  authors: [{
-    name: "Jack Ruder",
-    url: "https://github.com/derjacklive",
-  },
-  {
-    name: "Actualy no one Else",
-    url: "https://www.youtube.com/watch?v=hvL1339luv0",
-  },
+  authors: [
+    {
+      name: "Jack Ruder",
+      url: "https://github.com/derjacklive",
+    },
+    {
+      name: "Actualy no one Else",
+      url: "https://www.youtube.com/watch?v=hvL1339luv0",
+    },
   ],
   generator: "Next.js",
   keywords: "NoPlus, NoPlus-Web, Frontend, DerJackLive, DJL",
@@ -78,21 +79,22 @@ export const metadata: Metadata = {
   formatDetection: {
     telephone: false,
   },
-  abstract: "Web Frontend for NoPlus. By DerJackLive. NoPlus is a Project by DJL made to Learn and Explore the World of Unity and The Web",
+  abstract:
+    "Web Frontend for NoPlus. By DerJackLive. NoPlus is a Project by DJL made to Learn and Explore the World of Unity and The Web",
   alternates: {
-    canonical: '/',
+    canonical: "/",
     languages: {
-      'en': '/en',
-      'de': '/de-DE'
-    }
-  }
+      en: "/en",
+      de: "/de-DE",
+    },
+  },
 };
 
 import { gsap } from "gsap";
-    
+
 import { CustomEase } from "gsap/CustomEase";
 import { RoughEase, ExpoScaleEase, SlowMo } from "gsap/EasePack";
-    
+
 import { Flip } from "gsap/Flip";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Observer } from "gsap/Observer";
@@ -103,19 +105,34 @@ import { EaselPlugin } from "gsap/EaselPlugin";
 import { PixiPlugin } from "gsap/PixiPlugin";
 import { TextPlugin } from "gsap/TextPlugin";
 
-gsap.registerPlugin(Flip,ScrollTrigger,Observer,ScrollToPlugin,Draggable,MotionPathPlugin,EaselPlugin,PixiPlugin,TextPlugin,RoughEase,ExpoScaleEase,SlowMo,CustomEase);
+gsap.registerPlugin(
+  Flip,
+  ScrollTrigger,
+  Observer,
+  ScrollToPlugin,
+  Draggable,
+  MotionPathPlugin,
+  EaselPlugin,
+  PixiPlugin,
+  TextPlugin,
+  RoughEase,
+  ExpoScaleEase,
+  SlowMo,
+  CustomEase,
+);
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  
   return (
     <html lang="en">
       <SpeedInsights />
-      <Analytics/>
-      <body className={`${oxanium.variable} ${bungeeSpice.variable} font-oxanium bg-l-bg dark:bg-d-bg text-l-txt dark:text-d-txt duration-700`}>
+      <Analytics />
+      <body
+        className={`${oxanium.variable} ${bungeeSpice.variable} font-oxanium bg-l-bg dark:bg-d-bg text-l-txt dark:text-d-txt duration-700`}
+      >
         <Toaster />
         <div id="recapcha-container"></div>
         {children}

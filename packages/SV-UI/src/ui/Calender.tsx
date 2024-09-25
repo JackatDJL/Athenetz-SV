@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
 // eslint-disable-next-line no-redeclare
-import * as React from "react"
+import * as React from "react";
 // import { ChevronLeft, ChevronRight } from "react-feather"
-import { DayPicker } from "react-day-picker"
+import { DayPicker } from "react-day-picker";
 
-import { cn } from "../twm"
-import { buttonVariants } from "./Button"
+import { cn } from "../twm";
+import { buttonVariants } from "./Button";
 
-export type CalendarProps = React.ComponentProps<typeof DayPicker>
+export type CalendarProps = React.ComponentProps<typeof DayPicker>;
 
 /**
  * Renders a calendar component.
@@ -36,8 +36,8 @@ function Calendar({
         caption_label: "text-sm text-l-txt dark:text-d-txt font-medium",
         nav: "space-x-1 flex items-center",
         nav_button: cn(
-          buttonVariants({ variant: "outline"}),
-          "h-7 w-7 p-0 opacity-50 hover:opacity-100"
+          buttonVariants({ variant: "outline" }),
+          "h-7 w-7 p-0 opacity-50 hover:opacity-100",
         ),
         nav_button_previous: "absolute left-1",
         nav_button_next: "absolute right-1",
@@ -49,7 +49,7 @@ function Calendar({
         cell: "h-9 w-9 text-l-txt dark:text-d-txt text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-l-accent/50 duration-700 dark:[&:has([aria-selected].day-outside)]:bg-d-accent/50 [&:has([aria-selected])]:bg-l-accent dark:[&:has([aria-selected])]:bg-d-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20",
         day: cn(
           buttonVariants({ variant: "ghost" }),
-          "h-9 w-9 p-0 font-normal aria-selected:opacity-100"
+          "h-9 w-9 p-0 font-normal aria-selected:opacity-100",
         ),
         day_range_end: "day-range-end",
         day_selected:
@@ -69,11 +69,11 @@ function Calendar({
       // }}
       {...props}
     />
-  )
+  );
 }
-Calendar.displayName = "Calendar"
+Calendar.displayName = "Calendar";
 
-import { Preset } from "../layout/Popup"
+import { Preset } from "../layout/Popup";
 
 /**
  * Renders a calendar wrapped in a popup.
@@ -84,7 +84,7 @@ const CalendarPopup = () => {
     <Preset trigger="Show Calendar">
       <Calendar />
     </Preset>
-  )
-}
+  );
+};
 
-export { Calendar as Base, CalendarPopup as asPopup }
+export { Calendar as Base, CalendarPopup as asPopup };

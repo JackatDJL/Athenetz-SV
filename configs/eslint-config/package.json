@@ -1,5 +1,6 @@
 {
-  "name": "@jackatdjl/athenetz-sv-util-eslint-config",
+  "name": "@athenetz-sv/util-eslint-config",
+  "description": "Eslint Config Package",
   "version": "0.1.0",
   "files": [
     "library.js",
@@ -9,12 +10,14 @@
   "scripts": {
     "compile": "echo \"┏━━ Compiling Eslint-Config\" && run lint && run cleardist && run jsc && run clearmodules && run re-yarn && echo \"┗━━ Done\"",
     "lint": "echo \"┣┳━ Running Lint\n┃┣━ Abort \n┃┗━ No need to Lint\"",
-    "cleardist": "echo \"┣┳━ Running ClearDist\n┃┠─ run rimraf dist\" && rimraf dist && echo \"┃┗━ Done\"",
+    "cleardist": "echo \"┣┳━ Running ClearDist\n┃┣━ Abort \n┃┗━ There is no dist\"",
     "jsc": "echo \"┣┳━ Running Javascript Compiler\n┃┣━ Abort \n┃┗━ No need to Compile\"",
-    "clearmodules": "echo \"┣┳━ Running ClearModules\n┃┠─ run rimraf ../../node_modules/@jackatdjl/athenetz-sv-util-eslint-config\" && rimraf ../../node_modules/@jackatdjl/athenetz-sv-util-eslint-config && echo \"┃┗━ Done\"",
+    "clearmodules": "echo \"┣┳━ Running ClearModules\n┃┠─ run rimraf ../../node_modules/@athenetz-sv/util-eslint-config\" && rimraf ../../node_modules/@athenetz-sv/util-eslint-config && echo \"┃┗━ Done\"",
     "re-yarn": "echo \"┣┳━ Running Re-Yarn\n┃┠─ run yarn\" && yarn && echo \"┃┠─ run yarn dedupe\" && yarn dedupe && echo \"┃┗━ Done\""
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.11.1",
     "@typescript-eslint/eslint-plugin": "^7.1.0",
     "@typescript-eslint/parser": "^7.1.0",
     "@vercel/style-guide": "^5.2.0",
@@ -24,6 +27,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "eslint": "^8"
+    "@athenetz-sv/util-typescript-config": "workspace:^",
+    "eslint": "^9"
   }
 }

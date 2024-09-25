@@ -1,5 +1,5 @@
 {
-  "extends": "@jackatdjl/athenetz-sv-util-typescript-config/nextjs.json",
+  "extends": "@athenetz-sv/util-typescript-config/nextjs.json",
   "compilerOptions": {
     "plugins": [
       {

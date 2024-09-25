@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-"use client"
+"use client";
 
 // eslint-disable-next-line no-redeclare
 import React, {
@@ -9,76 +9,76 @@ import React, {
   useId,
   useRef,
   useState,
-} from "react"
-import { AnimatePresence, MotionConfig, motion } from "framer-motion"
-import { X } from "react-feather"
+} from "react";
+import { AnimatePresence, MotionConfig, motion } from "framer-motion";
+import { X } from "react-feather";
 
-import { cn } from "../twm"
+import { cn } from "../twm";
 
 const TRANSITION = {
   type: "spring",
   bounce: 0.05,
   duration: 0.3,
-}
+};
 
 function useClickOutside(
   ref: React.RefObject<HTMLElement>,
-  handler: () => void
+  handler: () => void,
 ) {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (ref.current && !ref.current.contains(event.target as Node)) {
-        handler()
+        handler();
       }
-    }
+    };
 
-    document.addEventListener("mousedown", handleClickOutside)
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
-    }
-  }, [ref, handler])
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [ref, handler]);
 }
 
 interface ScaleUpContextType {
-  isOpen: boolean
-  openScaleUp: () => void
-  closeScaleUp: () => void
-  uniqueId: string
-  note: string
-  setNote: (note: string) => void
+  isOpen: boolean;
+  openScaleUp: () => void;
+  closeScaleUp: () => void;
+  uniqueId: string;
+  note: string;
+  setNote: (note: string) => void;
 }
 
-const ScaleUpContext = createContext<ScaleUpContextType | undefined>(undefined)
+const ScaleUpContext = createContext<ScaleUpContextType | undefined>(undefined);
 
 function useScaleUp() {
-  const context = useContext(ScaleUpContext)
+  const context = useContext(ScaleUpContext);
   if (!context) {
-    throw new Error("useScaleUp must be used within a ScaleUpProvider")
+    throw new Error("useScaleUp must be used within a ScaleUpProvider");
   }
-  return context
+  return context;
 }
 
 function useScaleUpLogic() {
-  const uniqueId = useId()
-  const [isOpen, setIsOpen] = useState(false)
-  const [note, setNote] = useState("")
+  const uniqueId = useId();
+  const [isOpen, setIsOpen] = useState(false);
+  const [note, setNote] = useState("");
 
-  const openScaleUp = () => setIsOpen(true)
+  const openScaleUp = () => setIsOpen(true);
   const closeScaleUp = () => {
-    setIsOpen(false)
-    setNote("")
-  }
+    setIsOpen(false);
+    setNote("");
+  };
 
-  return { isOpen, openScaleUp, closeScaleUp, uniqueId, note, setNote }
+  return { isOpen, openScaleUp, closeScaleUp, uniqueId, note, setNote };
 }
 
 interface ScaleUpRootProps {
-  children: React.ReactNode
-  className?: string
+  children: React.ReactNode;
+  className?: string;
 }
 
 export function ScaleUpRoot({ children, className }: ScaleUpRootProps) {
-  const ScaleUpLogic = useScaleUpLogic()
+  const ScaleUpLogic = useScaleUpLogic();
 
   return (
     <ScaleUpContext.Provider value={ScaleUpLogic}>
@@ -86,71 +86,75 @@ export function ScaleUpRoot({ children, className }: ScaleUpRootProps) {
         <div
           className={cn(
             "relative flex items-center justify-center isolate",
-            className
+            className,
           )}
         >
           {children}
         </div>
       </MotionConfig>
     </ScaleUpContext.Provider>
-  )
+  );
 }
 
 interface ScaleUpTriggerProps {
-  children: React.ReactNode
-  className?: string
+  children: React.ReactNode;
+  className?: string;
 }
 
-export function ScaleUpTrigger({children, className }: ScaleUpTriggerProps) {
-  const { openScaleUp, uniqueId } = useScaleUp()
+export function ScaleUpTrigger({ children, className }: ScaleUpTriggerProps) {
+  const { openScaleUp, uniqueId } = useScaleUp();
 
   return (
     <>
-        <motion.button
-          key="button"
-          layoutId={`ScaleUp-${uniqueId}`}
-          className={cn(
-            "flex h-9 items-center border border-zinc-950/10 bg-white px-3 text-zinc-950 dark:border-zinc-50/10 dark:bg-zinc-700 dark:text-zinc-50",
-            className
-          )}
-          style={{
-            borderRadius: 8,
-          }}
-          onClick={openScaleUp}
-        >
-          <motion.span layoutId={`ScaleUp-label-${uniqueId}`} className="text-sm">
-            {children}
-          </motion.span>
-        </motion.button>
+      <motion.button
+        key="button"
+        layoutId={`ScaleUp-${uniqueId}`}
+        className={cn(
+          "flex h-9 items-center border border-zinc-950/10 bg-white px-3 text-zinc-950 dark:border-zinc-50/10 dark:bg-zinc-700 dark:text-zinc-50",
+          className,
+        )}
+        style={{
+          borderRadius: 8,
+        }}
+        onClick={openScaleUp}
+      >
+        <motion.span layoutId={`ScaleUp-label-${uniqueId}`} className="text-sm">
+          {children}
+        </motion.span>
+      </motion.button>
     </>
-  )
+  );
 }
 
 interface ScaleUpContentProps {
-  children: React.ReactNode
-  className?: string
-  header?: string
+  children: React.ReactNode;
+  className?: string;
+  header?: string;
 }
 
-export function ScaleUpContent({header, children, className }: ScaleUpContentProps) {
-  const { isOpen, closeScaleUp, uniqueId } = useScaleUp()
-  const formContainerRef = useRef<HTMLDivElement>(null)
+export function ScaleUpContent({
+  header,
+  children,
+  className,
+}: ScaleUpContentProps) {
+  const { isOpen, closeScaleUp, uniqueId } = useScaleUp();
+  const formContainerRef = useRef<HTMLDivElement>(null);
 
-  useClickOutside(formContainerRef, closeScaleUp)
+  useClickOutside(formContainerRef, closeScaleUp);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        closeScaleUp()
+        closeScaleUp();
       }
-    }
+    };
 
-    document.addEventListener("keydown", handleKeyDown)
+    document.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      document.removeEventListener("keydown", handleKeyDown)
-    }
-  }, [closeScaleUp])
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [closeScaleUp]);
 
   return (
     <AnimatePresence>
@@ -160,7 +164,7 @@ export function ScaleUpContent({header, children, className }: ScaleUpContentPro
           layoutId={`ScaleUp-${uniqueId}`}
           className={cn(
             "absolute h-[200px] w-[364px] overflow-hidden border border-zinc-950/10 bg-white outline-none dark:bg-zinc-700 z-50", // Changed z-90 to z-50
-            className
+            className,
           )}
           style={{
             borderRadius: 12,
@@ -169,18 +173,18 @@ export function ScaleUpContent({header, children, className }: ScaleUpContentPro
             transform: "none", // Remove any transform
           }}
         >
-            {header && <ScaleUpHeader>{header}</ScaleUpHeader>}
+          {header && <ScaleUpHeader>{header}</ScaleUpHeader>}
           {children}
         </motion.div>
       )}
     </AnimatePresence>
-  )
+  );
 }
 
 interface ScaleUpFormProps {
-  children: React.ReactNode
-  onSubmit?: (note: string) => void
-  className?: string
+  children: React.ReactNode;
+  onSubmit?: (note: string) => void;
+  className?: string;
 }
 
 export function ScaleUpForm({
@@ -188,13 +192,13 @@ export function ScaleUpForm({
   onSubmit,
   className,
 }: ScaleUpFormProps) {
-  const { note, closeScaleUp } = useScaleUp()
+  const { note, closeScaleUp } = useScaleUp();
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    onSubmit?.(note)
-    closeScaleUp()
-  }
+    e.preventDefault();
+    onSubmit?.(note);
+    closeScaleUp();
+  };
 
   return (
     <form
@@ -203,58 +207,57 @@ export function ScaleUpForm({
     >
       {children}
     </form>
-  )
+  );
 }
 
 interface ScaleUpLabelProps {
-  children: React.ReactNode
-  className?: string
+  children: React.ReactNode;
+  className?: string;
 }
 
 export function ScaleUpLabel({ children, className }: ScaleUpLabelProps) {
-  const { uniqueId, note } = useScaleUp()
+  const { uniqueId, note } = useScaleUp();
 
   return (
     <motion.span
       layoutId={`ScaleUp-label-${uniqueId}`}
       aria-hidden="true"
-      
       style={{
         opacity: note ? 0 : 1,
       }}
       className={cn(
         "absolute left-4 top-3 select-none text-sm text-zinc-500 dark:text-zinc-400",
-        className
+        className,
       )}
     >
       {children}
     </motion.span>
-  )
+  );
 }
 
 interface ScaleUpTextareaProps {
-  className?: string
+  className?: string;
 }
 
 export function ScaleUpTextarea({ className }: ScaleUpTextareaProps) {
-  const { note, setNote } = useScaleUp()
+  const { note, setNote } = useScaleUp();
 
   return (
     <textarea
       className={cn(
         "h-full w-full resize-none rounded-md bg-transparent px-4 py-3 text-sm outline-none",
-        className
+        className,
       )}
       autoFocus
       value={note}
       onChange={(e) => setNote(e.target.value)}
     />
-  )
+  );
 }
 
 interface ScaleUpFooterProps {
-  children: React.ReactNode
-  className?: string
+  children: React.ReactNode;
+  className?: string;
 }
 
 export function ScaleUpFooter({ children, className }: ScaleUpFooterProps) {
@@ -265,15 +268,15 @@ export function ScaleUpFooter({ children, className }: ScaleUpFooterProps) {
     >
       {children}
     </div>
-  )
+  );
 }
 
 interface ScaleUpCloseButtonProps {
-  className?: string
+  className?: string;
 }
 
 export function ScaleUpCloseButton({ className }: ScaleUpCloseButtonProps) {
-  const { closeScaleUp } = useScaleUp()
+  const { closeScaleUp } = useScaleUp();
 
   return (
     <button
@@ -284,56 +287,59 @@ export function ScaleUpCloseButton({ className }: ScaleUpCloseButtonProps) {
     >
       <X size={16} className="text-zinc-900 dark:text-zinc-100" />
     </button>
-  )
+  );
 }
 
 interface ScaleUpSubmitButtonProps {
-  className?: string
-  text?: string
+  className?: string;
+  text?: string;
 }
 
-export function ScaleUpSubmitButton({ text="Submit", className }: ScaleUpSubmitButtonProps) {
+export function ScaleUpSubmitButton({
+  text = "Submit",
+  className,
+}: ScaleUpSubmitButtonProps) {
   return (
     <button
       className={cn(
         "relative ml-1 flex h-8 shrink-0 scale-100 select-none appearance-none items-center justify-center rounded-lg border border-zinc-950/10 bg-transparent px-2 text-sm text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-800 focus-visible:ring-2 active:scale-[0.98] dark:border-zinc-50/10 dark:text-zinc-50 dark:hover:bg-zinc-800",
-        className
+        className,
       )}
       type="submit"
       aria-label={text}
     >
       {text}
     </button>
-  )
+  );
 }
 
 export function ScaleUpHeader({
   children,
   className,
 }: {
-  children: React.ReactNode
-  className?: string
+  children: React.ReactNode;
+  className?: string;
 }) {
   return (
     <div
       className={cn(
         "px-4 py-2 font-semibold text-zinc-900 dark:text-zinc-100",
-        className
+        className,
       )}
     >
       {children}
     </div>
-  )
+  );
 }
 
 export function ScaleUpBody({
   children,
   className,
 }: {
-  children: React.ReactNode
-  className?: string
+  children: React.ReactNode;
+  className?: string;
 }) {
-  return <div className={cn("p-4", className)}>{children}</div>
+  return <div className={cn("p-4", className)}>{children}</div>;
 }
 
 // New component: ScaleUpButton
@@ -342,19 +348,19 @@ export function ScaleUpButton({
   onClick,
   className,
 }: {
-  children: React.ReactNode
-  onClick?: () => void
-  className?: string
+  children: React.ReactNode;
+  onClick?: () => void;
+  className?: string;
 }) {
   return (
     <button
       className={cn(
         "flex w-full items-center gap-2 rounded-md px-4 py-2 text-left text-sm hover:bg-zinc-100 dark:hover:bg-zinc-700",
-        className
+        className,
       )}
       onClick={onClick}
     >
       {children}
     </button>
-  )
+  );
 }

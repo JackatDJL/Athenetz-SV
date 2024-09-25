@@ -1,5 +1,5 @@
 {
-  "name": "athenetz-sv",
+  "name": "@athenetz-sv/workspace",
   "private": true,
   "scripts": {
     "build": "turbo build",
