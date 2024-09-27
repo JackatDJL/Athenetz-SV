@@ -29,12 +29,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@athenetz-sv/api@workspace:*, @athenetz-sv/api@workspace:packages/API":
+"@athenetz-sv/api@workspace:^0.1.2, @athenetz-sv/api@workspace:packages/API":
   version: 0.0.0-use.local
   resolution: "@athenetz-sv/api@workspace:packages/API"
   dependencies:
-    "@athenetz-sv/util-eslint-config": "workspace:*"
-    "@athenetz-sv/util-typescript-config": "workspace:*"
+    "@athenetz-sv/util-eslint-config": "workspace:^0.1.0"
+    "@athenetz-sv/util-typescript-config": "workspace:^0.1.0"
     "@eslint/eslintrc": "npm:^3.1.0"
     "@eslint/js": "npm:^9.11.1"
     "@octokit/graphql": "npm:^8.1.1"
@@ -49,14 +49,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@athenetz-sv/ui@workspace:*, @athenetz-sv/ui@workspace:packages/SV-UI":
+"@athenetz-sv/ui@workspace:^0.1.2, @athenetz-sv/ui@workspace:packages/SV-UI":
   version: 0.0.0-use.local
   resolution: "@athenetz-sv/ui@workspace:packages/SV-UI"
   dependencies:
-    "@athenetz-sv/api": "workspace:*"
-    "@athenetz-sv/util-eslint-config": "workspace:*"
-    "@athenetz-sv/util-tailwind-config": "workspace:*"
-    "@athenetz-sv/util-typescript-config": "workspace:*"
+    "@athenetz-sv/api": "workspace:^0.1.2"
+    "@athenetz-sv/util-eslint-config": "workspace:^0.1.0"
+    "@athenetz-sv/util-tailwind-config": "workspace:^0.1.0"
+    "@athenetz-sv/util-typescript-config": "workspace:^0.1.0"
     "@babel/preset-typescript": "npm:^7.24.1"
     "@eslint/eslintrc": "npm:^3.1.0"
     "@eslint/js": "npm:^9.11.1"
@@ -122,11 +122,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@athenetz-sv/util-eslint-config@workspace:*, @athenetz-sv/util-eslint-config@workspace:^, @athenetz-sv/util-eslint-config@workspace:configs/eslint-config":
+"@athenetz-sv/util-eslint-config@workspace:^0.1.0, @athenetz-sv/util-eslint-config@workspace:configs/eslint-config":
   version: 0.0.0-use.local
   resolution: "@athenetz-sv/util-eslint-config@workspace:configs/eslint-config"
   dependencies:
-    "@athenetz-sv/util-typescript-config": "workspace:^"
+    "@athenetz-sv/util-typescript-config": "workspace:^0.1.0"
     "@eslint/eslintrc": "npm:^3.1.0"
     "@eslint/js": "npm:^9.11.1"
     "@typescript-eslint/eslint-plugin": "npm:^7.1.0"
@@ -140,17 +140,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@athenetz-sv/util-tailwind-config@workspace:*, @athenetz-sv/util-tailwind-config@workspace:^, @athenetz-sv/util-tailwind-config@workspace:configs/tailwind-config":
+"@athenetz-sv/util-tailwind-config@workspace:^0.1.0, @athenetz-sv/util-tailwind-config@workspace:configs/tailwind-config":
   version: 0.0.0-use.local
   resolution: "@athenetz-sv/util-tailwind-config@workspace:configs/tailwind-config"
   dependencies:
-    "@athenetz-sv/util-eslint-config": "workspace:^"
+    "@athenetz-sv/util-eslint-config": "workspace:^0.1.0"
     eslint: "npm:^8"
     tailwindcss: "npm:^3.4.12"
   languageName: unknown
   linkType: soft
 
-"@athenetz-sv/util-typescript-config@workspace:*, @athenetz-sv/util-typescript-config@workspace:^, @athenetz-sv/util-typescript-config@workspace:configs/typescript-config":
+"@athenetz-sv/util-typescript-config@workspace:^0.1.0, @athenetz-sv/util-typescript-config@workspace:configs/typescript-config":
   version: 0.0.0-use.local
   resolution: "@athenetz-sv/util-typescript-config@workspace:configs/typescript-config"
   dependencies:
@@ -158,15 +158,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@athenetz-sv/wahlen@workspace:*, @athenetz-sv/wahlen@workspace:apps/wahlen":
+"@athenetz-sv/wahlen@workspace:^0.1.2, @athenetz-sv/wahlen@workspace:apps/wahlen":
   version: 0.0.0-use.local
   resolution: "@athenetz-sv/wahlen@workspace:apps/wahlen"
   dependencies:
-    "@athenetz-sv/api": "workspace:*"
-    "@athenetz-sv/ui": "workspace:*"
-    "@athenetz-sv/util-eslint-config": "workspace:*"
-    "@athenetz-sv/util-tailwind-config": "workspace:*"
-    "@athenetz-sv/util-typescript-config": "workspace:*"
+    "@athenetz-sv/api": "workspace:^0.1.2"
+    "@athenetz-sv/ui": "workspace:^0.1.2"
+    "@athenetz-sv/util-eslint-config": "workspace:^0.1.0"
+    "@athenetz-sv/util-tailwind-config": "workspace:^0.1.0"
+    "@athenetz-sv/util-typescript-config": "workspace:^0.1.0"
     "@babel/preset-typescript": "npm:^7.24.1"
     "@chromatic-com/storybook": "npm:^1.4.0"
     "@eslint/eslintrc": "npm:^3.1.0"
@@ -217,12 +217,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@athenetz-sv/web@workspace:apps/web"
   dependencies:
-    "@athenetz-sv/api": "workspace:*"
-    "@athenetz-sv/ui": "workspace:*"
-    "@athenetz-sv/util-eslint-config": "workspace:^"
-    "@athenetz-sv/util-tailwind-config": "workspace:^"
-    "@athenetz-sv/util-typescript-config": "workspace:^"
-    "@athenetz-sv/wahlen": "workspace:*"
+    "@athenetz-sv/api": "workspace:^0.1.2"
+    "@athenetz-sv/ui": "workspace:^0.1.2"
+    "@athenetz-sv/util-eslint-config": "workspace:^0.1.0"
+    "@athenetz-sv/util-tailwind-config": "workspace:^0.1.0"
+    "@athenetz-sv/util-typescript-config": "workspace:^0.1.0"
+    "@athenetz-sv/wahlen": "workspace:^0.1.2"
     "@babel/preset-typescript": "npm:^7.24.1"
     "@chromatic-com/storybook": "npm:^1.4.0"
     "@eslint/eslintrc": "npm:^3.1.0"

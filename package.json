@@ -16,10 +16,10 @@
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "yarn@4.5.0",
   "workspaces": [
     "apps/*",
     "packages/*",
     "configs/*"
-  ]
+  ],
+  "packageManager": "yarn@4.5.0"
 }

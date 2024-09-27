@@ -19,7 +19,7 @@ export default [...compat.extends("../../configs/eslint-config/react-internal.js
         sourceType: "script",
 
         parserOptions: {
-            project: "./tsconfig.lint.json",
+            project: __dirname + "/tsconfig.json",
             tsconfigRootDir: "D:\\dev\\Athenetz-SV\\packages\\sv-ui",
         },
     },

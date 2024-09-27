@@ -42,7 +42,7 @@ if (
 
     fbappcheckinstance = firebaseAppCheck.initializeAppCheck(fbapp, {
       provider: new firebaseAppCheck.ReCaptchaV3Provider(
-        "6LcWUNEpAAAAALpHEz4a8Qqo8c97f661CPSZqw2U",
+        "6LeMw1AqAAAAAGIOHhvAt4N3iFROmcwuRDj2sI1m",
       ),
       isTokenAutoRefreshEnabled: true,
     });

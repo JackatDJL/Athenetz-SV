@@ -1,22 +1,8 @@
 import type { Metadata } from "next";
 import { Toaster } from "@athenetz-sv/ui/ui/Toast.js";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Oxanium, Bungee_Spice } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
-
-const oxanium = Oxanium({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-oxanium",
-});
-
-const bungeeSpice = Bungee_Spice({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-bungee-spice",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://noplus.vercel.app"),
@@ -131,7 +117,7 @@ export default function RootLayout({
       <SpeedInsights />
       <Analytics />
       <body
-        className={`${oxanium.variable} ${bungeeSpice.variable} font-oxanium bg-l-bg dark:bg-d-bg text-l-txt dark:text-d-txt duration-700`}
+        className={`bg-l-bg dark:bg-d-bg text-l-txt dark:text-d-txt duration-700`}
       >
         <Toaster />
         <div id="recapcha-container"></div>
