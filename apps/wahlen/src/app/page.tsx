@@ -17,6 +17,7 @@ import * as Toggle from "@athenetz-sv/ui/ui/Toggle.js";
 // eslint-disable-next-line no-redeclare
 import React from "react";
 import { toast } from "sonner";
+import { bungee } from "@athenetz-sv/ui/fonts.js";
 
 export default function Home() {
   WelcomeUser();
@@ -24,7 +25,7 @@ export default function Home() {
     <main className="bg-l-bg dark:bg-d-bg border border-l-acc">
       <section className="flex flex-col items-center justify-center w-screen h-screen">
         <div className="flex py-2">
-          <h1>Hello, This Website is Currently under Construction!</h1>
+          <h1 className={`${bungee.className} font-spice`}>Hello, This Website is Currently under Construction!</h1>
         </div>
         <div className="flex flex-row">
           <p className="p">By</p>

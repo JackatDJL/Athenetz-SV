@@ -1,15 +1,44 @@
-import { Oxanium, Bungee_Spice } from "next/font/google";
+import localfont from "next/font/local";
 
-
-const oxanium = Oxanium({
-  subsets: ["latin"],
-  display: "swap",
-});
-const bungeeSpice = Bungee_Spice({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
+const oxanium = localfont({
+  src: [
+    {
+      path: "/fonts/oxanium.ttf",
+    },
+  ],
 });
 
+const bungee = localfont({
+  src: [
+    {
+      path: "/fonts/bungee/regular.ttf",
+      style: "redular",
+    },
+    {
+      path: "/fonts/bungee/hairline.ttf",
+      style: "hairline",
+    },
+    {
+      path: "/fonts/bungee/inline.ttf",
+      style: "inline",
+    },
+    {
+      path: "/fonts/bungee/outline.ttf",
+      style: "outline",
+    },
+    {
+      path: "/fonts/bungee/shade.ttf",
+      style: "shade",
+    },
+    {
+      path: "/fonts/bungee/spice.ttf",
+      style: "spice",
+    },
+    {
+      path: "/fonts/bungee/tint.ttf",
+      style: "tint",
+    },
+  ],
+});
 
-export { oxanium, bungeeSpice };
+export { oxanium, bungee };

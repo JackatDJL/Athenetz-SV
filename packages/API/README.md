@@ -35,7 +35,7 @@ yarn dev
 Import the API system in your application as follows:
 
 ```javascript
-import { apiFunction } from '@athenetz-sv/api';
+import { apiFunction } from "@athenetz-sv/api";
 ```
 
 ## Contributing
