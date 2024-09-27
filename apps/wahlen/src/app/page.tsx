@@ -27,8 +27,8 @@ export default function Home() {
           <h1>Hello, This Website is Currently under Construction!</h1>
         </div>
         <div className="flex flex-row">
-          <p className="">By</p>
-          <p className="">Jack@DJL</p>
+          <p className="p">By</p>
+          <p className="p">Jack@DJL</p>
         </div>
         <div className="flex items-center justify-center">
           <FloatingPanelExample2Pre />
