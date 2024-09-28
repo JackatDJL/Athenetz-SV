@@ -1,7 +1,6 @@
 "use client";
 
 import { ThemeToggleButton } from "@athenetz-sv/ui/Theme.js";
-import WelcomeUser from "@athenetz-sv/ui/presets/functions/welcomeUser.js";
 import {
   FloatingPanelRoot,
   FloatingPanelTrigger,
@@ -20,7 +19,6 @@ import { toast } from "sonner";
 import { bungee } from "@athenetz-sv/ui/fonts.js";
 
 export default function Home() {
-  WelcomeUser();
   return (
     <main className="bg-l-bg dark:bg-d-bg border border-l-acc">
       <section className="flex flex-col items-center justify-center w-screen h-screen">
