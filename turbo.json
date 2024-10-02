@@ -23,11 +23,7 @@
       "dependsOn": ["compile","^lint"]
     },
     "dev": {
-      "dependsOn": ["lint","watch","dev"],
-      "cache": false,
-      "persistent": true
-    },
-    "watch": {
+      "dependsOn": ["compile"],
       "cache": false,
       "persistent": true
     },

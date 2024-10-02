@@ -14,7 +14,8 @@
     "tsc": "echo \"┣┳━ Running Typescript Compiler\n┃┠─ run tsc --build\" && tsc --build && echo \"┃┗━ Done\"",
     "clearmodules": "echo \"┣┳━ Running ClearModules\n┃┠─ run rimraf ../../node_modules/@athenetz-sv/api\" && rimraf ../../node_modules/@athenetz-sv/api && echo \"┃┗━ Done\"",
     "re-yarn": "echo \"┣┳━ Running Re-Yarn\n┃┠─ run yarn\" && yarn && echo \"┃┠─ run yarn dedupe\" && yarn dedupe && echo \"┃┗━ Done\"",
-    "watch": "tsc -w "
+    "watch": "echo \"┣┳━ Monitoring API-Libary\n┃┠─ tsc --watch\" && tsc --watch && echo \"┃┗━ Done\n┗━━ Done \"",
+    "dev": "echo \"┏━━ Running Dev\" && run watch"
   },
   "packageManager": "yarn@4.5.0",
   "dependencies": {
