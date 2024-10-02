@@ -41,7 +41,3 @@ import { apiFunction } from "@athenetz-sv/api";
 ## Contributing
 
 Please follow the contribution guidelines outlined in the project root.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file in the project root for more information.
