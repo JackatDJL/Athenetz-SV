@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
 // eslint-disable-next-line no-redeclare
-import * as React from "react"
-import { Drawer as DrawerPrimitive } from "vaul"
+import * as React from "react";
+import { Drawer as DrawerPrimitive } from "vaul";
 
-import { cn } from "../twm"
-import { Button } from "../ui/Button"
+import { cn } from "../twm";
+import { Button } from "../ui/Button";
 
 const Drawer = ({
   shouldScaleBackground = true,
@@ -15,12 +15,26 @@ const Drawer = ({
     shouldScaleBackground={shouldScaleBackground}
     {...props}
   />
-)
-Drawer.displayName = "Drawer"
+);
+Drawer.displayName = "Drawer";
 
 const DrawerTrigger = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Trigger> & { variant?: "destructive" | "outline" | "secondary" | "ghost" | "link" | "expandIcon" | "ringHover" | "shine" | "gooeyRight" | "gooeyLeft" | "linkHover1" | "linkHover2" }
+  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Trigger> & {
+    variant?:
+      | "destructive"
+      | "outline"
+      | "secondary"
+      | "ghost"
+      | "link"
+      | "expandIcon"
+      | "ringHover"
+      | "shine"
+      | "gooeyRight"
+      | "gooeyLeft"
+      | "linkHover1"
+      | "linkHover2";
+  }
 >(({ className, children, variant, ...props }, ref) => (
   <DrawerPrimitive.Trigger
     ref={ref}
@@ -29,24 +43,20 @@ const DrawerTrigger = React.forwardRef<
   >
     <Button variant={variant || "outline"}>{children}</Button>
   </DrawerPrimitive.Trigger>
-))
-DrawerTrigger.displayName = DrawerPrimitive.Trigger.displayName
+));
+DrawerTrigger.displayName = DrawerPrimitive.Trigger.displayName;
 
-const DrawerPortal = DrawerPrimitive.Portal
+const DrawerPortal = DrawerPrimitive.Portal;
 
 const DrawerClose = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Close>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Close>
 >(({ className, children, ...props }, ref) => (
-  <DrawerPrimitive.Close
-    ref={ref}
-    className={cn("", className)}
-    {...props}
-  >
-    <Button variant="outline" >{children}</Button>
+  <DrawerPrimitive.Close ref={ref} className={cn("", className)} {...props}>
+    <Button variant="outline">{children}</Button>
   </DrawerPrimitive.Close>
-))
-DrawerClose.displayName = "DrawerClose"
+));
+DrawerClose.displayName = "DrawerClose";
 
 const DrawerOverlay = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Overlay>,
@@ -54,11 +64,14 @@ const DrawerOverlay = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DrawerPrimitive.Overlay
     ref={ref}
-    className={cn("fixed inset-0 z-50 bg-l-bg-100/10 duration-700 dark:bg-d-bg-900/10 tinyblur", className)}
+    className={cn(
+      "fixed inset-0 z-50 bg-l-bg-100/10 duration-700 dark:bg-d-bg-900/10 tinyblur",
+      className,
+    )}
     {...props}
   />
-))
-DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName
+));
+DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName;
 
 const DrawerContent = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Content>,
@@ -69,42 +82,57 @@ const DrawerContent = React.forwardRef<
     <DrawerPrimitive.Content
       ref={ref}
       className={cn(
-      "fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border border-b-0 border-l-acc-200 duration-700 dark:border-d-acc-800 bg-l-bg/20 dark:bg-d-bg/20 glassblur",
-      className
+        "fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border border-b-0 border-l-acc-200 duration-700 dark:border-d-acc-800 bg-l-bg/20 dark:bg-d-bg/20 glassblur",
+        className,
       )}
-      style={{ maxHeight: '65vh' }} // Set the max height to 90% of the viewport height
+      style={{ maxHeight: "65vh" }} // Set the max height to 90% of the viewport height
       {...props}
+    >
+      <div className="mx-auto mt-4 h-2 w-[100px] rounded-full bg-muted" />
+      <div
+        style={{
+          overflowY: "auto",
+          flex: "1",
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
+        }}
       >
-        <div className="mx-auto mt-4 h-2 w-[100px] rounded-full bg-muted" />
-          <div style={{ overflowY: 'auto', flex: '1', scrollbarWidth: 'none', msOverflowStyle: 'none' }}> {/* Make this div scrollable and take up the remaining space */}
-            {children}
-        </div>
+        {" "}
+        {/* Make this div scrollable and take up the remaining space */}
+        {children}
+      </div>
     </DrawerPrimitive.Content>
   </DrawerPortal>
-))
-DrawerContent.displayName = "DrawerContent"
+));
+DrawerContent.displayName = "DrawerContent";
 
 const DrawerHeader = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
-    className={cn("grid gap-1.5 p-4 text-center text-l-txt duration-700 dark:text-d-txt sm:text-left", className)}
+    className={cn(
+      "grid gap-1.5 p-4 text-center text-l-txt duration-700 dark:text-d-txt sm:text-left",
+      className,
+    )}
     {...props}
   />
-)
-DrawerHeader.displayName = "DrawerHeader"
+);
+DrawerHeader.displayName = "DrawerHeader";
 
 const DrawerFooter = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
-    className={cn("mt-auto flex flex-col gap-2 p-4 text-l-txt/80 duration-700 dark:text-d-txt/80", className)}
+    className={cn(
+      "mt-auto flex flex-col gap-2 p-4 text-l-txt/80 duration-700 dark:text-d-txt/80",
+      className,
+    )}
     {...props}
   />
-)
-DrawerFooter.displayName = "DrawerFooter"
+);
+DrawerFooter.displayName = "DrawerFooter";
 
 const DrawerTitle = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Title>,
@@ -114,12 +142,12 @@ const DrawerTitle = React.forwardRef<
     ref={ref}
     className={cn(
       "text-lg font-semibold leading-none tracking-tight text-l-txt duration-700 dark:text-d-txt",
-      className
+      className,
     )}
     {...props}
   />
-))
-DrawerTitle.displayName = DrawerPrimitive.Title.displayName
+));
+DrawerTitle.displayName = DrawerPrimitive.Title.displayName;
 
 const DrawerDescription = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Description>,
@@ -130,8 +158,8 @@ const DrawerDescription = React.forwardRef<
     className={cn("text-sm text-muted-foreground", className)}
     {...props}
   />
-))
-DrawerDescription.displayName = DrawerPrimitive.Description.displayName
+));
+DrawerDescription.displayName = DrawerPrimitive.Description.displayName;
 
 export {
   Drawer as Wrapper,
@@ -141,5 +169,5 @@ export {
   DrawerTitle as Title,
   DrawerDescription as Description,
   DrawerClose as Close,
-  DrawerFooter as Footer
-}
+  DrawerFooter as Footer,
+};

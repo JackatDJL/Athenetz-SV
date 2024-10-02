@@ -1,7 +1,6 @@
 {
-  "name": "sv-api",
-  "private": true,
-  "version": "0.1.2",
+  "name": "@athenetz-sv/api",
+  "version": "0.1.3",
   "files": [
     "dist"
   ],
@@ -9,22 +8,25 @@
     "./*": "./dist/*"
   },
   "scripts": {
-    "lint": "eslint src --max-warnings 2 --color --cache",
-    "cleardist": "echo \"Running ClearDist\" && rimraf dist",
-    "clearmodules": "echo \"Running ClearModules\" && rimraf ../../node_modules/api",
-    "re-yarn": "echo \"Running Install&Dedupe\" && yarn install && yarn dedupe",
-    "tsc": "echo \"Running Typescript Compiler\" && tsc --build",
-    "compile": "run cleardist && run tsc && run clearmodules && run re-yarn",
-    "watch": "tsc -w "
+    "compile": "echo \"┏━━ Compiling API\" && run lint && run cleardist && run tsc && run clearmodules && run re-yarn && echo \"┗━━ Done\"",
+    "lint": "echo \"┣┳━ Running Lint\n┃┠─ run lint {options}\" && eslint src --max-warnings 2 --color --cache && echo \"┃┗━ Done\"",
+    "cleardist": "echo \"┣┳━ Running ClearDist\n┃┠─ run rimraf dist\" && rimraf dist && echo \"┃┗━ Done\"",
+    "tsc": "echo \"┣┳━ Running Typescript Compiler\n┃┠─ run tsc --build\" && tsc --build && echo \"┃┗━ Done\"",
+    "clearmodules": "echo \"┣┳━ Running ClearModules\n┃┠─ run rimraf ../../node_modules/@athenetz-sv/api\" && rimraf ../../node_modules/@athenetz-sv/api && echo \"┃┗━ Done\"",
+    "re-yarn": "echo \"┣┳━ Running Re-Yarn\n┃┠─ run yarn\" && yarn && echo \"┃┠─ run yarn dedupe\" && yarn dedupe && echo \"┃┗━ Done\"",
+    "watch": "echo \"┣┳━ Monitoring API-Libary\n┃┠─ tsc --watch\" && tsc --watch && echo \"┃┗━ Done \"",
+    "dev": "echo \"┏━━ Running Dev\" && run watch && echo \"┗━━ Done\""
   },
   "packageManager": "yarn@4.5.0",
   "dependencies": {
+    "@athenetz-sv/util-typescript-config": "workspace:^0.1.0",
     "@octokit/graphql": "^8.1.1",
-    "@util/eslint-config": "workspace:^",
-    "@util/typescript-config": "workspace:^",
     "typescript": "^5.6.2"
   },
   "devDependencies": {
+    "@athenetz-sv/util-eslint-config": "workspace:^0.1.0",
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.11.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

@@ -1,9 +1,21 @@
 {
-  "name": "@util/typescript-config",
-  "version": "1.0.0",
-  "private": true,
+  "name": "@athenetz-sv/util-typescript-config",
+  "version": "0.1.0",
   "license": "MIT",
+  "scripts": {
+    "compile": "echo \"┏━━ Compiling Typescript-Config\" && run lint && run cleardist && run jsc && run clearmodules && run re-yarn && echo \"┗━━ Done\"",
+    "lint": "echo \"┣┳━ Running Lint\n┃┣━ Abort \n┃┗━ No need to Lint\"",
+    "cleardist": "echo \"┣┳━ Running ClearDist\n┃┣━ Abort \n┃┗━ There is no dist\"",
+    "jsc": "echo \"┣┳━ Running Javascript Compiler\n┃┣━ Abort \n┃┗━ No need to Compile\"",
+    "clearmodules": "echo \"┣┳━ Running ClearModules\n┃┠─ run rimraf ../../node_modules/@athenetz-sv/util-typescript-config\" && rimraf ../../node_modules/@athenetz-sv/util-typescript-config && echo \"┃┗━ Done\"",
+    "re-yarn": "echo \"┣┳━ Running Re-Yarn\n┃┠─ run yarn\" && yarn && echo \"┃┠─ run yarn dedupe\" && yarn dedupe && echo \"┃┗━ Done\"",
+    "watch": "echo \"┣┳━ Monitoring Typescript-Config\n┃┣━ Abort \n┃┗━ Nothing to monitor\"",
+    "dev": "echo \"┏━━ Running Dev\" && run watch && echo \"┗━━ Done\""
+  },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "typescript": "^5.6.0"
   }
 }

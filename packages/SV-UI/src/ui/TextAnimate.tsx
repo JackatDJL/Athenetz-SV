@@ -1,9 +1,14 @@
-"use client"
+"use client";
 
-import { FC, useRef } from "react"
-import { HTMLMotionProps, motion, useAnimation, useInView } from "framer-motion"
-import { DefaultText } from "../presets/className"
-import { cn } from "../twm"
+import { FC, useRef } from "react";
+import {
+  HTMLMotionProps,
+  motion,
+  useAnimation,
+  useInView,
+} from "framer-motion";
+import { DefaultText } from "../presets/className";
+import { cn } from "../twm";
 
 type AnimationType =
   | "fadeIn"
@@ -13,14 +18,14 @@ type AnimationType =
   | "rollIn"
   | "whipIn"
   | "whipInUp"
-  | "calmInUp"
+  | "calmInUp";
 
 interface Props extends HTMLMotionProps<"div"> {
-  text: string
-  type?: AnimationType
-  delay?: number
-  duration?: number
-  className?: string
+  text: string;
+  type?: AnimationType;
+  delay?: number;
+  duration?: number;
+  className?: string;
 }
 
 const animationVariants = {
@@ -192,7 +197,7 @@ const animationVariants = {
       },
     },
   },
-}
+};
 
 const TextAnimate: FC<Props> = ({
   text,
@@ -205,15 +210,15 @@ const TextAnimate: FC<Props> = ({
   //     triggerOnce: true,
   //   });
 
-  const ref = useRef(null)
+  const ref = useRef(null);
   // eslint-disable-next-line no-unused-vars
-  const isInView = useInView(ref, { once: true })
+  const isInView = useInView(ref, { once: true });
 
-  const letters = Array.from(text)
-  const { container, child } = animationVariants[type]
+  const letters = Array.from(text);
+  const { container, child } = animationVariants[type];
 
   // eslint-disable-next-line no-unused-vars
-  const ctrls = useAnimation()
+  const ctrls = useAnimation();
 
   //   useEffect(() => {
   //     if (isInView) {
@@ -254,13 +259,13 @@ const TextAnimate: FC<Props> = ({
                   >
                     {character}
                   </motion.span>
-                )
+                );
               })}
             </motion.span>
-          )
+          );
         })}
       </h2>
-    )
+    );
   }
 
   return (
@@ -270,7 +275,11 @@ const TextAnimate: FC<Props> = ({
       variants={container}
       initial="hidden"
       animate="visible"
-      className={cn(DefaultText, "mt-10 text-4xl font-black text-black dark:text-neutral-100 py-5 pb-8 px-8 md:text-5xl", className)}
+      className={cn(
+        DefaultText,
+        "mt-10 text-4xl font-black text-black dark:text-neutral-100 py-5 pb-8 px-8 md:text-5xl",
+        className,
+      )}
       {...props}
     >
       {letters.map((letter, index) => (
@@ -279,7 +288,7 @@ const TextAnimate: FC<Props> = ({
         </motion.span>
       ))}
     </motion.h2>
-  )
-}
+  );
+};
 
-export { TextAnimate }
+export { TextAnimate };

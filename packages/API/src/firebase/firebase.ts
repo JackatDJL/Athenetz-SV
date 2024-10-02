@@ -1,13 +1,10 @@
 /* eslint-disable */
-"use client"
+"use client";
 
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 import { getAnalytics, isSupported } from "firebase/analytics";
-import dotenv from 'dotenv';
-
-dotenv.config();
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FB_APIKEY,
@@ -16,16 +13,18 @@ const firebaseConfig = {
   storageBucket: process.env.NEXT_PUBLIC_FB_STORAGEBUCKET,
   messagingSenderId: process.env.NEXT_PUBLIC_FB_MESSAGINGSENDERID,
   appId: process.env.NEXT_PUBLIC_FB_APPID,
-  measurementId: process.env.NEXT_PUBLIC_FB_MEASUREMENTID
-}
-
+  measurementId: process.env.NEXT_PUBLIC_FB_MEASUREMENTID,
+};
 
 if (typeof window !== "undefined" && window.location.hostname === "localhost") {
   // @ts-ignore
   globalThis.FIREBASE_APPCHECK_DEBUG_TOKEN = true;
 }
 
-if (typeof window !== "undefined" && window.location.hostname === "b48kz8qg-3000.euw.devtunnels.ms") {
+if (
+  typeof window !== "undefined" &&
+  window.location.hostname === "b48kz8qg-3000.euw.devtunnels.ms"
+) {
   // @ts-ignore
   globalThis.FIREBASE_APPCHECK_DEBUG_TOKEN = true;
 }
@@ -33,13 +32,19 @@ if (typeof window !== "undefined" && window.location.hostname === "b48kz8qg-3000
 const fbapp = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 let fbappcheckinstance: any = null;
 
-if (typeof window !== "undefined" && process.title == 'browser' && !fbappcheckinstance) {
+if (
+  typeof window !== "undefined" &&
+  process.title == "browser" &&
+  !fbappcheckinstance
+) {
   import("firebase/app-check").then(async (firebaseAppCheck) => {
     const recv3token = process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_PUBLIC_KEY;
 
     fbappcheckinstance = firebaseAppCheck.initializeAppCheck(fbapp, {
-      provider: new firebaseAppCheck.ReCaptchaV3Provider("6LcWUNEpAAAAALpHEz4a8Qqo8c97f661CPSZqw2U"),
-      isTokenAutoRefreshEnabled: true
+      provider: new firebaseAppCheck.ReCaptchaV3Provider(
+        "6LeMw1AqAAAAAGIOHhvAt4N3iFROmcwuRDj2sI1m",
+      ),
+      isTokenAutoRefreshEnabled: true,
     });
     // console.log("AppCheckInstance", fbappcheckinstance);
   });
@@ -54,7 +59,7 @@ isSupported().then((supported) => {
   if (!supported) {
     return;
   }
-  fblytics = getAnalytics(fbapp)
-})
+  fblytics = getAnalytics(fbapp);
+});
 
-export { fbapp, fbauth, fblytics, fstore, fbappcheckinstance as appCheck }
+export { fbapp, fbauth, fblytics, fstore, fbappcheckinstance as appCheck };

@@ -1,13 +1,38 @@
-# Turborepo starter
+# Athenetz-SV
 
-This is an official starter Turborepo.
+This is the Monorepo for the Student Council of the Gymnasium Athenaeum Stade
+Located in Stade, Lower Saxony, Germany
 
-## Using this example
+This project is currently entirely in German. In the (distant) future, English, Russian, and Ukrainian might be added.
+However, English is used in README files and documentation out of habit.
 
-Run the following command:
+[Open](https://athenetz-sv.vercel.app)
+
+## Contact us!
+
+If you got Questions please write us an E-/mail
+[Write a Email](mailto:sv@athenetz.de?subject=%7BSubject%7D%20--%20SORT-REPO)
+
+or a Mail to
+
+Gymnasium Athenaeum
+Schülervertretung
+z. Hdn. Jack Ruder
+Harsefelder Straße 40
+21680 Stade
+
+## To Contribute
+
+Run the following commands in your dev directory:
 
 ```sh
-npx create-turbo@latest
+git clone https://github.com/JackatDJL/Athenetz-SV.git
+cd Athenetz-SV
+git fetch
+git checkout v0.0.1-dev
+corepack enable
+yarn install
+yarn build
 ```
 
 ## What's inside?
@@ -16,13 +41,15 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `sv-ui`: a stub React component library shared by both `web` and `docs` applications
-- `@util/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@util/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- `@athenetz-sv/web`: The Production Output [Next.js](https://nextjs.org/) app
+- `@athenetz-sv/wahlen`: the [Next.js](https://nextjs.org/) app for the Voting Module
+- `@athenetz-sv/ui`: The UI Libary - **DIRECT COPY OF MY DJLUI PACKAGE** - Version: [1edf620](https://github.com/JnMProjects/DJLUI/commit/1edf62067684ba4c4659c2021a4c47712887461b)
+- `@athenetz-sv/util-eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+- `@athenetz-sv/util-typescript-config`: `tsconfig.json`s used throughout the monorepo
+- `@athenetz-sv/util-tailwind-config`: **Design System** Contoll through `tailwind.config.js`
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+**Typescript** knowledge required!
+**Yarn** package manager required!
 
 ### Utilities
 
@@ -36,9 +63,9 @@ This Turborepo has some additional tools already setup for you:
 
 To build all apps and packages, run the following command:
 
-```
-cd my-turborepo
-pnpm build
+```sh
+yarn dedupe
+yarn build
 ```
 
 ### Develop
@@ -46,8 +73,7 @@ pnpm build
 To develop all apps and packages, run the following command:
 
 ```
-cd my-turborepo
-pnpm dev
+yarn dev
 ```
 
 ### Remote Caching

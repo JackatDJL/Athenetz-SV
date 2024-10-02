@@ -3,7 +3,7 @@
   "ui": "tui",
   "tasks": {
     "build": {
-      "dependsOn": ["compile","lint","^build"],
+      "dependsOn": ["compile","^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "env": [
         "NEXT_PUBLIC_FB_APIKEY",
@@ -23,11 +23,7 @@
       "dependsOn": ["compile","^lint"]
     },
     "dev": {
-      "dependsOn": ["lint","watch","dev"],
-      "cache": false,
-      "persistent": true
-    },
-    "watch": {
+      "dependsOn": ["compile"],
       "cache": false,
       "persistent": true
     },

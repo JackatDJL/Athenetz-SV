@@ -1,6 +1,6 @@
 {
-  "name": "web",
-  "version": "0.1.0",
+  "name": "@athenetz-sv/web",
+  "version": "0.1.2",
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
@@ -9,23 +9,27 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@util/eslint-config": "workspace:^",
-    "@util/typescript-config": "workspace:^",
+    "@athenetz-sv/api": "workspace:^0.1.2",
+    "@athenetz-sv/ui": "workspace:^0.1.2",
+    "@athenetz-sv/util-typescript-config": "workspace:^0.1.0",
+    "@athenetz-sv/wahlen": "workspace:^0.1.2",
     "@vercel/analytics": "^1.3.1",
     "@vercel/speed-insights": "^1.0.12",
     "eslint": "^9.10.0",
     "gsap": "^3.12.5",
-    "next": "14.2.12",
+    "next": "v15.0.0-canary.172",
     "react": "^18",
     "react-dom": "^18",
-    "sv-api": "workspace:*",
-    "sv-ui": "workspace:*",
     "tailwindcss": "^3.4.12",
-    "wahlen": "workspace:*"
+    "webpack": "^5.95.0"
   },
   "devDependencies": {
+    "@athenetz-sv/util-eslint-config": "workspace:^0.1.0",
+    "@athenetz-sv/util-tailwind-config": "workspace:^0.1.0",
     "@babel/preset-typescript": "^7.24.1",
     "@chromatic-com/storybook": "^1.4.0",
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.11.1",
     "@storybook/addon-essentials": "^8.2.4",
     "@storybook/addon-interactions": "^8.2.4",
     "@storybook/addon-links": "^8.2.4",

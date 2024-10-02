@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
 // eslint-disable-next-line no-redeclare
-import * as React from "react"
-import * as SliderPrimitive from "@radix-ui/react-slider"
+import * as React from "react";
+import * as SliderPrimitive from "@radix-ui/react-slider";
 
-import { cn } from "../twm"
+import { cn } from "../twm";
 
 const Slider = React.forwardRef<
   React.ElementRef<typeof SliderPrimitive.Root>,
@@ -14,7 +14,7 @@ const Slider = React.forwardRef<
     ref={ref}
     className={cn(
       "relative flex w-full touch-none select-none items-center",
-      className
+      className,
     )}
     {...props}
   >
@@ -23,19 +23,30 @@ const Slider = React.forwardRef<
     </SliderPrimitive.Track>
     <SliderPrimitive.Thumb className="block h-5 w-5 rounded-full border-2 border-l-prim duration-700 dark:border-d-prim bg-l-bg dark:bg-d-bg ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-l-acc dark:focus-visible:ring-d-acc focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50" />
   </SliderPrimitive.Root>
-))
-Slider.displayName = SliderPrimitive.Root.displayName
+));
+Slider.displayName = SliderPrimitive.Root.displayName;
 
-
-
-function GaugeCircle({ max = 100, min = 0, value = 0, className = "" }: { max?: number, min?: number, value?: number, className?: string }) {
+function GaugeCircle({
+  max = 100,
+  min = 0,
+  value = 0,
+  className = "",
+}: {
+  max?: number;
+  min?: number;
+  value?: number;
+  className?: string;
+}) {
   const circumference = 2 * Math.PI * 45;
   const percentPx = circumference / 100;
   const currentPercent = ((value - min) / (max - min)) * 100;
 
   return (
     <div
-      className={cn("relative h-40 w-40 text-2xl font-semibold text-l-txt duration-700 dark:text-d-txt", className)}
+      className={cn(
+        "relative h-40 w-40 text-2xl font-semibold text-l-txt duration-700 dark:text-d-txt",
+        className,
+      )}
       style={
         {
           "--circle-size": "100px",
@@ -119,5 +130,4 @@ function GaugeCircle({ max = 100, min = 0, value = 0, className = "" }: { max?: 
   );
 }
 
-
-export { Slider as Default, GaugeCircle as Gauge }
+export { Slider as Default, GaugeCircle as Gauge };

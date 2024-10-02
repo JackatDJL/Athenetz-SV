@@ -1,5 +1,5 @@
 {
-  "extends": "@util/typescript-config/nextjs.json",
+  "extends": "@athenetz-sv/util-typescript-config/nextjs.json",
   "compilerOptions": {
     "plugins": [
       {
@@ -7,7 +7,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
   "include": [
@@ -15,7 +17,10 @@
     "next.config.mjs",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "dist/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

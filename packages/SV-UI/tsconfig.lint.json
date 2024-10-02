@@ -1,5 +1,5 @@
 {
-  "extends": "@util/typescript-config/react-library.json",
+  "extends": "@athenetz-sv/util-typescript-config/react-library.json",
   "compilerOptions": {
     "outDir": "dist"
   },

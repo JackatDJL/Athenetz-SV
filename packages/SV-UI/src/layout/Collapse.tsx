@@ -1,27 +1,36 @@
-"use client"
+"use client";
 
 // eslint-disable-next-line no-redeclare
-import * as React from "react"
-import * as CollapsePrimitive from "@radix-ui/react-accordion"
-import { ChevronDown } from "react-feather"
+import * as React from "react";
+import * as CollapsePrimitive from "@radix-ui/react-accordion";
+import { ChevronDown } from "react-feather";
 
-import { cn } from "../twm"
+import { cn } from "../twm";
 
 interface CGroupProps {
-  title?: string
+  title?: string;
   children?: React.ReactNode;
 }
 
-const CollapseGroup: React.FC<CGroupProps> = ({ children, title, ...props }) => {
+const CollapseGroup: React.FC<CGroupProps> = ({
+  children,
+  title,
+  ...props
+}) => {
   return (
     <>
       {title && <h2>{title}</h2>}
-      <CollapsePrimitive.Root type="multiple" {...props} defaultValue={["default"]} className="border-t border-b duration-700 border-d-bg dark:border-l-bg" >
-      {children}
+      <CollapsePrimitive.Root
+        type="multiple"
+        {...props}
+        defaultValue={["default"]}
+        className="border-t border-b duration-700 border-d-bg dark:border-l-bg"
+      >
+        {children}
       </CollapsePrimitive.Root>
     </>
   );
-}
+};
 
 const CollapseItem = React.forwardRef<
   React.ElementRef<typeof CollapsePrimitive.Item>,
@@ -30,10 +39,13 @@ const CollapseItem = React.forwardRef<
   <CollapsePrimitive.Item
     ref={ref}
     {...props}
-    className={cn("border-t border-b border-d-bg/70 duration-700 dark:border-l-bg/70", className)}
+    className={cn(
+      "border-t border-b border-d-bg/70 duration-700 dark:border-l-bg/70",
+      className,
+    )}
   />
-))
-CollapseItem.displayName = "AccordionItem"
+));
+CollapseItem.displayName = "AccordionItem";
 
 const CollapseHeadRaw = React.forwardRef<
   React.ElementRef<typeof CollapsePrimitive.Trigger>,
@@ -44,7 +56,7 @@ const CollapseHeadRaw = React.forwardRef<
       ref={ref}
       className={cn(
         "flex flex-1 items-center justify-between text-l-txt duration-700 dark:text-d-txt font py-4 font-medium transition-all [&[data-state=open]>svg]:rotate-180",
-        className
+        className,
       )}
       {...props}
     >
@@ -52,8 +64,8 @@ const CollapseHeadRaw = React.forwardRef<
       <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
     </CollapsePrimitive.Trigger>
   </CollapsePrimitive.Header>
-))
-CollapseHeadRaw.displayName = "CollapseHeadRaw"
+));
+CollapseHeadRaw.displayName = "CollapseHeadRaw";
 
 const CollapseContentRaw = React.forwardRef<
   React.ElementRef<typeof CollapsePrimitive.Content>,
@@ -66,30 +78,44 @@ const CollapseContentRaw = React.forwardRef<
   >
     <div className={cn("pb-4 pt-0", className)}>{children}</div>
   </CollapsePrimitive.Content>
-))
- 
-CollapseContentRaw.displayName = CollapsePrimitive.Content.displayName
- 
+));
+
+CollapseContentRaw.displayName = CollapsePrimitive.Content.displayName;
 
 interface CollapseProps {
-    title?: string;
-    children?: React.ReactNode;
-    trigger: React.ReactNode;
-    className?: string;
-    no?: string;
-    defaultExpanded?: boolean;
+  title?: string;
+  children?: React.ReactNode;
+  trigger: React.ReactNode;
+  className?: string;
+  no?: string;
+  defaultExpanded?: boolean;
 }
 let collapseCounter = 0;
-const Collapse: React.FC<CollapseProps> = ({ defaultExpanded, title, trigger, children, className, no, ...props }) => {
+const Collapse: React.FC<CollapseProps> = ({
+  defaultExpanded,
+  title,
+  trigger,
+  children,
+  className,
+  no,
+  ...props
+}) => {
   const value = no || `collapse-${collapseCounter++}`;
-  
+
   if (!defaultExpanded) {
     return (
       <CollapseItem className={cn("border-b border-t")} value={value}>
         <CollapseHeadRaw>{trigger}</CollapseHeadRaw>
         <CollapseContentRaw>
-          <h1 className=" font-bold border-collapse top-2 duration-700 text-l-txt-800 dark:text-d-txt-400">{title}</h1>
-          <div className={cn("text-l-txt dark:text-d-txt duration-700", className)} {...props} >{children}</div>
+          <h1 className=" font-bold border-collapse top-2 duration-700 text-l-txt-800 dark:text-d-txt-400">
+            {title}
+          </h1>
+          <div
+            className={cn("text-l-txt dark:text-d-txt duration-700", className)}
+            {...props}
+          >
+            {children}
+          </div>
         </CollapseContentRaw>
       </CollapseItem>
     );
@@ -98,8 +124,15 @@ const Collapse: React.FC<CollapseProps> = ({ defaultExpanded, title, trigger, ch
       <CollapseItem className={cn("border-b border-t")} value={"default"}>
         <CollapseHeadRaw>{trigger}</CollapseHeadRaw>
         <CollapseContentRaw>
-          <h1 className=" font-bold border-collapse top-2 text-l-txt-800 dark:text-d-txt-400">{title}</h1>
-          <div className={cn("text-l-txt dark:text-d-txt", className)} {...props} >{children}</div>
+          <h1 className=" font-bold border-collapse top-2 text-l-txt-800 dark:text-d-txt-400">
+            {title}
+          </h1>
+          <div
+            className={cn("text-l-txt dark:text-d-txt", className)}
+            {...props}
+          >
+            {children}
+          </div>
         </CollapseContentRaw>
       </CollapseItem>
     );
