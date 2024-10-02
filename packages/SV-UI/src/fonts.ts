@@ -6,6 +6,7 @@ const oxanium = localfont({
       path: "/fonts/oxanium.ttf",
     },
   ],
+  display: "swap",
 });
 
 const bungee = localfont({
@@ -39,6 +40,7 @@ const bungee = localfont({
       style: "tint",
     },
   ],
+  display: "swap",
 });
 
 export { oxanium, bungee };

@@ -8,7 +8,9 @@
     "cleardist": "echo \"┣┳━ Running ClearDist\n┃┣━ Abort \n┃┗━ There is no dist\"",
     "jsc": "echo \"┣┳━ Running Javascript Compiler\n┃┣━ Abort \n┃┗━ No need to Compile\"",
     "clearmodules": "echo \"┣┳━ Running ClearModules\n┃┠─ run rimraf ../../node_modules/@athenetz-sv/util-tailwind-config\" && rimraf ../../node_modules/@athenetz-sv/util-tailwind-config && echo \"┃┗━ Done\"",
-    "re-yarn": "echo \"┣┳━ Running Re-Yarn\n┃┠─ run yarn\" && yarn && echo \"┃┠─ run yarn dedupe\" && yarn dedupe && echo \"┃┗━ Done\""
+    "re-yarn": "echo \"┣┳━ Running Re-Yarn\n┃┠─ run yarn\" && yarn && echo \"┃┠─ run yarn dedupe\" && yarn dedupe && echo \"┃┗━ Done\"",
+    "watch": "echo \"┣┳━ Monitoring Tailwind-Config\n┃┣━ Abort \n┃┗━ Nothing to monitor\"",
+    "dev": "echo \"┏━━ Running Dev\" && run watch && echo \"┗━━ Done\""
   },
   "dependencies": {
     "eslint": "^8",

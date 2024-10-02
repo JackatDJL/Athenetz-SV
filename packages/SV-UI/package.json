@@ -14,8 +14,9 @@
     "tsc": "echo \"┣┳━ Running Typescript Compiler\n┃┠─ run tsc --build\" && tsc --build && echo \"┃┗━ Done\"",
     "clearmodules": "echo \"┣┳━ Running ClearModules\n┃┠─ run rimraf ../../node_modules/@athenetz-sv/ui\" && rimraf ../../node_modules/@athenetz-sv/ui && echo \"┃┗━ Done\"",
     "re-yarn": "echo \"┣┳━ Running Re-Yarn\n┃┠─ run yarn\" && yarn && echo \"┃┠─ run yarn dedupe\" && yarn dedupe && echo \"┃┗━ Done\"",
-    "watch": "tsc -w ",
-    "generate:component": "turbo gen react-component"
+    "watch": "echo \"┣┳━ Monitoring UI-Libary\n┃┠─ tsc --watch\" && tsc --watch && echo \"┃┗━ Done \"",
+    "dev": "echo \"┏━━ Running Dev\" && run watch",
+    "generate:component": "turbo gen react-component && echo \"┗━━ Done\""
   },
   "devDependencies": {
     "@athenetz-sv/util-eslint-config": "workspace:^0.1.0",
