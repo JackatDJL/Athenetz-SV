@@ -34,9 +34,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
       - name: Move to ${{ matrix.directory }} directory
-        run: cd ${{ matrix.directory }}
+        run: |
+          cd $(dirname ${{ matrix.directory }})
+          cd $(basename ${{ matrix.directory }})
 
       - name: Install Formatter
         run: |
