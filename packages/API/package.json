@@ -9,13 +9,14 @@
   },
   "scripts": {
     "compile": "echo \"┏━━ Compiling API\" && run lint && run cleardist && run tsc && run clearmodules && run re-yarn && echo \"┗━━ Done\"",
-    "lint": "echo \"┣┳━ Running Lint\n┃┠─ run lint {options}\" && eslint src --max-warnings 2 --color --cache && echo \"┃┗━ Done\"",
+    "lint": "echo \"┣┳━ Running Lint\n┃┠─ run lint\" && eslint src --max-warnings 2 --color --cache && echo \"┃┗━ Done\"",
     "cleardist": "echo \"┣┳━ Running ClearDist\n┃┠─ run rimraf dist\" && rimraf dist && echo \"┃┗━ Done\"",
     "tsc": "echo \"┣┳━ Running Typescript Compiler\n┃┠─ run tsc --build\" && tsc --build && echo \"┃┗━ Done\"",
     "clearmodules": "echo \"┣┳━ Running ClearModules\n┃┠─ run rimraf ../../node_modules/@athenetz-sv/api\" && rimraf ../../node_modules/@athenetz-sv/api && echo \"┃┗━ Done\"",
     "re-yarn": "echo \"┣┳━ Running Re-Yarn\n┃┠─ run yarn\" && yarn && echo \"┃┠─ run yarn dedupe\" && yarn dedupe && echo \"┃┗━ Done\"",
     "watch": "echo \"┣┳━ Monitoring API-Libary\n┃┠─ tsc --watch\" && tsc --watch && echo \"┃┗━ Done \"",
-    "dev": "echo \"┏━━ Running Dev\" && run watch && echo \"┗━━ Done\""
+    "dev": "echo \"┏━━ Running Dev\" && run watch && echo \"┗━━ Done\"",
+    "lint-cli": "echo \"┏━━ Running Lint with CLI Options\n┣┳━ Running Lint\n┃┠─ run lint --format @microsoft/eslint-formatter-sarif --output-file eslint-results.sarif \" && eslint src --color --format @microsoft/eslint-formatter-sarif --output-file eslint-results.sarif && echo \"┃┗━ Done\n┗━━ Done\" "
   },
   "packageManager": "yarn@4.5.0",
   "dependencies": {
