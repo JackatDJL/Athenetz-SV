@@ -23,8 +23,7 @@ jobs:
   eslint:
     strategy:
       matrix:
-        directory:
-          ["/packages/SV-UI", "/packages/API", "/apps/wahlen", "/apps/web"]
+        directory: ["packages/SV-UI", "packages/API", "apps/wahlen", "apps/web"]
     name: Run Eslint Scanning for ${{ matrix.directory }}
     runs-on: ubuntu-latest
     permissions:
@@ -34,6 +33,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Print Contents of Current Directory
+        run: ls -la
       - name: Move to ${{ matrix.directory }} directory
         run: |
           cd $(dirname ${{ matrix.directory }})
