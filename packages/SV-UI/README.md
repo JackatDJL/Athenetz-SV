@@ -1,4 +1,5 @@
 # @athenetz-sv/ui
+[![ESLint](https://github.com/JackatDJL/Athenetz-SV/actions/workflows/eslint.yml/badge.svg)](https://github.com/JackatDJL/Athenetz-SV/actions/workflows/eslint.yml)
 
 ## UI Libary
 

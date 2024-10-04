@@ -1,4 +1,5 @@
 # @athenetz-sv/wahlen
+[![ESLint](https://github.com/JackatDJL/Athenetz-SV/actions/workflows/eslint.yml/badge.svg)](https://github.com/JackatDJL/Athenetz-SV/actions/workflows/eslint.yml)
 
 This is the voting module for the website.
 
