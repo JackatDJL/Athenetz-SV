@@ -1,4 +1,5 @@
 # Athenetz-SV
+[![ESLint](https://github.com/JackatDJL/Athenetz-SV/actions/workflows/eslint.yml/badge.svg?branch=v0.0.1-dev)](https://github.com/JackatDJL/Athenetz-SV/actions/workflows/eslint.yml)[![CodeQL](https://github.com/JackatDJL/Athenetz-SV/actions/workflows/github-code-scanning/codeql/badge.svg?branch=v0.0.1-dev)](https://github.com/JackatDJL/Athenetz-SV/actions/workflows/github-code-scanning/codeql)[![Dependabot Updates](https://github.com/JackatDJL/Athenetz-SV/actions/workflows/dependabot/dependabot-updates/badge.svg?branch=v0.0.1-dev)](https://github.com/JackatDJL/Athenetz-SV/actions/workflows/dependabot/dependabot-updates)
 
 This is the Monorepo for the Student Council of the Gymnasium Athenaeum Stade
 Located in Stade, Lower Saxony, Germany

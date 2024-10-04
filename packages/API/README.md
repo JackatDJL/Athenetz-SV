@@ -1,4 +1,5 @@
 # @athenetz-sv/api
+[![ESLint](https://github.com/JackatDJL/Athenetz-SV/actions/workflows/eslint.yml/badge.svg)](https://github.com/JackatDJL/Athenetz-SV/actions/workflows/eslint.yml)
 
 This package contains the API system used in the Athenetz-SV applications.
 
