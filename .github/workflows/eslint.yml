@@ -23,7 +23,8 @@ jobs:
   eslint:
     strategy:
       matrix:
-        directory: ["packages/sv-ui", "packages/api", "apps/wahlen", "apps/web"]
+        directory:
+          ["/packages/sv-ui", "/packages/api", "/apps/wahlen", "/apps/web"]
     name: Run Eslint Scanning for ${{ matrix.directory }}
     runs-on: ubuntu-latest
     permissions:
