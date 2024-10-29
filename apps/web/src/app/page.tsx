@@ -1,95 +1,85 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+
+import { ThemeToggleButton } from "@athenetz-sv/ui/Theme.js";
+import WelcomeUser from "@athenetz-sv/ui/presets/functions/welcomeUser.js";
+import {
+  FloatingPanelRoot,
+  FloatingPanelTrigger,
+  FloatingPanelContent,
+  FloatingPanelForm,
+  FloatingPanelTextarea,
+  FloatingPanelFooter,
+  FloatingPanelCloseButton,
+  FloatingPanelSubmitButton,
+} from "@athenetz-sv/ui/layout/FloatingPanel.js";
+import { Tooltip } from "@athenetz-sv/ui/layout/Tooltip.js";
+import * as Toggle from "@athenetz-sv/ui/ui/Toggle.js";
+// eslint-disable-next-line no-redeclare
+import React from "react";
+import { toast } from "sonner";
 
 export default function Home() {
+  WelcomeUser();
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+    <main className="bg-l-bg dark:bg-d-bg border border-l-acc">
+      <section className="flex flex-col items-center justify-center w-screen h-screen">
+        <div className="flex py-2">
+          <h1 className={`bshade font-spice`}>Hello, This Website is Currently under Construction!</h1>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className="flex flex-row">
+          <p className="p">By</p>
+          <p className="p">Jack@DJL</p>
+        </div>
+        <div className="flex items-center justify-center">
+          <FloatingPanelExample2Pre />
+        </div>
+      </section>
+      <section className="absolute bottom-1 left-2">
+        <ThemeToggleButton />
+      </section>
+    </main>
+  );
+}
+
+function FloatingPanelExample2Pre() {
+  const handleSubmit = (note: string) => {
+    console.log("Submitted Review:", note, "Rating: ", value);
+    toast.info("Submitted Review: " + note + " Rating: " + value);
+  };
+  const [value, setValue] = React.useState("3");
+  return (
+    <>
+      <FloatingPanelRoot>
+        <FloatingPanelTrigger title="Review?">❤</FloatingPanelTrigger>
+        <FloatingPanelContent>
+          <FloatingPanelForm onSubmit={handleSubmit}>
+            <Toggle.Group
+              type="single"
+              value={value}
+              onValueChange={(value) => {
+                if (value) setValue(value);
+              }}
+            >
+              <Toggle.Item value="5">❤</Toggle.Item>
+              <Toggle.Item value="4">👍</Toggle.Item>
+              <Toggle.Item value="3">😐</Toggle.Item>
+              <Toggle.Item value="2">👎</Toggle.Item>
+              <Toggle.Item value="1">💔</Toggle.Item>
+            </Toggle.Group>
+            <Tooltip
+              align="center"
+              side="bottom"
+              tips={<FloatingPanelTextarea id="more-input" />}
+            >
+              Do you want to Tell us more?
+            </Tooltip>
+            <FloatingPanelFooter>
+              <FloatingPanelCloseButton />
+              <FloatingPanelSubmitButton />
+            </FloatingPanelFooter>
+          </FloatingPanelForm>
+        </FloatingPanelContent>
+      </FloatingPanelRoot>
+    </>
   );
 }

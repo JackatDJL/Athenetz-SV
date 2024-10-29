@@ -46,7 +46,7 @@ if (
       ),
       isTokenAutoRefreshEnabled: true,
     });
-    // console.log("AppCheckInstance", fbappcheckinstance);
+    //console.log("AppCheckInstance", fbappcheckinstance);
   });
 }
 

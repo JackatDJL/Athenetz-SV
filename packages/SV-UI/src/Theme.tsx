@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import "@theme-toggles/react/css/Within.css";
 import { Within } from "@theme-toggles/react";
 // eslint-disable-next-line no-redeclare
 import React from "react";

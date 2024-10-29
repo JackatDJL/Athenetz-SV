@@ -2,6 +2,9 @@
   "name": "@athenetz-sv/util-tailwind-config",
   "version": "0.1.0",
   "packageManager": "yarn@4.5.0",
+  "files": [
+    "src"
+  ],
   "scripts": {
     "compile": "echo \"┏━━ Compiling Tailwind-Config\" && run lint && run cleardist && run jsc && run clearmodules && run re-yarn && echo \"┗━━ Done\"",
     "lint": "echo \"┣┳━ Running Lint\n┃┣━ Abort \n┃┗━ No need to Lint\"",
