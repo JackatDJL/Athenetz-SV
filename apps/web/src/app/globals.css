@@ -40,3 +40,15 @@ a {
     color-scheme: dark;
   }
 }
+
+.gigalypse {
+  font-family: gigalypse, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.nscience {
+  font-family: new-science, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}

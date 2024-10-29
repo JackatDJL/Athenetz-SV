@@ -13,3 +13,25 @@
 .tinyblur {
   backdrop-filter: blur(1px);
 }
+.gigalypse {
+  font-family: gigalypse, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.nscience {
+  font-family: new-science, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.oxanium {
+  font-family: "oxanium", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.bshade {
+  font-family: "bungee", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}

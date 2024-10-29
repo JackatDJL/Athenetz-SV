@@ -106,8 +106,6 @@ gsap.registerPlugin(
   SlowMo,
   CustomEase,
 );
-import { oxanium } from "@athenetz-sv/ui/fonts.js";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -117,8 +115,11 @@ export default function RootLayout({
     <html lang="en">
       <SpeedInsights />
       <Analytics />
+      <head>
+        <link rel="stylesheet" href="https://use.typekit.net/dsa8oou.css"></link>
+      </head>
       <body
-        className={`${oxanium.className}bg-l-bg dark:bg-d-bg text-l-txt dark:text-d-txt duration-700`}
+        className={`bg-l-bg dark:bg-d-bg text-l-txt dark:text-d-txt duration-700`}
       >
         <Toaster />
         <div id="recapcha-container"></div>
