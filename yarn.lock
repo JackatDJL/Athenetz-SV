@@ -168,8 +168,11 @@ __metadata:
     "@types/node": "npm:^20"
     "@types/react": "npm:^18"
     "@types/react-dom": "npm:^18"
+    "@vercel/analytics": "npm:^1.3.2"
+    "@vercel/speed-insights": "npm:^1.0.14"
     eslint: "npm:^8"
     eslint-config-next: "npm:15.0.2"
+    gsap: "npm:^3.12.5"
     next: "npm:15.0.2"
     postcss: "npm:^8"
     react: "npm:19.0.0-rc-02c0e824-20241028"
@@ -4536,6 +4539,50 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vercel/analytics@npm:^1.3.2":
+  version: 1.3.2
+  resolution: "@vercel/analytics@npm:1.3.2"
+  dependencies:
+    server-only: "npm:^0.0.1"
+  peerDependencies:
+    next: ">= 13"
+    react: ^18.0 || ^19.0 || ^19.0.0-rc
+  peerDependenciesMeta:
+    next:
+      optional: true
+    react:
+      optional: true
+  checksum: 10c3/e133c09351e61ff991a1666fb29d94051eb9a54c451785756e47ac829be49386221c89bfd853cada3265f450a8fb59ee122fa91f7354e101b9d7565691ea106f
+  languageName: node
+  linkType: hard
+
+"@vercel/speed-insights@npm:^1.0.14":
+  version: 1.0.14
+  resolution: "@vercel/speed-insights@npm:1.0.14"
+  peerDependencies:
+    "@sveltejs/kit": ^1 || ^2
+    next: ">= 13"
+    react: ^18 || ^19 || ^19.0.0-rc
+    svelte: ">= 4"
+    vue: ^3
+    vue-router: ^4
+  peerDependenciesMeta:
+    "@sveltejs/kit":
+      optional: true
+    next:
+      optional: true
+    react:
+      optional: true
+    svelte:
+      optional: true
+    vue:
+      optional: true
+    vue-router:
+      optional: true
+  checksum: 10c3/3c9bf981cf68043660bf96b202cc152c1857f8775621430d58f0161858cd92422ae116cc1a12c958ccde730c5114494dd42d640c2a41921fb7ebc820da1fab11
+  languageName: node
+  linkType: hard
+
 "@vercel/style-guide@npm:^5.2.0":
   version: 5.2.0
   resolution: "@vercel/style-guide@npm:5.2.0"
@@ -7619,6 +7666,13 @@ __metadata:
   version: 1.4.0
   resolution: "graphemer@npm:1.4.0"
   checksum: 10c3/e72b9a12b7a41a5c03d5125146306cb2ce6a6b61e4b1c46703cf0e436ae7c2087b852150448f304b116b3a04a74c15f4db5bfdb6c1eaf61f9ff330aa7bb7f5dc
+  languageName: node
+  linkType: hard
+
+"gsap@npm:^3.12.5":
+  version: 3.12.5
+  resolution: "gsap@npm:3.12.5"
+  checksum: 10c3/b687796d5f01b88e1e196260379f68634c6adfb3fd6ed90590891410cf869ddaacad9bb3f688bd8a02edeee6b20ed386df521fefac0371d4e5b545a635a936b8
   languageName: node
   linkType: hard
 
@@ -10984,6 +11038,13 @@ __metadata:
     parseurl: "npm:~1.3.3"
     send: "npm:0.19.0"
   checksum: 10c3/a4172d4813cda29faa39f7259feab65dc1272abbd43a28e25c7d7ba6b9fa256e6883494254b1e68efae558a1faa14d96085a46d7bbeb70b244074da69102bb1f
+  languageName: node
+  linkType: hard
+
+"server-only@npm:^0.0.1":
+  version: 0.0.1
+  resolution: "server-only@npm:0.0.1"
+  checksum: 10c3/af729c3f97a23706be634f4b4866b656c431379289f8ea2d74234b8c98aec8a5e9968dbf26282d7adc422b799b52f6b9fdf5753bcb7cc58c8145c050d630fb9e
   languageName: node
   linkType: hard
 
