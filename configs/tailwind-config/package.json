@@ -6,12 +6,12 @@
     "src"
   ],
   "scripts": {
-    "compile": "echo \"┏━━ Compiling Tailwind-Config\" && run lint && run cleardist && run jsc && run clearmodules && run re-yarn && echo \"┗━━ Done\"",
+    "compile": "echo \"┏━━ Compiling Tailwind-Config\" && run pre-yarn && run lint && run cleardist && run jsc && run clearmodules && echo \"┗━━ Done\"",
     "lint": "echo \"┣┳━ Running Lint\n┃┣━ Abort \n┃┗━ No need to Lint\"",
     "cleardist": "echo \"┣┳━ Running ClearDist\n┃┣━ Abort \n┃┗━ There is no dist\"",
     "jsc": "echo \"┣┳━ Running Javascript Compiler\n┃┣━ Abort \n┃┗━ No need to Compile\"",
     "clearmodules": "echo \"┣┳━ Running ClearModules\n┃┠─ run rimraf ../../node_modules/@athenetz-sv/util-tailwind-config\" && rimraf ../../node_modules/@athenetz-sv/util-tailwind-config && echo \"┃┗━ Done\"",
-    "re-yarn": "echo \"┣┳━ Running Re-Yarn\n┃┠─ run yarn\" && yarn && echo \"┃┠─ run yarn dedupe\" && yarn dedupe && echo \"┃┗━ Done\"",
+    "pre-yarn": "echo \"┣┳━ Updating Dependencies\n┃┣━ Abort \n┃┗━ May conflict with Yarn\"",
     "watch": "echo \"┣┳━ Monitoring Tailwind-Config\n┃┣━ Abort \n┃┗━ Nothing to monitor\"",
     "dev": "echo \"┏━━ Running Dev\" && run watch && echo \"┗━━ Done\""
   },
