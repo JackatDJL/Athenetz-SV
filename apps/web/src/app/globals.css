@@ -1,5 +1,5 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import "./../../../../packages/SV-UI/dist/styles.css"
+@import "./../../../../packages/SV-UI/dist/styles.css";

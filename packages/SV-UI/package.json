@@ -17,7 +17,7 @@
     "up-yarn": "echo \"┣┳━ Updating Dependencies\n┃┠─ run yarn dedupe\" && yarn dedupe && echo \"┃┗━ Done\"",
     "watch1": "echo \"┣┳━ Monitoring UI-Libary\n┃┠─ tsc --watch\" && tsc --watch && echo \"┃┗━ Done \"",
     "watch2": "echo \"┣┳━ Monitoring Tailwind\n┃┠─ tailwindcss -i src/src.css -o dist/styles.css --watch\" && tailwindcss -i src/src.css -o dist/styles.css --watch && echo \"┃┗━ Done \"",
-    "dev": "echo \"┏━━ Running Dev\" && conc watch1 watch2",
+    "dev": "echo \"┏━━ Running Dev\" && conc \"run watch1\" \"run watch2\"",
     "generate:component": "turbo gen react-component && echo \"┗━━ Done\"",
     "lint-cli": "echo \"┏━━ Running Lint with CLI Options\n┣┳━ Running Lint\n┃┠─ run lint --format @microsoft/eslint-formatter-sarif --output-file eslint-results.sarif \" && eslint src --color --format @microsoft/eslint-formatter-sarif --output-file eslint-results.sarif && echo \"┃┗━ Done\n┗━━ Done\" "
   },

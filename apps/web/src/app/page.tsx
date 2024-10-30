@@ -21,14 +21,14 @@ import { toast } from "sonner";
 export default function Home() {
   WelcomeUser();
   return (
-    <main className="bg-l-bg dark:bg-d-bg border border-l-acc">
-      <section className="flex flex-col items-center justify-center w-screen h-screen">
+    <main className="bg-l-bg dark:bg-d-bg border border-l-acc flex items-center justify-center">
+      <section className="flex flex-col items-center justify-center ">
         <div className="flex py-2">
-          <h1 className={`bshade font-spice`}>Hello, This Website is Currently under Construction!</h1>
+          <h1 className={`bshade`}>Hello, This Website is Currently under Construction!</h1>
         </div>
         <div className="flex flex-row">
           <p className="p">By</p>
-          <p className="p">Jack@DJL</p>
+          <p className="oxanium p">Jack@DJL</p>
         </div>
         <div className="flex items-center justify-center">
           <FloatingPanelExample2Pre />
