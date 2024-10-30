@@ -1,0 +1,34 @@
+2024-10-12T13:35:53.453390Z  WARN daemon_server: turborepo_lib::commands::daemon: daemon already running
+2024-10-12T13:36:42.314562Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages\\API")}
+2024-10-12T13:36:42.314602Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@athenetz-sv/api"), path: AnchoredSystemPathBuf("packages\\API") }}))
+2024-10-12T13:37:17.507285Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages\\API")}
+2024-10-12T13:37:17.507315Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@athenetz-sv/api"), path: AnchoredSystemPathBuf("packages\\API") }}))
+2024-10-12T13:37:17.729414Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-10-12T13:37:53.116695Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages\\SV-UI")}
+2024-10-12T13:37:53.116768Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@athenetz-sv/ui"), path: AnchoredSystemPathBuf("packages\\SV-UI") }}))
+2024-10-12T13:38:11.112804Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages\\SV-UI")}
+2024-10-12T13:38:11.112827Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@athenetz-sv/ui"), path: AnchoredSystemPathBuf("packages\\SV-UI") }}))
+2024-10-12T13:38:13.004131Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-10-12T13:38:41.610235Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\wahlen\\.next")}
+2024-10-12T13:38:41.610261Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@athenetz-sv/wahlen"), path: AnchoredSystemPathBuf("apps\\wahlen") }}))
+2024-10-12T13:38:41.926999Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\wahlen\\.next")}
+2024-10-12T13:38:41.927019Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@athenetz-sv/wahlen"), path: AnchoredSystemPathBuf("apps\\wahlen") }}))
+2024-10-12T13:38:41.927060Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-10-12T13:38:48.712381Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\wahlen\\.next")}
+2024-10-12T13:38:48.712409Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@athenetz-sv/wahlen"), path: AnchoredSystemPathBuf("apps\\wahlen") }}))
+2024-10-12T13:38:48.954734Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-10-12T13:38:58.922606Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\wahlen\\.next")}
+2024-10-12T13:38:58.922632Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@athenetz-sv/wahlen"), path: AnchoredSystemPathBuf("apps\\wahlen") }}))
+2024-10-12T13:38:59.119525Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-10-12T13:39:02.707631Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\wahlen\\.next")}
+2024-10-12T13:39:02.707658Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@athenetz-sv/wahlen"), path: AnchoredSystemPathBuf("apps\\wahlen") }}))
+2024-10-12T13:39:03.101410Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-10-12T13:39:19.907188Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\wahlen\\.next")}
+2024-10-12T13:39:19.907216Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@athenetz-sv/wahlen"), path: AnchoredSystemPathBuf("apps\\wahlen") }}))
+2024-10-12T13:39:20.319061Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-10-12T13:39:20.319563Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\wahlen\\.next")}
+2024-10-12T13:39:20.319578Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@athenetz-sv/wahlen"), path: AnchoredSystemPathBuf("apps\\wahlen") }}))
+2024-10-12T13:39:20.319614Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-10-12T13:39:33.520485Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\wahlen\\.next")}
+2024-10-12T13:39:33.520511Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@athenetz-sv/wahlen"), path: AnchoredSystemPathBuf("apps\\wahlen") }}))
+2024-10-12T13:39:33.777417Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
