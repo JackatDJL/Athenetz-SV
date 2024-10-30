@@ -109,7 +109,7 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://use.typekit.net/dsa8oou.css"></link>
       </head>
       <body
-        className={`bg-l-bg dark:bg-d-bg text-l-txt dark:text-d-txt duration-700 h-full w-full overflow-hidden`}
+        className={`bg-l-bg dark:bg-d-bg text-l-txt dark:text-d-txt duration-700`}
       >
         <Toaster />
         <div id="recapcha-container"></div>
