@@ -105,12 +105,10 @@ export default function RootLayout({
     <html lang="en">
       <SpeedInsights />
       <Analytics />
-      <head>
-        <link rel="stylesheet" href="https://use.typekit.net/dsa8oou.css"></link>
-      </head>
       <body
         className={`bg-l-bg dark:bg-d-bg text-l-txt dark:text-d-txt duration-700`}
       >
+        <link rel="stylesheet" href="https://use.typekit.net/dsa8oou.css"></link>
         <Toaster />
         <div id="recapcha-container"></div>
         {children}
