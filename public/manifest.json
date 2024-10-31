@@ -1,0 +1,52 @@
+{
+    "theme_color": "#121C63",
+    "background_color": "#E5E5EB",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "name": "Student Council of the Athenaeum Stade",
+    "short_name": "Athe-SV",
+    "description": "The Student Council of the Athenaeum Stade",
+    "icons": [
+        {
+            "src": "brand/SV.png",
+            "sizes": "0x0",
+            "type": "image/png"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "My Profile",
+            "short_name": "Profile",
+            "url": "/profile",
+            "icons": [
+                {
+                    "src": "brand/0.svg",
+                    "type": "image/svg+xml"
+                }
+            ]
+        },
+        {
+            "name": "Vote in the Elections",
+            "short_name": "Vote",
+            "url": "/votes",
+            "icons": [
+                {
+                    "src": "brand/0.svg",
+                    "type": "image/svg+xml"
+                }
+            ]
+        }
+    ],
+    "share_target": {
+        "name": "Share to the Student Council",
+        "short_name": "Share",
+        "action": "/post",
+        "method": "POST",
+        "enctype": "application/x-www-form-urlencoded",
+        "params": {
+            "Title": "title",
+            "Description": "text"
+        }
+    }
+}
