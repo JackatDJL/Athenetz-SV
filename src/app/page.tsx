@@ -17,11 +17,12 @@ import * as Toggle from "@ui/Toggle";
 // eslint-disable-next-line no-redeclare
 import React from "react";
 import { toast } from "sonner";
+import { DefaultWrapper } from "@pre/className"
 
 export default function Home() {
   WelcomeUser();
   return (
-    <main className="bg-l-bg dark:bg-d-bg border border-l-acc h-screen w-screen">
+    <main className={DefaultWrapper}>
       <section className="flex flex-col items-center justify-center ">
         <div className="flex py-2">
           <h1 className="bshade">Hello, This Website is Currently under Construction!</h1>

@@ -83,9 +83,9 @@ __metadata:
     next: "npm:15.0.2"
     next-themes: "npm:^0.3.0"
     postcss: "npm:^8"
-    react: "npm:19.0.0-rc-02c0e824-20241028"
+    react: "npm:next"
     react-day-picker: "npm:^9.1.1"
-    react-dom: "npm:19.0.0-rc-02c0e824-20241028"
+    react-dom: "npm:next"
     react-feather: "npm:^2.0.10"
     react-firebase-hooks: "npm:^5.1.1"
     react-spinners: "npm:^0.14.1"
@@ -8991,14 +8991,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:19.0.0-rc-02c0e824-20241028":
-  version: 19.0.0-rc-02c0e824-20241028
-  resolution: "react-dom@npm:19.0.0-rc-02c0e824-20241028"
+"react-dom@npm:next":
+  version: 19.0.0-rc-603e6108-20241029
+  resolution: "react-dom@npm:19.0.0-rc-603e6108-20241029"
   dependencies:
-    scheduler: "npm:0.25.0-rc-02c0e824-20241028"
+    scheduler: "npm:0.25.0-rc-603e6108-20241029"
   peerDependencies:
-    react: 19.0.0-rc-02c0e824-20241028
-  checksum: 10c3/812fa2f188e5660cd6931344b3655dda0ac760e9132718b290a68c7c253b52db51347a3a47e2a05231fb3a787dc794115493997317e59c7e0594d0e6a11e1b3d
+    react: 19.0.0-rc-603e6108-20241029
+  checksum: 10c3/367d290e1b0db23410c13418e3bc502f9abdb0ddabd5390b31853f912f7b62ad61754c13fd33fd9702a78d10b3eb4329c7eca57f7bbaa21ba042958157e8dc89
   languageName: node
   linkType: hard
 
@@ -9111,10 +9111,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:19.0.0-rc-02c0e824-20241028":
-  version: 19.0.0-rc-02c0e824-20241028
-  resolution: "react@npm:19.0.0-rc-02c0e824-20241028"
-  checksum: 10c3/d922c0c35a61326ecbfbda94bb177e2f0162fd42f4aedc7c6db2b70d5ccce7f3f188a34b42b57243861ae0005076f67383a987e1de32f3e2c40e33c540c33220
+"react@npm:next":
+  version: 19.0.0-rc-603e6108-20241029
+  resolution: "react@npm:19.0.0-rc-603e6108-20241029"
+  checksum: 10c3/46997883fff62dec4a628c15ac0c3fe0b015890db80e45150c6a8095b20acf8fa068311beb7887afe0c135b520de859e8daa4c41c7817c962bf9f227ae0d277b
   languageName: node
   linkType: hard
 
@@ -9392,10 +9392,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"scheduler@npm:0.25.0-rc-02c0e824-20241028":
-  version: 0.25.0-rc-02c0e824-20241028
-  resolution: "scheduler@npm:0.25.0-rc-02c0e824-20241028"
-  checksum: 10c3/b4ac40336551e78bbf5e9d66407c96f1ebb5e16638c1ca9ac586d9cec1f4028c3ad118b064ca469906b1f908ff42e6db8544676f283dbb7e77406bf231ccf95f
+"scheduler@npm:0.25.0-rc-603e6108-20241029":
+  version: 0.25.0-rc-603e6108-20241029
+  resolution: "scheduler@npm:0.25.0-rc-603e6108-20241029"
+  checksum: 10c3/d034cb7ec187e5a4a909ba11435f4e4fed2907211a2d8302905b8f59c153185cd821c611115e883779b358476c46e8422a6d64bfd023e0b54cc542c46ca747e8
   languageName: node
   linkType: hard
 
