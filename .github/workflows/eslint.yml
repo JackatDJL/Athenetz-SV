@@ -21,10 +21,7 @@ on:
 
 jobs:
   eslint:
-    strategy:
-      matrix:
-        directory: ["packages/SV-UI", "packages/API", "apps/wahlen", "apps/web"]
-    name: Run Eslint Scanning for ${{ matrix.directory }}
+    name: Run Eslint Scanning for Athe-SV
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -34,12 +31,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Print Contents of Current Directory
-        run: ls -la
-      - name: Run Eslint at ${{ matrix.directory }}
+      - name: Run Eslint at Root
         run: |
-          cd $(dirname ${{ matrix.directory }})
-          cd $(basename ${{ matrix.directory }})
           ls -la
           yarn add @microsoft/eslint-formatter-sarif@3.1.0
           yarn lint-cli
@@ -50,5 +43,5 @@ jobs:
       - name: Upload analysis results to GitHub
         uses: github/codeql-action/upload-sarif@v3
         with:
-          sarif_file: ${{ matrix.directory }}/eslint-results.sarif
+          sarif_file: eslint-results.sarif
           wait-for-processing: true
