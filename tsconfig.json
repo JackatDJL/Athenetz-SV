@@ -20,14 +20,16 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@components/*": ["./src/components/*"],
-      "@ui/*": ["./src/components/ui/*"],
-      "@fx/*": ["./src/components/effects/*"],
-      "@layout/*": ["./src/components/layout/*"],
-      "@pre/*": ["./src/components/presets/*"],
-      "@api/*": ["./src/api/*"],
+      "§/*": ["./src/ux/*"],
+      "§api/*": ["./src/ux/api/*"],
+      "§fx/*": ["./src/ux/effects/*"],
+      "§comp/*": ["./src/ux/components/*"],
+      "§util/*": ["./src/ux/util/*"],
+      "§ui/*": ["./src/ux/ui/*"],
+      "§lt/*": ["./src/ux/layout/*"],
+      "~/*": ["./public/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "tailwind.config.js"],
   "exclude": ["node_modules"]
 }

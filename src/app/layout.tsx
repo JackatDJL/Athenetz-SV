@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Toaster } from "@ui/Toast";
+import { Toaster } from "§ui/Toast";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
