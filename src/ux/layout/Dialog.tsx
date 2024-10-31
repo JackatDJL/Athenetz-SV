@@ -429,7 +429,7 @@ const DialogWrapper: React.FC<
 
 interface DialogProps {
   title?: string;
-  description?: string;
+  description?: React.ReactNode;
   close?: string;
   closeaschild?: React.ReactNode;
   closevariant?: "default" | "secondary" | "destructive" | "outline" | "ghost";

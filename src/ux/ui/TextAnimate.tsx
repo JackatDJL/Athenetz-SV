@@ -231,7 +231,7 @@ const TextAnimate: FC<Props> = ({
 
   if (type === "rollIn" || type === "whipIn") {
     return (
-      <h2 className="mt-10 text-3xl font-black text-black dark:text-neutral-100 py-5 pb-8 px-8 md:text-5xl">
+      <h2 className={cn([DefaultText, className])}>
         {text.split(" ").map((word, index) => {
           return (
             <motion.span
@@ -275,11 +275,7 @@ const TextAnimate: FC<Props> = ({
       variants={container}
       initial="hidden"
       animate="visible"
-      className={cn(
-        DefaultText,
-        "mt-10 text-4xl font-black text-black dark:text-neutral-100 py-5 pb-8 px-8 md:text-5xl",
-        className,
-      )}
+      className={cn([DefaultText, className])}
       {...props}
     >
       {letters.map((letter, index) => (
