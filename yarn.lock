@@ -8790,8 +8790,8 @@ __metadata:
   linkType: hard
 
 "elliptic@npm:^6.5.3, elliptic@npm:^6.5.5":
-  version: 6.5.7
-  resolution: "elliptic@npm:6.5.7"
+  version: 6.6.0
+  resolution: "elliptic@npm:6.6.0"
   dependencies:
     bn.js: "npm:^4.11.9"
     brorand: "npm:^1.1.0"
@@ -8800,7 +8800,7 @@ __metadata:
     inherits: "npm:^2.0.4"
     minimalistic-assert: "npm:^1.0.1"
     minimalistic-crypto-utils: "npm:^1.0.1"
-  checksum: 10c3/8e7d1862e6cf367f1f95c3fe62cb70ba2c9326d28780807fdb9c14c84aa0921cdf8030b503bdfedb0bcf9af703c2892a58951a1b593454556246e78a57161cbf
+  checksum: 10c3/8c6b89126bb376d360f6ebf47d181d69046d406eaf797bd74cb078638d5d0728c00a40bb8d5cc816be986b6961ce811c5540911ea75838e9d864741cf172e1aa
   languageName: node
   linkType: hard
 
