@@ -1930,13 +1930,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@theme-toggles/react@npm:^4.1.0":
-  version: 4.1.0
-  resolution: "@theme-toggles/react@npm:4.1.0"
+"@theme-toggles/react@npm:^3.9.0":
+  version: 3.9.0
+  resolution: "@theme-toggles/react@npm:3.9.0"
   peerDependencies:
     react: ^16 || ^17 || ^18
     react-dom: ^16 || ^17 || ^18
-  checksum: 10c3/c7cd3d3789264e054a441243d83bf3e372a52fecac98f26226d459fbed4fea164ba3094b93d25910fcc2d369550d8f5dbd586005cc771cee84640143bdea9b79
+  checksum: 10c3/8c0377e1e77c37354f9d51f5627bb55e6e7bbd9279569619b664f4552df90ef1cec901a333414dc632fe662615a7bca35508656fc787810f943bae3f6dbadd26
   languageName: node
   linkType: hard
 
@@ -2180,7 +2180,7 @@ __metadata:
     "@radix-ui/react-toggle": "npm:^1.1.0"
     "@radix-ui/react-toggle-group": "npm:^1.1.0"
     "@radix-ui/react-tooltip": "npm:^1.1.3"
-    "@theme-toggles/react": "npm:^4.1.0"
+    "@theme-toggles/react": "npm:^3.9.0"
     "@types/node": "npm:^20"
     "@types/react": "npm:^18"
     "@types/react-dom": "npm:^18"
