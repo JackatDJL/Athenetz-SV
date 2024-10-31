@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { Within } from "@theme-toggles/react";
+import "@theme-toggles/react/css/Within.css"
 // eslint-disable-next-line no-redeclare
 import React from "react";
 
@@ -31,9 +32,6 @@ const ThemeToggleButton: React.FC<{ size?: number }> = ({ size = 5 }) => {
   return (
     <Within
       duration={750}
-      placeholder={undefined}
-      onPointerEnterCapture={undefined}
-      onPointerLeaveCapture={undefined}
       toggled={isToggled}
       toggle={toggle}
       reversed
