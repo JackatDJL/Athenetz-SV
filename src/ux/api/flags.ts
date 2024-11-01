@@ -9,5 +9,9 @@ import { unstable_flag as flag } from '@vercel/flags/next';
 
 export const gk_Main = flag({
   key: 'GateKeeper_Main',
-  decide: () => false,
+  description: 'Enables entry to the Website',
+  async decide() {
+    return false;
+  }, 
+  defaultValue: false,
 });
