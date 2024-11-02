@@ -7,7 +7,7 @@ const YouAintSupposedToBeHere: React.FC = () => {
         <>
             <Header />
             <main className="bg-l-bg dark:bg-d-bg h-screen w-screen duration-300 flex items-center justify-center">
-                <TextAnimate type='calmInUp' className="text-5xl gigalypse font-bold inline" text="You Ain't Supposed To Be Here" />
+                <TextAnimate type='calmInUp' className="text-5xl max-sm:text-xl gigalypse font-bold inline" text="You Ain't Supposed To Be Here" />
             </main>
         </>
     );

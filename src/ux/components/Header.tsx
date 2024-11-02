@@ -293,8 +293,8 @@ const SM_Header: React.FC = () => {
                             </motion.div>
                         </motion.section>
                         <motion.div initial={{y: -10, opacity:0}} animate={{y: 0, opacity: 1}} transition={{delay: .4,duration: 0.5}}><Separator /></motion.div>
-                        <motion.section className='w-screen flex h-60 items-center justify-center'>
-                            <div className='grid grid-rows-6 grid-cols-5 h-60 w-screen p-4 '>
+                        <motion.section className='w-screen flex h-96 items-center justify-center'>
+                            <div className='grid grid-rows-6 grid-cols-5 h-96 w-screen p-4 '>
                                 <AnimatePresence>
                                     {isOpen && <>
                                         <motion.div className=' col-start-1 col-span-3 row-start-1 row-span-4 flex items-center justify-center border-l-acc dark:border-d-acc border-2 rounded-md p-2'
@@ -332,6 +332,9 @@ const SM_Header: React.FC = () => {
                                     </>}
                                 </AnimatePresence>
                             </div>
+                        </motion.section>
+                        <motion.section>
+                            <ThemeToggleButton />
                         </motion.section>
                     </AnimatePresence>  
                 </motion.main>

@@ -4,7 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { fbapp } from "@/ux/api/firebase/firebase";
 import { getAuth } from "@firebase/auth";
 
-const fbauth = getAuth(fbapp);
+const fbauth = getAuth(fbapp!);
 
 export default async function WelcomeUser() {
   const [user, loading, error] = useAuthState(fbauth);
