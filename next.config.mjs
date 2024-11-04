@@ -33,6 +33,9 @@ const nextConfig = {
 
     return config;
   },
+  experimental: {
+    turbo: false,
+  }
 };
 
 export default nextConfig;
