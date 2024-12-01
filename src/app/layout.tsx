@@ -66,6 +66,7 @@ export const metadata: Metadata = {
   },
 };
 
+import React from "react";
 import { gsap } from "gsap";
 
 import { CustomEase } from "gsap/CustomEase";

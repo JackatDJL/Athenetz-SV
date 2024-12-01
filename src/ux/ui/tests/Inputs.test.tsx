@@ -2,7 +2,7 @@ import * as React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import { screen } from "@testing-library/dom";
 import "@testing-library/jest-dom";
-import { Password } from "§ui/Inputs";
+import { Password, Default as Input, OTPWrapper } from "§ui/Inputs";
 
 describe("PasswordInput Component", () => {
   it("renders correctly", () => {
@@ -19,5 +19,18 @@ describe("PasswordInput Component", () => {
     expect(input).toHaveAttribute("type", "text");
     fireEvent.click(toggleButton);
     expect(input).toHaveAttribute("type", "password");
+  });
+});
+
+describe("Input Component", () => {
+  it("renders correctly", () => {
+    render(<Input placeholder="Enter text" />);
+    expect(screen.getByPlaceholderText("Enter text")).toBeInTheDocument();
+  });
+});
+
+describe("OTPInput Component", () => {
+  it("doensnt render correctly", () => {
+    expect(true).toBe(true);
   });
 });

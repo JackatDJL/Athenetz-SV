@@ -13,10 +13,20 @@ function useUserExists() {
   return !!user;
 }
 
-export default function Decide() {
-  const [isUserExists, setIsUserExists] = useState(false);
-  const gkMain = gk_Main();
+async function GATEKEEPER(what: string) {
+  const GGgk_Main = gk_Main();
+  switch (what) {
+    case "main":
+      return await GGgk_Main;
+    default:
+      return false;
+  }
+}
 
+export default async function Decide() {
+  const [isUserExists, setIsUserExists] = useState(false);
+  const gkMain = await GATEKEEPER("main");
+  
   useEffect(() => {
     setIsUserExists(useUserExists());
   }, []);

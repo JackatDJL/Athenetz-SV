@@ -32,13 +32,13 @@ const Icon = React.forwardRef<
     shadow,
     type = "secondary",
     ...props
-  }) => {
+  }, ref) => {
     const siteinpx =
       size === "sm" ? 30 : size === "md" ? 45 : size === "lg" ? 60 : 30;
 
     if (!badged) {
       const FIcon = Feather[icon] ? Feather[icon] : Feather["Code"];
-      return <FIcon size={siteinpx} color={color} />;
+      return <FIcon size={siteinpx} color={color} data-testid="feathericon//§tt" />;
     } else {
       return (
         <BadgedIcon
