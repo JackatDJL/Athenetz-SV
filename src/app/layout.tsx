@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Toaster } from "§ui/Toast";
+import { Toaster } from "@jackatdjl/djl-ui";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
@@ -12,10 +12,11 @@ export const metadata: Metadata = {
     {
       name: "Jack Ruder",
       url: "https://github.com/jackatdjl",
-    }
+    },
   ],
   generator: "Next.js",
-  keywords: "ATHE, Athenetz, Athenaeum Stade, Jack Ruder, DJL, Jack@DJL, Robocup, Robocup Stade",
+  keywords:
+    "ATHE, Athenetz, Athenaeum Stade, Jack Ruder, DJL, Jack@DJL, Robocup, Robocup Stade",
   referrer: "origin-when-cross-origin",
   creator: "Jack Ruder",
   publisher: "Jack@DJL, Vercel, Studen Council of the Athenaeum Stade",
@@ -95,7 +96,7 @@ gsap.registerPlugin(
   RoughEase,
   ExpoScaleEase,
   SlowMo,
-  CustomEase,
+  CustomEase
 );
 export default function RootLayout({
   children,
@@ -109,7 +110,10 @@ export default function RootLayout({
       <body
         className={`bg-l-bg dark:bg-d-bg text-l-txt dark:text-d-txt duration-700`}
       >
-        <link rel="stylesheet" href="https://use.typekit.net/dsa8oou.css"></link>
+        <link
+          rel="stylesheet"
+          href="https://use.typekit.net/dsa8oou.css"
+        ></link>
         <Toaster />
         <div id="recapcha-container"></div>
         {children}

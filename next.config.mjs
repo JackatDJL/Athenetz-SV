@@ -24,18 +24,15 @@ const nextConfig = {
     // Add a custom rule to handle node: scheme
     config.module.rules.push({
       test: /\.js$/,
-      loader: 'string-replace-loader',
+      loader: "string-replace-loader",
       options: {
-        search: 'node:',
-        replace: '',
+        search: "node:",
+        replace: "",
       },
     });
 
     return config;
   },
-  experimental: {
-    turbo: false,
-  }
 };
 
 export default nextConfig;
