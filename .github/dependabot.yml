@@ -5,12 +5,9 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm" 
+  - package-ecosystem: "npm"
     directories:
-      - "/packages/sv-ui",
-      - "/packages/api",
-      - "/apps/web",
-      - "/apps/wahlen"
+      - "/to be changed"
     schedule:
       interval: "weekly"
       day: "wednesday"
@@ -27,15 +24,11 @@ updates:
       seperator: "-"
     reviewers:
       - "jackatdjl"
-    target-branch: 
+    target-branch:
       - "main"
-      - "v*.*.*"
-  - package-ecosystem: "npm" 
+  - package-ecosystem: "npm"
     directories:
-      - "/packages/sv-ui",
-      - "/packages/api",
-      - "/apps/web",
-      - "/apps/wahlen"
+      - "/to be changed"
     schedule:
       interval: "daily"
       time: "15:00"
@@ -43,7 +36,7 @@ updates:
     assignees:
       - "dependabot"
     commit-message:
-      prefix: "MAIN-DEP: "
+      prefix: "DEV-DEP: "
     labels:
       - "dependencies"
     open-pull-requests-limit: 4
@@ -51,4 +44,4 @@ updates:
       seperator: "-"
     reviewers:
       - "jackatdjl"
-    target-branch: "v*.*.*-dev"
+    target-branch: "ATHESV*"
