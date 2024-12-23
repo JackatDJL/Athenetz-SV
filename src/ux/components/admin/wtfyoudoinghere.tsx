@@ -1,5 +1,5 @@
 import React from "react";
-import { TextAnimate } from "@jackatdjl/djl-ui/fx";
+import { TextAnimate } from "@jackatdjl/djl-ui/fx/textanimate";
 import Header from "§comp/Header";
 
 const YouAintSupposedToBeHere: React.FC = () => {

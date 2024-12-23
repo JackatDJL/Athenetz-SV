@@ -2203,9 +2203,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jackatdjl/djl-ui@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "@jackatdjl/djl-ui@npm:0.1.0"
+"@jackatdjl/djl-ui@npm:^0.5.0":
+  version: 0.5.0
+  resolution: "@jackatdjl/djl-ui@npm:0.5.0"
   dependencies:
     "@radix-ui/react-accordion": "npm:^1.2.1"
     "@radix-ui/react-alert-dialog": "npm:^1.1.2"
@@ -2244,7 +2244,7 @@ __metadata:
     tailwind-merge: "npm:^2.5.5"
     tailwindcss: "npm:^3.4.15"
     vaul: "npm:^1.1.1"
-  checksum: 10c3/df1558a35ec5a8d3402b7f760e768ce2c458117d14394e8404c391e3ad77bbced671030e36918b9c8d7dd691e8ff9a2996dc96d67230b50d92b2f1b4e1122214
+  checksum: 10c3/90542891eee30d85c42f540f7701d98b56a2b562350e4b4cd0ec4c0d655a60954d9d012c1a9926eb719e58b28fa4530a12ad5f1098fa93016a91be615c7dffff
   languageName: node
   linkType: hard
 
@@ -2478,18 +2478,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jridgewell/gen-mapping@npm:^0.3.2":
-  version: 0.3.5
-  resolution: "@jridgewell/gen-mapping@npm:0.3.5"
-  dependencies:
-    "@jridgewell/set-array": "npm:^1.2.1"
-    "@jridgewell/sourcemap-codec": "npm:^1.4.10"
-    "@jridgewell/trace-mapping": "npm:^0.3.24"
-  checksum: 10c3/301968364a821b349d4a5b94e4a91d189d1299da7dec8fed184d8d69d34ed4fa4c8b1cccf02ba8e6bd4a2723b36013c38c5d621da96f3b979c24436b93c1039c
-  languageName: node
-  linkType: hard
-
-"@jridgewell/gen-mapping@npm:^0.3.5":
+"@jridgewell/gen-mapping@npm:^0.3.2, @jridgewell/gen-mapping@npm:^0.3.5":
   version: 0.3.8
   resolution: "@jridgewell/gen-mapping@npm:0.3.8"
   dependencies:
@@ -3369,7 +3358,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@radix-ui/react-primitive@npm:2.0.0, @radix-ui/react-primitive@npm:^2.0.0":
+"@radix-ui/react-primitive@npm:2.0.0":
   version: 2.0.0
   resolution: "@radix-ui/react-primitive@npm:2.0.0"
   dependencies:
@@ -3388,7 +3377,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@radix-ui/react-primitive@npm:2.0.1":
+"@radix-ui/react-primitive@npm:2.0.1, @radix-ui/react-primitive@npm:^2.0.0":
   version: 2.0.1
   resolution: "@radix-ui/react-primitive@npm:2.0.1"
   dependencies:
@@ -3557,7 +3546,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@radix-ui/react-slot@npm:1.1.0, @radix-ui/react-slot@npm:^1.1.0":
+"@radix-ui/react-slot@npm:1.1.0":
   version: 1.1.0
   resolution: "@radix-ui/react-slot@npm:1.1.0"
   dependencies:
@@ -3572,7 +3561,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@radix-ui/react-slot@npm:1.1.1":
+"@radix-ui/react-slot@npm:1.1.1, @radix-ui/react-slot@npm:^1.1.0":
   version: 1.1.1
   resolution: "@radix-ui/react-slot@npm:1.1.1"
   dependencies:
@@ -4354,21 +4343,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
+"@types/node@npm:*, @types/node@npm:>=12.12.47, @types/node@npm:>=13.7.0":
   version: 22.10.2
   resolution: "@types/node@npm:22.10.2"
   dependencies:
     undici-types: "npm:~6.20.0"
   checksum: 10c3/40c37382bd81e45f0c8f33fd49d66d4c433cc7a0c35fdeac45583c93605cc461cd50508888bf0031cf525586213f86a5bc2b98c74efa7e181594e8f73d9d0d74
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:>=12.12.47, @types/node@npm:>=13.7.0":
-  version: 22.8.5
-  resolution: "@types/node@npm:22.8.5"
-  dependencies:
-    undici-types: "npm:~6.19.8"
-  checksum: 10c3/6f3c36e09da193d2cf4809831a6545182adb19a0a91e8f8060154f012ed1b2a45197fb6601557d0dca9a3f45f041af71fe6d3c3bf207ce3a5e1a1ef2923af943
   languageName: node
   linkType: hard
 
@@ -4765,7 +4745,7 @@ __metadata:
     "@babel/preset-env": "npm:^7.26.0"
     "@babel/preset-react": "npm:^7.25.9"
     "@babel/preset-typescript": "npm:^7.26.0"
-    "@jackatdjl/djl-ui": "npm:^0.1.0"
+    "@jackatdjl/djl-ui": "npm:^0.5.0"
     "@jest/globals": "npm:^29.7.0"
     "@theme-toggles/react": "npm:^4.1.0"
     "@types/babel__preset-env": "npm:^7"
@@ -6185,27 +6165,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^11.11.11":
-  version: 11.11.11
-  resolution: "framer-motion@npm:11.11.11"
-  dependencies:
-    tslib: "npm:^2.4.0"
-  peerDependencies:
-    "@emotion/is-prop-valid": "*"
-    react: ^18.0.0
-    react-dom: ^18.0.0
-  peerDependenciesMeta:
-    "@emotion/is-prop-valid":
-      optional: true
-    react:
-      optional: true
-    react-dom:
-      optional: true
-  checksum: 10c3/565e44fda6cb383d647f73bea6495b1ee7164038bb318d0eb29f55bce09445c235aa9e19a112e369fe0b44b46b86853c9ecc159f75d67c729b7d3342f542efd2
-  languageName: node
-  linkType: hard
-
-"framer-motion@npm:^11.13.1":
+"framer-motion@npm:^11.11.11, framer-motion@npm:^11.13.1":
   version: 11.14.4
   resolution: "framer-motion@npm:11.14.4"
   dependencies:
@@ -6654,17 +6614,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"input-otp@npm:^1.2.5":
-  version: 1.2.5
-  resolution: "input-otp@npm:1.2.5"
-  peerDependencies:
-    react: ^16.8 || ^17.0 || ^18.0 || ^19.0
-    react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0
-  checksum: 10c3/2b6d74f67353b1537312594d45cceda0797b528b7bd732d35b6371f2a850346a45cf8bebf09c075154f591a5ac766502f768f7b003b83e0feee6a71955c0f366
-  languageName: node
-  linkType: hard
-
-"input-otp@npm:^1.4.1":
+"input-otp@npm:^1.2.5, input-otp@npm:^1.4.1":
   version: 1.4.1
   resolution: "input-otp@npm:1.4.1"
   peerDependencies:
@@ -6730,15 +6680,6 @@ __metadata:
   version: 1.2.7
   resolution: "is-callable@npm:1.2.7"
   checksum: 10c3/853a17fd326ad448cafc9eeb83154454fc88991235362496d3ae7be3c38b293f9d848b51ba58f353a40652755bdcc6927e9a21a795bf10218ccdc6e30d40adcd
-  languageName: node
-  linkType: hard
-
-"is-core-module@npm:^2.13.0":
-  version: 2.15.1
-  resolution: "is-core-module@npm:2.15.1"
-  dependencies:
-    hasown: "npm:^2.0.2"
-  checksum: 10c3/89958c34e97ded78509cdd1cc2feedd38ab2243f05b8cb472a5572cccf448a413b2cc3fc74751a6dfef43522cd6cb0449743a920b1737622197eeb88692c6fd2
   languageName: node
   linkType: hard
 
@@ -7554,14 +7495,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lilconfig@npm:^3.0.0":
-  version: 3.1.2
-  resolution: "lilconfig@npm:3.1.2"
-  checksum: 10c3/cf0b8efe784481eb7cb0a54291d83caff42bfba3492bef4351b95a38134648cf7eb1499d69c2349529c8fcb43c6af5ae028c639c3cd827513202a2e352832a9b
-  languageName: node
-  linkType: hard
-
-"lilconfig@npm:^3.1.3":
+"lilconfig@npm:^3.0.0, lilconfig@npm:^3.1.3":
   version: 3.1.3
   resolution: "lilconfig@npm:3.1.3"
   checksum: 10c3/c51308ff0045360a98deea16c9e3cdd272178499aa1198fa6782ddc497336574bb91b5b89b110b88b76c732418b759f204bac0154b5411cde26c5193971dde1c
@@ -9021,20 +8955,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@npm:^1.1.7":
-  version: 1.22.8
-  resolution: "resolve@npm:1.22.8"
-  dependencies:
-    is-core-module: "npm:^2.13.0"
-    path-parse: "npm:^1.0.7"
-    supports-preserve-symlinks-flag: "npm:^1.0.0"
-  bin:
-    resolve: bin/resolve
-  checksum: 10c3/d3593804cfb1fcee71543040a3cf3dbe9b00ac6f508fcf8e114cf7db5d4c4b191bd844a6ecd41425685f8245675c78b9eaa099ced414bd0a0d15bae0222b4ab5
-  languageName: node
-  linkType: hard
-
-"resolve@npm:^1.14.2, resolve@npm:^1.20.0, resolve@npm:^1.22.8":
+"resolve@npm:^1.1.7, resolve@npm:^1.14.2, resolve@npm:^1.20.0, resolve@npm:^1.22.8":
   version: 1.22.9
   resolution: "resolve@npm:1.22.9"
   dependencies:
@@ -9047,20 +8968,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@patch:resolve@npm%3A^1.1.7#optional!builtin<compat/resolve>":
-  version: 1.22.8
-  resolution: "resolve@patch:resolve@npm%3A1.22.8#optional!builtin<compat/resolve>::version=1.22.8&hash=c3c19d"
-  dependencies:
-    is-core-module: "npm:^2.13.0"
-    path-parse: "npm:^1.0.7"
-    supports-preserve-symlinks-flag: "npm:^1.0.0"
-  bin:
-    resolve: bin/resolve
-  checksum: 10c3/5b5f4773350496b9e67a904097764080c615fa50e5fe313d839f196de5644d9b22c6992e5b0516ec6680d124d8a6f1b23178cd72a19514782211bd7d98fc51ab
-  languageName: node
-  linkType: hard
-
-"resolve@patch:resolve@npm%3A^1.14.2#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.20.0#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.8#optional!builtin<compat/resolve>":
+"resolve@patch:resolve@npm%3A^1.1.7#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.14.2#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.20.0#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.8#optional!builtin<compat/resolve>":
   version: 1.22.9
   resolution: "resolve@patch:resolve@npm%3A1.22.9#optional!builtin<compat/resolve>::version=1.22.9&hash=c3c19d"
   dependencies:
@@ -9795,14 +9703,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.0.0, tslib@npm:^2.1.0, tslib@npm:^2.4.0":
-  version: 2.8.0
-  resolution: "tslib@npm:2.8.0"
-  checksum: 10c3/b1bb1dc7392397aedcf86044ed4456969869b110193376557561344a2e0875427323b6f85667f0922a9569184a8e72b4882ef4464c8d5a7e2c77e34e07c79ce9
-  languageName: node
-  linkType: hard
-
-"tslib@npm:^2.8.0":
+"tslib@npm:^2.0.0, tslib@npm:^2.1.0, tslib@npm:^2.4.0, tslib@npm:^2.8.0":
   version: 2.8.1
   resolution: "tslib@npm:2.8.1"
   checksum: 10c3/f5579651f74120a1a191f5bd08c7eb7f5225ca1e0fc10109d783e5ee533d9e032dd5387e6d37a95315ae11c97d155a7697bdba8659b8840485e9fa329d67ff7e
@@ -9857,7 +9758,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici-types@npm:~6.19.2, undici-types@npm:~6.19.8":
+"undici-types@npm:~6.19.2":
   version: 6.19.8
   resolution: "undici-types@npm:6.19.8"
   checksum: 10c3/aaf20370d55ab337b83d78efacf71ae56ceb128250c98007db80aefbb6a2d90e991464fbdfd7797c2b9ed8381198ff6589e727a074d7b3e536469cd2bc3bf23d

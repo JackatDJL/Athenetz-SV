@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Toaster } from "@jackatdjl/djl-ui";
+import { default as Sonner } from "@jackatdjl/djl-ui/sonner";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
@@ -68,36 +68,7 @@ export const metadata: Metadata = {
 };
 
 import React from "react";
-import { gsap } from "gsap";
 
-import { CustomEase } from "gsap/CustomEase";
-import { RoughEase, ExpoScaleEase, SlowMo } from "gsap/EasePack";
-
-import { Flip } from "gsap/Flip";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Observer } from "gsap/Observer";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { Draggable } from "gsap/Draggable";
-import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-import { EaselPlugin } from "gsap/EaselPlugin";
-import { PixiPlugin } from "gsap/PixiPlugin";
-import { TextPlugin } from "gsap/TextPlugin";
-
-gsap.registerPlugin(
-  Flip,
-  ScrollTrigger,
-  Observer,
-  ScrollToPlugin,
-  Draggable,
-  MotionPathPlugin,
-  EaselPlugin,
-  PixiPlugin,
-  TextPlugin,
-  RoughEase,
-  ExpoScaleEase,
-  SlowMo,
-  CustomEase
-);
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -114,7 +85,7 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://use.typekit.net/dsa8oou.css"
         ></link>
-        <Toaster />
+        <Sonner.Toaster />
         <div id="recapcha-container"></div>
         {children}
       </body>

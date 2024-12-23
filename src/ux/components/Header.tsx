@@ -4,7 +4,7 @@ import { Divide, Pivot as Hamburger } from "hamburger-react";
 import { ThemeToggleButton } from "§comp/Theme";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Separator } from "@jackatdjl/djl-ui";
+import Separator from "@jackatdjl/djl-ui/separator";
 
 const MotionImage = motion.create(Image);
 /**
