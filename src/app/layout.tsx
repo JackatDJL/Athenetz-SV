@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Toaster } from "§ui/Toast";
+import { default as Sonner } from "@jackatdjl/djl-ui/sonner";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
@@ -12,10 +12,11 @@ export const metadata: Metadata = {
     {
       name: "Jack Ruder",
       url: "https://github.com/jackatdjl",
-    }
+    },
   ],
   generator: "Next.js",
-  keywords: "ATHE, Athenetz, Athenaeum Stade, Jack Ruder, DJL, Jack@DJL, Robocup, Robocup Stade",
+  keywords:
+    "ATHE, Athenetz, Athenaeum Stade, Jack Ruder, DJL, Jack@DJL, Robocup, Robocup Stade",
   referrer: "origin-when-cross-origin",
   creator: "Jack Ruder",
   publisher: "Jack@DJL, Vercel, Studen Council of the Athenaeum Stade",
@@ -66,36 +67,8 @@ export const metadata: Metadata = {
   },
 };
 
-import { gsap } from "gsap";
+import React from "react";
 
-import { CustomEase } from "gsap/CustomEase";
-import { RoughEase, ExpoScaleEase, SlowMo } from "gsap/EasePack";
-
-import { Flip } from "gsap/Flip";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Observer } from "gsap/Observer";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { Draggable } from "gsap/Draggable";
-import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-import { EaselPlugin } from "gsap/EaselPlugin";
-import { PixiPlugin } from "gsap/PixiPlugin";
-import { TextPlugin } from "gsap/TextPlugin";
-
-gsap.registerPlugin(
-  Flip,
-  ScrollTrigger,
-  Observer,
-  ScrollToPlugin,
-  Draggable,
-  MotionPathPlugin,
-  EaselPlugin,
-  PixiPlugin,
-  TextPlugin,
-  RoughEase,
-  ExpoScaleEase,
-  SlowMo,
-  CustomEase,
-);
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -108,8 +81,11 @@ export default function RootLayout({
       <body
         className={`bg-l-bg dark:bg-d-bg text-l-txt dark:text-d-txt duration-700`}
       >
-        <link rel="stylesheet" href="https://use.typekit.net/dsa8oou.css"></link>
-        <Toaster />
+        <link
+          rel="stylesheet"
+          href="https://use.typekit.net/dsa8oou.css"
+        ></link>
+        <Sonner.Toaster />
         <div id="recapcha-container"></div>
         {children}
       </body>

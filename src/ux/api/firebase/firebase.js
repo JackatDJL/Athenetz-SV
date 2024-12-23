@@ -1,7 +1,6 @@
-/* eslint-disable */
 "use client";
 
-import { initializeApp, getApps, getApp } from "firebase/app";
+import { initializeApp, getApp, getApps } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 import { getAnalytics, isSupported } from "firebase/analytics";
@@ -16,6 +15,15 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FB_MEASUREMENTID,
 };
 
+if (typeof window !== "undefined" && !getApps().length) {
+  initializeApp(firebaseConfig);
+}
+
+const fbapp = typeof window !== "undefined" ? getApp() : null;
+const fstore = typeof window !== "undefined" ? getFirestore() : null;
+const fbauth = typeof window !== "undefined" ? getAuth(fbapp) : null;
+
+// App Check
 if (typeof window !== "undefined" && window.location.hostname === "localhost") {
   // @ts-ignore
   globalThis.FIREBASE_APPCHECK_DEBUG_TOKEN = true;
@@ -29,8 +37,7 @@ if (
   globalThis.FIREBASE_APPCHECK_DEBUG_TOKEN = true;
 }
 
-const fbapp = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-let fbappcheckinstance: any = null;
+let fbappcheckinstance = null;
 
 if (
   typeof window !== "undefined" &&
@@ -39,27 +46,11 @@ if (
 ) {
   import("firebase/app-check").then(async (firebaseAppCheck) => {
     const recv3token = process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_PUBLIC_KEY;
-
     fbappcheckinstance = firebaseAppCheck.initializeAppCheck(fbapp, {
-      provider: new firebaseAppCheck.ReCaptchaV3Provider(
-        "6LeMw1AqAAAAAGIOHhvAt4N3iFROmcwuRDj2sI1m",
-      ),
+      provider: new firebaseAppCheck.ReCaptchaV3Provider(recv3token),
       isTokenAutoRefreshEnabled: true,
     });
-    //console.log("AppCheckInstance", fbappcheckinstance);
   });
 }
 
-const fstore = getFirestore();
-const fbauth = getAuth();
-
-let fblytics: ReturnType<typeof getAnalytics> | undefined;
-
-isSupported().then((supported) => {
-  if (!supported) {
-    return;
-  }
-  fblytics = getAnalytics(fbapp);
-});
-
-export { fbapp, fbauth, fblytics, fstore, fbappcheckinstance as appCheck };
+export { fbapp, fstore, fbauth };

@@ -1,36 +1,86 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.glassblur {
-  backdrop-filter: blur(10px);
-}
-.softblur {
-  backdrop-filter: blur(5px);
-}
-.tinyblur {
-  backdrop-filter: blur(1px);
-}
-.gigalypse {
-  font-family: gigalypse, sans-serif;
-  font-weight: 800;
-  font-style: normal;
+@layer base {
+  :root {
+    --background: 120 13% 97%; /* bgL.hslRaw */
+    --foreground: 120 67% 13%; /* textL.hslRaw */
+    --card: 120 13% 97%; /* bgL.hslRaw */
+    --card-foreground: 120 67% 13%; /* textL.hslRaw */
+    --popover: 120 13% 97%; /* bgL.hslRaw */
+    --popover-foreground: 120 67% 13%; /* textL.hslRaw */
+    --primary: 120 47% 65%; /* primaryL.hslRaw */
+    --primary-foreground: 120 67% 13%; /* primaryFgL.hslRaw */
+    --secondary: 120 71% 71%; /* secondaryL.hslRaw */
+    --secondary-foreground: 120 67% 13%; /* secondaryFgL.hslRaw */
+    --muted: 120 13% 77%; /* bgL.hslRaw.20 */
+    --muted-foreground: 120 67% 34%; /* textL.hslRaw.70 */
+    --accent: 120 64% 68%; /* accentL.hslRaw */
+    --accent-foreground: 120 67% 13%; /* accentFgL.hslRaw */
+    --destructive: 0 85% 60%; /* destructive color */
+    --destructive-foreground: 120 67% 13%; /* textL.hslRaw */
+    --border: 120 13% 77%; /* bgL.hslRaw.20 */
+    --input: 120 13% 77%; /* bgL.hslRaw.20 */
+    --ring: 120 64% 55%; /* accentL.hslRaw.40 */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 120 13% 4%; /* bgD.hslRaw */
+    --foreground: 120 67% 80%; /* textD.hslRaw */
+    --card: 120 13% 4%; /* bgD.hslRaw */
+    --card-foreground: 120 67% 80%; /* textD.hslRaw */
+    --popover: 120 13% 4%; /* bgD.hslRaw */
+    --popover-foreground: 120 67% 80%; /* textD.hslRaw */
+    --primary: 120 47% 65%; /* primaryD.hslRaw */
+    --primary-foreground: 120 67% 13%; /* primaryFgD.hslRaw */
+    --secondary: 120 71% 71%; /* secondaryD.hslRaw */
+    --secondary-foreground: 120 67% 13%; /* secondaryFgD.hslRaw */
+    --muted: 120 13% 32%; /* bgD.hslRaw.80 */
+    --muted-foreground: 120 67% 80%; /* textD.hslRaw */
+    --accent: 120 64% 68%; /* accentD.hslRaw */
+    --accent-foreground: 120 67% 13%; /* accentFgD.hslRaw */
+    --destructive: 0 62% 30%; /* destructive color */
+    --destructive-foreground: 120 67% 55%; /* textD.hslRaw.10 */
+    --border: 120 13% 55%; /* bgD.hslRaw.60 */
+    --input: 120 13% 32%; /* bgD.hslRaw.80 */
+    --ring: 120 64% 55%; /* accentD.hslRaw.60 */
+  }
 }
 
-.nscience {
-  font-family: new-science, sans-serif;
-  font-weight: 600;
-  font-style: normal;
+@layer base {
+  .glassblur {
+    backdrop-filter: blur(10px);
+  }
+  .softblur {
+    backdrop-filter: blur(5px);
+  }
+  .tinyblur {
+    backdrop-filter: blur(1px);
+  }
+  .gigalypse {
+    font-family: gigalypse, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+  }
 }
 
-.oxanium {
-  font-family: "oxanium", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-.bshade {
-  font-family: "bungee", sans-serif;
-  font-weight: 800;
-  font-style: normal;
+@layer utilities {
+  .nscience {
+    font-family: new-science, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .oxanium {
+    font-family: "oxanium", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  .bshade {
+    font-family: "bungee", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+  }
 }
