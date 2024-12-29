@@ -1,9 +1,8 @@
+/* eslint-disable */
 import React, { Ref, MouseEventHandler } from "react";
 import { forwardRefWithAs } from "./utils";
 import { ToggleProps, ReactTag } from "./types";
-const Within = forwardRefWithAs(function Within<
-  TTag extends ReactTag = "button"
->(props: ToggleProps<TTag>, ref: Ref<Element>) {
+const Within = forwardRefWithAs(function Within(props, ref) {
   const {
     onToggle,
     toggled,
@@ -29,8 +28,8 @@ const Within = forwardRefWithAs(function Within<
     className,
   ].join(" ");
   style["--theme-toggle__within--duration"] = `${duration}ms`;
-  if (Component === "button" && !rest.type) (rest as any).type = "button";
-  const handleClick: MouseEventHandler<TTag> = (e) => {
+  if (Component === "button" && !rest.type) rest.type = "button";
+  const handleClick = (e) => {
     onToggle && onToggle(!toggled);
     onClick && onClick(e);
   };

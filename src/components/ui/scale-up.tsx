@@ -19,7 +19,7 @@ const TRANSITION = {
   duration: 0.3,
 };
 
-function useClickOutside<T extends HTMLElement>(
+function useClickOutside<T extends HTMLElement | null>(
   ref: React.RefObject<T>,
   handler: () => void
 ): void {

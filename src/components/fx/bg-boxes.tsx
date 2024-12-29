@@ -45,7 +45,6 @@ export const BoxesCore: React.FC<{ className?: string }> = ({
           className="w-16 h-8 border-l border-slate-700 relative"
           data-key={i}
           data-testid="box-row"
-          // eslint-disable-next-line react/no-array-index-key
           key={i}
         >
           {cols.map((__, j) => (
@@ -55,7 +54,6 @@ export const BoxesCore: React.FC<{ className?: string }> = ({
               }}
               className="w-16 h-8  border-r border-t border-slate-700 relative"
               data-testid="box-col"
-              // eslint-disable-next-line react/no-array-index-key
               key={j}
               whileHover={{
                 backgroundColor: `var(${getRandomColor()})`,

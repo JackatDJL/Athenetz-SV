@@ -35,7 +35,6 @@ export function Custom({
   useEffect(() => {
     spring.set(value);
     if (onAnimationStart) onAnimationStart();
-    // eslint-disable-next-line @typescript-eslint/no-deprecated -- idk it works
     const unsubscribe = spring.onChange(() => {
       if (spring.get() === value && onAnimationComplete) onAnimationComplete();
     });

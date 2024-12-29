@@ -74,7 +74,6 @@ export function FocusCards({ cards }: { cards: Card[] }): React.JSX.Element {
       data-testid="focus-card-wrapper"
     >
       {" "}
-      // Added testid for the wrapping div
       {cards.map((card, index) => (
         <Card
           card={card}

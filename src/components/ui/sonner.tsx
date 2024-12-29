@@ -3,7 +3,6 @@
 import { Toaster as Sonner, toast } from "sonner";
 import React from "react";
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type -- dont care it works
 const Toaster = ({ ...props }) => {
   const theme =
     typeof window !== "undefined" && localStorage.getItem("theme") === "dark"

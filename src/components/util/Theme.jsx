@@ -5,7 +5,7 @@ import Within from "./ttport/Within";
 import "@theme-toggles/react/css/Within.css";
 import React from "react";
 
-const ThemeToggleButton: React.FC<{ size?: number }> = ({ size = 5 }) => {
+const ThemeToggleButton = ({ size = 5 }) => {
   const storedTheme =
     typeof localStorage !== "undefined" ? localStorage.getItem("theme") : null;
 

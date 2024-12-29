@@ -32,6 +32,7 @@ function CustomDirectionAwareTabs({
   rounded,
   onChange,
   activeTab: propActiveTab,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   setActiveTab: _propSetActiveTab,
 }: OgImageSectionProps): React.JSX.Element {
   const [activeTab, setActiveTab] = useState(propActiveTab || 1);

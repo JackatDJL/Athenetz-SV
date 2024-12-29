@@ -16,14 +16,14 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       <input
         className={cn(
           "flex text-foreground h-10 w-full duration-700 rounded-md border border-ring bg-background px-3 py-2 text-sm ring-offset-d-bg dark:ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
-          className,
+          className
         )}
         ref={ref}
         type={type}
         {...props}
       />
     );
-  },
+  }
 );
 Input.displayName = "Input";
 
@@ -71,7 +71,7 @@ const PasswordInput = forwardRef<HTMLInputElement, InputProps>(
 				`}</style>
       </div>
     );
-  },
+  }
 );
 PasswordInput.displayName = "PasswordInput";
 
@@ -83,7 +83,7 @@ const InputOTP = React.forwardRef<
     className={cn("disabled:cursor-not-allowed", className)}
     containerClassName={cn(
       "flex items-center gap-2 has-[:disabled]:opacity-50",
-      containerClassName,
+      containerClassName
     )}
     ref={ref}
     render={() => <>{children}</>}
@@ -125,6 +125,7 @@ const InputOTPSlot = React.forwardRef<
     hasFakeCaret?: boolean;
   }
 >(({ className, ...props }, ref) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const _inputOTPContext = React.useContext(OTPInputContext);
   const char = props.char;
   const isActive = props.isActive;
@@ -135,7 +136,7 @@ const InputOTPSlot = React.forwardRef<
       className={cn(
         "relative flex h-10 w-10 items-center justify-center border-y border-r border-ring duration-700 text-sm transition-all first:rounded-l-md first:border-l last:rounded-r-md",
         isActive && "z-10 ring-2 ring-ring ring-offset-background",
-        className,
+        className
       )}
       ref={ref}
       {...props}
@@ -169,13 +170,13 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       <textarea
         className={cn(
           "flex min-h-[80px] w-full rounded-md border border-input bg-background duration-700 text-foreground px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
-          className,
+          className
         )}
         ref={ref}
         {...props}
       />
     );
-  },
+  }
 );
 Textarea.displayName = "Textarea";
 

@@ -45,13 +45,10 @@ export const TextHoverEffect = ({
 
   return (
     <motion.svg
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- not infered by importer // works fine
       animate={animate}
       className={cn("select-none", className)}
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- not infered by importer // works fine
       exit={exit}
       height="100%"
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- not infered by importer // works fine
       initial={initial}
       key="hoverfx"
       onMouseEnter={() => {
@@ -118,7 +115,7 @@ export const TextHoverEffect = ({
       <text
         className={cn(
           font ?? "font-[helvetica] font-bold ",
-          " stroke-neutral-200 dark:stroke-neutral-800 fill-transparent text-7xl",
+          " stroke-neutral-200 dark:stroke-neutral-800 fill-transparent text-7xl"
         )}
         dominantBaseline="middle"
         key="t1"
@@ -137,7 +134,7 @@ export const TextHoverEffect = ({
         }}
         className={cn(
           font ?? "font-[helvetica] font-bold ",
-          " font-bold fill-transparent text-7xl   stroke-neutral-200 dark:stroke-neutral-800",
+          " font-bold fill-transparent text-7xl   stroke-neutral-200 dark:stroke-neutral-800"
         )}
         dominantBaseline="middle"
         initial={{ strokeDashoffset: 1000, strokeDasharray: 1000 }}
@@ -156,7 +153,7 @@ export const TextHoverEffect = ({
       <text
         className={cn(
           font ?? "font-[helvetica] font-bold ",
-          " font-bold fill-transparent text-7xl  ",
+          " font-bold fill-transparent text-7xl  "
         )}
         dominantBaseline="middle"
         key="t3"

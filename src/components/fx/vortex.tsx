@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 // Credits: https://ui.aceternity.com/
 
@@ -159,8 +160,6 @@ export const Vortex = (props: VortexProps): React.JSX.Element => {
     particleProps[i4] = vy;
     particleProps[i5] = life;
 
-    (checkBounds(x, y, canvas) || life > ttl) && initParticle(i);
-
     if (checkBounds(x, y, canvas) || life > ttl) {
       initParticle(i);
     }
@@ -180,7 +179,10 @@ export const Vortex = (props: VortexProps): React.JSX.Element => {
     ctx.save();
     ctx.lineCap = "round";
     ctx.lineWidth = radius;
-    ctx.strokeStyle = `hsla(${hue.toString()},100%,60%,${fadeInOut(life, ttl).toString()})`;
+    ctx.strokeStyle = `hsla(${hue.toString()},100%,60%,${fadeInOut(
+      life,
+      ttl
+    ).toString()})`;
     ctx.beginPath();
     ctx.moveTo(x, y);
     ctx.lineTo(x2, y2);

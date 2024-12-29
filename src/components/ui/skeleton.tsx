@@ -4,7 +4,7 @@ import { cn } from ">util/twm";
 
 function useDimensions(
   ref: RefObject<HTMLElement>,
-  options = { debounce: 0 },
+  options = { debounce: 0 }
 ): { width: number; height: number } {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
@@ -25,7 +25,7 @@ function Skeleton({
 }: React.HTMLAttributes<HTMLDivElement> & {
   children?: React.ReactNode;
 }): React.JSX.Element {
-  const childRef = useRef(null);
+  const childRef = useRef<HTMLDivElement>({} as HTMLDivElement);
   const { width, height } = useDimensions(childRef, { debounce: 0 });
 
   return (
