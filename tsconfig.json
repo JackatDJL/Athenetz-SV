@@ -23,6 +23,8 @@
       "$/*": ["./src/components/fx/*"],
       ">util/*": ["./src/components/util/*"],
       ">api/*": ["./src/components/api/*"],
+      ">comp/*": ["./src/components/compositions/*"],
+      "§": ["./src/app/config.json"],
       "~/*": ["./src/*"]
     }
   },
