@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-// import { default as Sonner } from "@jackatdjl/djl-ui/sonner";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
+import { Toaster } from ">/sonner";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -76,14 +76,12 @@ export default function RootLayout({
     <html lang="en">
       <SpeedInsights />
       <Analytics />
-      <body
-        className={`bg-l-bg dark:bg-d-bg text-l-txt dark:text-d-txt duration-700`}
-      >
+      <body className={`bg-background text-foreground duration-200`}>
         <link
           rel="stylesheet"
           href="https://use.typekit.net/dsa8oou.css"
         ></link>
-        {/* <Sonner.Toaster /> */}
+        <Toaster />
         <div id="recapcha-container"></div>
         {children}
       </body>
