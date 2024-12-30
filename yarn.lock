@@ -3650,6 +3650,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"appwrite@npm:^16.1.0":
+  version: 16.1.0
+  resolution: "appwrite@npm:16.1.0"
+  checksum: 10c3/521807e3c1f8906b72c80c7f5be92ac3a036f2c79dbb1d65a149b7b1a055c5ee3f124270bec7383e2ea0e1bb83d294fd6f01582fd345192fb67ddcfc753efedd
+  languageName: node
+  linkType: hard
+
 "arg@npm:^4.1.0":
   version: 4.1.3
   resolution: "arg@npm:4.1.3"
@@ -3871,6 +3878,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:^8.18.0"
     "@vercel/analytics": "npm:^1.4.1"
     "@vercel/speed-insights": "npm:^1.1.0"
+    appwrite: "npm:^16.1.0"
     cmdk: "npm:^1.0.4"
     cva: "npm:1.0.0-beta.2"
     eslint: "npm:^9"

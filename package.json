@@ -37,6 +37,7 @@
     "@types/react-dom": "^18.2.19",
     "@vercel/analytics": "^1.4.1",
     "@vercel/speed-insights": "^1.1.0",
+    "appwrite": "^16.1.0",
     "cmdk": "^1.0.4",
     "cva": "1.0.0-beta.2",
     "framer-motion": "^11.13.1",

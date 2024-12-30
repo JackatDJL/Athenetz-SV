@@ -5,6 +5,8 @@ import { ThemeToggleButton } from ">util/Theme";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { Separator } from ">/separator";
+import { account } from ">api/appwrite/init";
+import Error from "next/error";
 
 const MotionImage = motion.create(Image);
 /**
@@ -50,6 +52,7 @@ export default Header;
 
 // Define the UserData interface
 interface UserData {
+  pulled: boolean;
   uid: string;
   displayName: string | null;
   photoURL: string;
@@ -60,16 +63,26 @@ const useUserData = () => {
 
   useEffect(() => {
     const fetchUserData = async () => {
-      // Simulate fetching user data without using firebase
-      const userDataMock = {
-        uid: "mockUid",
-        displayName: "Mock User",
-        photoURL: "https://example.com/mockUserPhoto.png",
-      };
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const defaultPP =
         "https://cloud-hx4xc136q-hack-club-bot.vercel.app/0image.png";
-      setUserData(userDataMock);
+      const dataUser = {
+        pulled: false,
+        uid: "",
+        displayName: "",
+        photoURL: defaultPP,
+      };
+      account
+        .get()
+        .then((user) => {
+          dataUser.uid = user.$id;
+          dataUser.displayName = user.name;
+          dataUser.pulled = true;
+        })
+        .catch((reason) => {
+          throw new Error(reason);
+        });
+
+      setUserData(dataUser);
     };
 
     fetchUserData();
@@ -165,7 +178,7 @@ const LG_Header: React.FC = () => {
           </motion.a>
         )} */}
       </section>
-      {userData?.uid && (
+      {userData?.pulled && (
         <motion.a
           href="/profile"
           className="right-3 flex items-center p-2"
@@ -280,7 +293,7 @@ const MD_Header: React.FC = () => {
             transition={{ duration: 0.5 }}
           >
             <AnimatePresence>
-              {userData?.uid && (
+              {userData?.pulled && (
                 <motion.section
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -50 }}
@@ -456,7 +469,7 @@ const SM_Header: React.FC = () => {
             transition={{ duration: 0.5 }}
           >
             <AnimatePresence>
-              {userData?.uid && (
+              {userData?.pulled && (
                 <motion.section
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -50 }}
