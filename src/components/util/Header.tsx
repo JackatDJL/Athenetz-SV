@@ -5,8 +5,6 @@ import { ThemeToggleButton } from ">util/Theme";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { Separator } from ">/separator";
-import { fbauth } from ">api/firebase/firebase";
-import { User } from "firebase/auth";
 
 const MotionImage = motion.create(Image);
 /**
@@ -62,20 +60,16 @@ const useUserData = () => {
 
   useEffect(() => {
     const fetchUserData = async () => {
-      if (!fbauth || !fbauth.currentUser) {
-        setUserData(null);
-        return;
-      }
-
-      const user: User = fbauth.currentUser;
-
-      const uid = user.uid;
-      const displayName = user.displayName;
+      // Simulate fetching user data without using firebase
+      const userDataMock = {
+        uid: "mockUid",
+        displayName: "Mock User",
+        photoURL: "https://example.com/mockUserPhoto.png",
+      };
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const defaultPP =
         "https://cloud-hx4xc136q-hack-club-bot.vercel.app/0image.png";
-
-      const photoURL = user.photoURL ? user.photoURL : defaultPP;
-      setUserData({ uid, displayName, photoURL });
+      setUserData(userDataMock);
     };
 
     fetchUserData();
@@ -83,6 +77,7 @@ const useUserData = () => {
 
   return userData;
 };
+
 const LG_Header: React.FC = () => {
   const userData = useUserData();
 
