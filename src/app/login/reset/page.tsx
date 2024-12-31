@@ -1,16 +1,15 @@
 "use client";
-import { account } from ">api/appwrite/init";
-import Link from "next/link";
-import { useEffect } from "react";
-import { ArrowLeft } from "react-feather";
-import { motion } from "motion/react";
-import { ThemeToggleButton } from ">util/Theme";
-import * as Inputs from ">/inputs";
-import { Button } from ">/button";
 import { toast } from "sonner";
+import { useEffect, useState } from "react";
 import { navigate } from ">api/navigate";
+import { account } from ">api/appwrite/init";
+import { ArrowLeft } from "react-feather";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { Button } from ">/button";
+import { ThemeToggleButton } from ">util/Theme";
 
-export default function LoginPage() {
+export default function Reset() {
   const isLoggedIn = async () => {
     const checkToast = toast.loading("Connecting to Identity Plattform", {
       duration: Infinity,
@@ -44,68 +43,60 @@ export default function LoginPage() {
     isLoggedIn();
   }, []);
 
-  function verify() {
-    const checkpromise = account.get();
+  const [submitDisabled, setSubmitDisabled] = useState(false);
 
-    checkpromise.then((user) => {
-      if (!user.emailVerification) {
-        const ttoast = toast.loading("Sende verifizierungs Email...", {
-          duration: Infinity,
-        });
-
-        const promise = account.createVerification(
-          "https://athe-sv.vercel.app/signup/verify"
-        );
-
-        promise.then(
-          () => {
-            toast.success("Verifizierungs Email gesendet", {
-              id: ttoast,
-              duration: 5000,
-              action: {
-                label: "Zu Athenetz",
-                onClick: () => {
-                  navigate("https://athenetz.de/iserv/mail");
-                },
-              },
-            });
-          },
-          (reason) => {
-            toast.error(reason.message, { id: ttoast, duration: 5000 });
-            toast.info(
-              "Sorry an unexpected Error occured, it has ben automaticly reported to our servers"
-            );
-
-            throw reason;
-          }
-        );
-      }
+  function reset(email: string) {
+    const ttoast = toast.loading("Kommuniziere mit Server...", {
+      duration: Infinity,
     });
-  }
-
-  function signIn(email: string, password: string) {
-    const ttoast = toast.loading("Anmelden...", { duration: Infinity });
     email = email + "@athenetz.de";
-    const promise = account.createEmailPasswordSession(email, password);
+
+    const promise = account.createRecovery(
+      email,
+      "https://athe-sv.vercel.app/login/reset/verify"
+    );
 
     promise.then(
-      function () {
-        toast.success("Angemeldet!", { id: ttoast, duration: 5000 });
+      () => {
+        toast.success("Email zum Zurücksetzen gesendet", {
+          id: ttoast,
+          duration: 5000,
+          action: {
+            label: "Zu Athenetz",
+            onClick: () => {
+              navigate("https://athenetz.de/iserv/mail");
+            },
+          },
+        });
         navigate("/");
-        verify();
       },
-      function (error) {
-        toast.error(error.message, { id: ttoast, duration: 5000 });
+      (reason) => {
+        if (
+          reason.message ==
+          "Invalid `email` param: Value must be a valid email address"
+        ) {
+          toast.warning("Bitte gib deinen richtigen Benutzernamen an!", {
+            id: ttoast,
+            duration: 5000,
+          });
+          setSubmitDisabled(false);
+        } else {
+          toast.error(reason.message, { id: ttoast, duration: 5000 });
+          toast.info(
+            "Sorry an unexpected Error occured, it has ben automaticly reported to our servers"
+          );
+          navigate("/");
+          throw reason;
+        }
       }
     );
   }
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setSubmitDisabled(true);
     const email = (event.currentTarget.elements[0] as HTMLInputElement).value;
-    const password = (event.currentTarget.elements[1] as HTMLInputElement)
-      .value;
-    signIn(email, password);
+    reset(email);
   };
 
   return (
@@ -120,10 +111,10 @@ export default function LoginPage() {
         <main className="flex-1 flex items-center justify-center">
           <motion.section className="border-2 rounded-xl border-accent bg-card w-3/4 lg:w-1/2 xl:w-1/3 h-4/5 lg:h-3/4 duration-200 flex items-center justify-center">
             <form
-              onSubmit={handleSubmit}
               className="flex flex-col items-center justify-center gap-4"
+              onSubmit={handleSubmit}
             >
-              <h2 className="bdefault text-5xl">Anmelden</h2>
+              <h2 className="bdefault text-3xl">Passwort Zurücksetzen</h2>
               <div className="group flex h-10 w-full rounded-md border border-ring bg-background text-sm ring-offset-d-bg dark:ring-offset-background focus-within:ring-2 focus-within:ring-accent focus-within:ring-offset-2 focus-within:outline-none duration-700">
                 <input
                   className="flex-1 px-3 py-2 rounded-l-md bg-transparent placeholder:text-muted-foreground focus:outline-none"
@@ -135,32 +126,9 @@ export default function LoginPage() {
                 </div>
               </div>
 
-              <Inputs.Password placeholder="Password" />
-              <Button type="submit">Sign In</Button>
-              <div className="grid grid-flow-row grid-cols-2 grid-rows-2 p-2">
-                <Link
-                  href="/login/reset"
-                  className="text-xs text-muted-foreground flex items-center justify-center p-2"
-                  prefetch
-                >
-                  Passwort Vergessen?
-                </Link>
-                <Link
-                  href="/login/fast"
-                  className="text-xs text-muted-foreground flex items-center justify-center"
-                  prefetch
-                >
-                  Email Link benutzen
-                </Link>
-
-                <Link
-                  className="text-xs text-muted-foreground col-span-2 flex items-center justify-center"
-                  href="/login/athenetz"
-                  prefetch
-                >
-                  Mit Athenetz Anmelden
-                </Link>
-              </div>
+              <Button type="submit" disabled={submitDisabled}>
+                Email Senden
+              </Button>
             </form>
           </motion.section>
         </main>

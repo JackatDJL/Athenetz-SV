@@ -5,12 +5,11 @@ import { useEffect } from "react";
 import { ArrowLeft } from "react-feather";
 import { motion } from "motion/react";
 import { ThemeToggleButton } from ">util/Theme";
-import { grid } from "ldrs";
+import { SkewLoader } from "react-spinners";
 import { toast } from "sonner";
 import { navigate } from ">api/navigate";
 
 export default function LoginPage() {
-  grid.register();
   const isLoggedIn = async () => {
     const checkToast = toast.loading("Connecting to Identity Plattform", {
       duration: Infinity,
@@ -72,7 +71,7 @@ export default function LoginPage() {
         </section>
         <main className="flex-1 flex items-center justify-center">
           <motion.section className="border-2 rounded-xl border-accent bg-card w-3/4 lg:w-1/2 xl:w-1/3 h-4/5 lg:h-3/4 duration-200 flex items-center justify-center">
-            <l-grid size="60" speed="1.5" color="black"></l-grid>
+            <SkewLoader />
           </motion.section>
         </main>
         <motion.section className="flex items-end justify-start p-2">

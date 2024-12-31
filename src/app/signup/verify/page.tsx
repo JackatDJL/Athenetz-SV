@@ -1,7 +1,6 @@
 "use client";
 import { ThemeToggleButton } from ">util/Theme";
 import { motion } from "framer-motion";
-import { grid } from "ldrs";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "react-feather";
@@ -9,9 +8,9 @@ import { toast } from "sonner";
 import { useEffect } from "react";
 import { account } from ">api/appwrite/init";
 import { navigate } from ">api/navigate";
+import { SkewLoader } from "react-spinners";
 
 export default function VerifyPage() {
-  grid.register();
   const params = useSearchParams();
 
   const userid = params.get("userId");
@@ -116,7 +115,7 @@ export default function VerifyPage() {
         </section>
         <main className="flex-1 flex items-center justify-center">
           <motion.section className="border-2 rounded-xl border-accent bg-card w-3/4 lg:w-1/2 xl:w-1/3 h-4/5 lg:h-3/4 duration-200 flex items-center justify-center">
-            <l-grid size="60" speed="1.5" color="black"></l-grid>
+            <SkewLoader />
           </motion.section>
         </main>
         <motion.section className="flex items-end justify-start p-2">

@@ -28,7 +28,7 @@ export default function SignUpPage() {
       },
       function (error) {
         if (error.message == "User (role: guests) missing scope (account)") {
-          toast.success("Connected", { id: checkToast, duration: 5000 });
+          toast.dismiss(checkToast);
           navigate("/");
         } else {
           toast.error(error.message, { id: checkToast, duration: 5000 });
@@ -63,6 +63,12 @@ export default function SignUpPage() {
             toast.success("Verifizierungs Email gesendet", {
               id: ttoast,
               duration: 5000,
+              action: {
+                label: "Zu Athenetz",
+                onClick: () => {
+                  navigate("https://athenetz.de/iserv/mail");
+                },
+              },
             });
           },
           (reason) => {
@@ -92,7 +98,16 @@ export default function SignUpPage() {
         verify();
       },
       function (error) {
-        toast.error(error.message, { id: ttoast, duration: 3000 });
+        if (
+          error.message ==
+          "Invalid `password` param: Password must be between 8 and 265 characters long, and should not be one of the commonly used password."
+        ) {
+          toast.warning(
+            "Samma, Gratulation, du hast das Sicherheitslotto verloren. Versuchs doch mal mit etwas, das nicht jeder benutzt!"
+          );
+        } else {
+          toast.error(error.message, { id: ttoast, duration: 3000 });
+        }
       }
     );
   }
@@ -129,7 +144,7 @@ export default function SignUpPage() {
                   type="name"
                   placeholder="user.name"
                 />
-                <div className="bg-gray-200 px-4 py-2 rounded-r-md">
+                <div className="bg-gray-300 dark:bg-gray-800 px-4 py-2 rounded-r-md">
                   @athenetz.de
                 </div>
               </div>
