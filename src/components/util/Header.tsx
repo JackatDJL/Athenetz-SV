@@ -5,8 +5,8 @@ import { ThemeToggleButton } from ">util/Theme";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { Separator } from ">/separator";
-import { account } from ">api/appwrite/init";
-import { toast } from "sonner";
+import { ArrowLeft } from "react-feather";
+import Link from "next/link";
 
 const MotionImage = motion.create(Image);
 /**
@@ -50,59 +50,7 @@ const Header: React.FC = () => {
 
 export default Header;
 
-// Define the UserData interface
-interface UserData {
-  pulled: boolean;
-  uid: string;
-  displayName: string | null;
-  photoURL: string;
-}
-
-const useUserData = () => {
-  const [userData, setUserData] = useState<UserData | null>(null);
-
-  useEffect(() => {
-    const fetchUserData = async () => {
-      const defaultPP =
-        "https://cloud-hx4xc136q-hack-club-bot.vercel.app/0image.png";
-      const dataUser = {
-        pulled: false,
-        uid: "",
-        displayName: "",
-        photoURL: defaultPP,
-      };
-      const promise = account.get();
-
-      promise.then(
-        (user) => {
-          dataUser.uid = user.$id;
-          dataUser.displayName = user.name;
-          dataUser.pulled = true;
-        },
-        function (error) {
-          if (error.message == "User (role: guests) missing scope (account)") {
-            return;
-          } else {
-            toast.error(error.message);
-            toast.info(
-              "Sorry an unexpected Error occured, it has ben automaticly reported to our servers"
-            );
-            throw error;
-          }
-        }
-      );
-      setUserData(dataUser);
-    };
-
-    fetchUserData();
-  }, []);
-
-  return userData;
-};
-
 const LG_Header: React.FC = () => {
-  const userData = useUserData();
-
   return (
     <motion.header
       className="bg-l-sec-900 dark:bg-d-sec-900 text-l-txt dark:text-d-txt h-20 w-screen sticky flex items-center top-0 p-1"
@@ -148,81 +96,37 @@ const LG_Header: React.FC = () => {
         />
       </motion.a>
       <section className="flex items-center justify-around flex-grow px-7">
-        <motion.a
-          href="/"
-          className="font-xl nscience"
+        <motion.p
+          className="font-xl nscience flex items-center justify-center p-2"
           initial={{ y: -10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.75, duration: 0.5 }}
         >
-          Startseite
-        </motion.a>
-        <motion.a
-          href="/robotik"
+          <Link href="https://athenetz.de/iserv" prefetch>
+            <ArrowLeft /> Athenetz
+          </Link>
+        </motion.p>
+        <motion.p
           className="font-xl nscience"
           initial={{ y: -10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 1, duration: 0.5 }}
         >
-          Robotik
-        </motion.a>
-        <motion.a
-          href="/sv"
+          <Link href="/poll" prefetch>
+            <a>Wahlen</a>
+          </Link>
+        </motion.p>
+        <motion.p
           className="font-xl nscience"
           initial={{ y: -10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 1.25, duration: 0.5 }}
         >
-          Öffnungszeiten
-        </motion.a>
-        {/* {user?.developer && (
-          <motion.a
-            href="/admin"
-            className="font-xl nscience"
-            initial={{ y: -10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 1.5, duration: 0.5 }}
-          >
-            Admin
-          </motion.a>
-        )} */}
+          <Link href="/sv" prefetch>
+            <a>Über Uns</a>
+          </Link>
+        </motion.p>
       </section>
-      {userData?.pulled && (
-        <motion.a
-          href="/profile"
-          className="right-3 flex items-center p-2"
-          layout
-        >
-          <div className="text-right p-1">
-            <motion.p
-              className="font-bold -my-1 text-xl text-right"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.5, duration: 0.75 }}
-            >
-              Welcome back,
-            </motion.p>
-            <motion.p
-              className="-my-1"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.65, duration: 0.75 }}
-            >
-              {userData.displayName}
-            </motion.p>
-          </div>
-          <motion.div>
-            <div
-              style={{
-                height: "50px",
-                width: "50px",
-                backgroundColor: "white",
-                borderRadius: "50%",
-              }}
-            ></div>
-          </motion.div>
-        </motion.a>
-      )}
     </motion.header>
   );
 };
