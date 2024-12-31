@@ -1,7 +1,6 @@
 "use client";
 import { account } from ">api/appwrite/init";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { ArrowLeft } from "react-feather";
 import { motion } from "motion/react";
@@ -10,19 +9,10 @@ import * as Inputs from ">/inputs";
 import { Button } from ">/button";
 import { ID } from "appwrite";
 import { toast } from "sonner";
+import { navigate } from ">api/navigate";
 
 export default function SignUpPage() {
   const isLoggedIn = async () => {
-    // account
-    //   .get()
-    //   .then(() => {
-    //     // eslint-disable-next-line react-hooks/rules-of-hooks
-    //     const router = useRouter();
-    //     router.push("/");
-    //   })
-    //   .catch((reason) => {
-    //     toast.warning(reason);
-    //   });
     const checkToast = toast.loading("Connecting to Identity Plattform", {
       duration: Infinity,
     });
@@ -32,20 +22,20 @@ export default function SignUpPage() {
       function () {
         toast.info("Samma, du bist ja schon Angemeldet!", {
           id: checkToast,
-          duration: 200,
+          duration: 5000,
         });
-        //eslint-disable-next-line react-hooks/rules-of-hooks
-        const router = useRouter();
-        router.push("/");
+        navigate("/");
       },
       function (error) {
         if (error.message == "User (role: guests) missing scope (account)") {
-          toast.success("Connected", { id: checkToast, duration: 200 });
+          toast.success("Connected", { id: checkToast, duration: 5000 });
+          navigate("/");
         } else {
-          toast.error(error.message, { id: checkToast, duration: 200 });
+          toast.error(error.message, { id: checkToast, duration: 5000 });
           toast.info(
             "Sorry an unexpected Error occured, it has ben automaticly reported to our servers"
           );
+          navigate("/");
           throw error;
         }
       }
@@ -54,6 +44,39 @@ export default function SignUpPage() {
   useEffect(() => {
     isLoggedIn();
   }, []);
+
+  function verify() {
+    const checkpromise = account.get();
+
+    checkpromise.then((user) => {
+      if (!user.emailVerification) {
+        const ttoast = toast.loading("Sende verifizierungs Email...", {
+          duration: Infinity,
+        });
+
+        const promise = account.createVerification(
+          "https://athe-sv.vercel.app/signup/verify"
+        );
+
+        promise.then(
+          () => {
+            toast.success("Verifizierungs Email gesendet", {
+              id: ttoast,
+              duration: 5000,
+            });
+          },
+          (reason) => {
+            toast.error(reason.message, { id: ttoast, duration: 5000 });
+            toast.info(
+              "Sorry an unexpected Error occured, it has ben automaticly reported to our servers"
+            );
+
+            throw reason;
+          }
+        );
+      }
+    });
+  }
 
   function signUp(email: string, password: string, name: string) {
     const ttoast = toast.loading("Komuniziere mit Server...", {
@@ -64,13 +87,12 @@ export default function SignUpPage() {
 
     promise.then(
       function () {
-        toast.success("Angemeldet!", { id: ttoast, duration: 600 });
-        toast.info("Nicht vergessen die Email zu Bestätingen!", {
-          duration: 200,
-        });
+        toast.success("Registriert!", { id: ttoast, duration: 5000 });
+        navigate("/");
+        verify();
       },
       function (error) {
-        toast.error(error.message, { id: ttoast, duration: 200 });
+        toast.error(error.message, { id: ttoast, duration: 3000 });
       }
     );
   }

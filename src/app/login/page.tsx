@@ -1,7 +1,6 @@
 "use client";
 import { account } from ">api/appwrite/init";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { ArrowLeft } from "react-feather";
 import { motion } from "motion/react";
@@ -9,19 +8,10 @@ import { ThemeToggleButton } from ">util/Theme";
 import * as Inputs from ">/inputs";
 import { Button } from ">/button";
 import { toast } from "sonner";
+import { navigate } from ">api/navigate";
 
 export default function LoginPage() {
   const isLoggedIn = async () => {
-    // account
-    //   .get()
-    //   .then(() => {
-    //     // eslint-disable-next-line react-hooks/rules-of-hooks
-    //     const router = useRouter();
-    //     router.push("/");
-    //   })
-    //   .catch((reason) => {
-    //     toast.warning(reason);
-    //   });
     const checkToast = toast.loading("Connecting to Identity Plattform", {
       duration: Infinity,
     });
@@ -31,20 +21,20 @@ export default function LoginPage() {
       function () {
         toast.info("Samma, du bist ja schon Angemeldet!", {
           id: checkToast,
-          duration: 200,
+          duration: 5000,
         });
-        //eslint-disable-next-line react-hooks/rules-of-hooks
-        const router = useRouter();
-        router.push("/");
+
+        navigate("/");
       },
       function (error) {
         if (error.message == "User (role: guests) missing scope (account)") {
-          toast.success("Connected", { id: checkToast, duration: 200 });
+          toast.success("Connected", { id: checkToast, duration: 5000 });
         } else {
-          toast.error(error.message, { id: checkToast, duration: 200 });
+          toast.error(error.message, { id: checkToast, duration: 5000 });
           toast.info(
             "Sorry an unexpected Error occured, it has ben automaticly reported to our servers"
           );
+          navigate("/");
           throw error;
         }
       }
@@ -54,6 +44,39 @@ export default function LoginPage() {
     isLoggedIn();
   }, []);
 
+  function verify() {
+    const checkpromise = account.get();
+
+    checkpromise.then((user) => {
+      if (!user.emailVerification) {
+        const ttoast = toast.loading("Sende verifizierungs Email...", {
+          duration: Infinity,
+        });
+
+        const promise = account.createVerification(
+          "https://athe-sv.vercel.app/signup/verify"
+        );
+
+        promise.then(
+          () => {
+            toast.success("Verifizierungs Email gesendet", {
+              id: ttoast,
+              duration: 5000,
+            });
+          },
+          (reason) => {
+            toast.error(reason.message, { id: ttoast, duration: 5000 });
+            toast.info(
+              "Sorry an unexpected Error occured, it has ben automaticly reported to our servers"
+            );
+
+            throw reason;
+          }
+        );
+      }
+    });
+  }
+
   function signIn(email: string, password: string) {
     const ttoast = toast.loading("Anmelden...", { duration: Infinity });
     email = email + "@athenetz.de";
@@ -61,10 +84,12 @@ export default function LoginPage() {
 
     promise.then(
       function () {
-        toast.success("Angemeldet!", { id: ttoast, duration: 200 });
+        toast.success("Angemeldet!", { id: ttoast, duration: 5000 });
+        navigate("/");
+        verify();
       },
       function (error) {
-        toast.error(error.message, { id: ttoast, duration: 200 });
+        toast.error(error.message, { id: ttoast, duration: 5000 });
       }
     );
   }
@@ -106,7 +131,30 @@ export default function LoginPage() {
 
               <Inputs.Password placeholder="Password" />
               <Button type="submit">Sign In</Button>
-              <p className="text-xs text-gray-500">Forgot Password?</p>
+              <div className="grid grid-flow-row grid-cols-2 grid-rows-2 p-2">
+                <Link
+                  href="/login/reset"
+                  className="text-xs text-muted-foreground flex items-center justify-center p-2"
+                  prefetch
+                >
+                  Passwort Vergessen?
+                </Link>
+                <Link
+                  href="/login/fast"
+                  className="text-xs text-muted-foreground flex items-center justify-center"
+                  prefetch
+                >
+                  Email Link benutzen
+                </Link>
+
+                <Link
+                  className="text-xs text-muted-foreground col-span-2 flex items-center justify-center"
+                  href="/login/athenetz"
+                  prefetch
+                >
+                  Mit Athenetz Anmelden
+                </Link>
+              </div>
             </form>
           </motion.section>
         </main>

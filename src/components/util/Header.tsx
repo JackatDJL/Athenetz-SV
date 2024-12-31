@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { Separator } from ">/separator";
 import { account } from ">api/appwrite/init";
-import Error from "next/error";
+import { toast } from "sonner";
 
 const MotionImage = motion.create(Image);
 /**
@@ -71,17 +71,26 @@ const useUserData = () => {
         displayName: "",
         photoURL: defaultPP,
       };
-      account
-        .get()
-        .then((user) => {
+      const promise = account.get();
+
+      promise.then(
+        (user) => {
           dataUser.uid = user.$id;
           dataUser.displayName = user.name;
           dataUser.pulled = true;
-        })
-        .catch((reason) => {
-          throw new Error(reason);
-        });
-
+        },
+        function (error) {
+          if (error.message == "User (role: guests) missing scope (account)") {
+            return;
+          } else {
+            toast.error(error.message);
+            toast.info(
+              "Sorry an unexpected Error occured, it has ben automaticly reported to our servers"
+            );
+            throw error;
+          }
+        }
+      );
       setUserData(dataUser);
     };
 
