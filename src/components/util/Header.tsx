@@ -60,7 +60,7 @@ const LG_Header: React.FC = () => {
       transition={{ duration: 0.5 }}
       layout
     >
-      <motion.a href="/" className=" flex items-center top-0 p-1">
+      <Link prefetch href="/" className=" flex items-center top-0 p-1">
         <MotionImage
           src={"/brand/Athe.png"}
           width={150}
@@ -94,7 +94,7 @@ const LG_Header: React.FC = () => {
           transition={{ delay: 0.5, duration: 0.5 }}
           priority
         />
-      </motion.a>
+      </Link>
       <section className="flex items-center justify-around flex-grow px-7">
         <motion.p
           className="font-xl nscience flex items-center justify-center p-2"
@@ -133,7 +133,6 @@ const LG_Header: React.FC = () => {
 
 const MD_Header: React.FC = () => {
   const [isOpen, setOpen] = useState(false);
-  const userData = useUserData();
 
   return (
     <motion.header
@@ -148,7 +147,7 @@ const MD_Header: React.FC = () => {
           className="h-20 top-0 flex items-center justify-between w-screen  "
           style={{ zIndex: 11 }}
         >
-          <motion.a href="/" className=" flex items-center top-0 p-1">
+          <Link prefetch href="/" className=" flex items-center top-0 p-1">
             <MotionImage
               src={"/brand/Athe.png"}
               width={150}
@@ -182,7 +181,7 @@ const MD_Header: React.FC = () => {
               transition={{ delay: 0.5, duration: 0.5 }}
               priority
             />
-          </motion.a>
+          </Link>
           <AnimatePresence>
             <motion.div
               initial={{ opacity: 0 }}
@@ -206,46 +205,6 @@ const MD_Header: React.FC = () => {
             transition={{ duration: 0.5 }}
           >
             <AnimatePresence>
-              {userData?.pulled && (
-                <motion.section
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -50 }}
-                  transition={{ duration: 2 }}
-                  className="flex items-center justify-between p-3"
-                >
-                  <div className="">
-                    <motion.h2
-                      className="px-1 oxanium text-xl"
-                      initial={{ y: -10, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ delay: 0.1, duration: 0.5 }}
-                    >
-                      Welcome back,{" "}
-                    </motion.h2>
-                    <motion.h2
-                      className="px-1 oxanium text-xl"
-                      initial={{ y: -10, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ delay: 0.25, duration: 0.5 }}
-                    >
-                      {userData.displayName}
-                    </motion.h2>
-                  </div>
-                  <motion.div
-                    initial={{ x: 20, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                  >
-                    <div
-                      style={{
-                        height: "50px",
-                        width: "50px",
-                        backgroundColor: "white",
-                        borderRadius: "50%",
-                      }}
-                    ></div>
-                  </motion.div>
-                </motion.section>
-              )}
               <motion.div
                 initial={{ y: -10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -259,16 +218,18 @@ const MD_Header: React.FC = () => {
                     {isOpen && (
                       <>
                         <motion.div
-                          className=" col-start-1 col-span-3 row-start-1 row-span-4 flex items-center justify-center border-l-acc dark:border-d-acc border-2 rounded-md p-2"
+                          className="col-start-1 col-span-3 row-start-1 row-span-4 flex items-center justify-center border-l-acc dark:border-d-acc border-2 rounded-md p-2"
                           initial={{ opacity: 0, x: 10, y: 10 }}
                           animate={{ opacity: 1, x: 0, y: 0 }}
                           exit={{ opacity: 0, y: 10 }}
                           transition={{ delay: 0.3, duration: 0.5 }}
                         >
-                          Startseite
+                          <Link href="https://athenetz.de/iserv">
+                            Startseite
+                          </Link>
                         </motion.div>
                         <motion.div
-                          className=" col-start-4 col-span-2 row-start-1 row-span-4 flex items-center justify-center border-l-acc dark:border-d-acc border-2 rounded-md p-2"
+                          className="col-start-4 col-span-2 row-start-1 row-span-4 flex items-center justify-center border-l-acc dark:border-d-acc border-2 rounded-md p-2"
                           initial={{ opacity: 0, x: -10, y: 10 }}
                           animate={{ opacity: 1, x: 0, y: 0 }}
                           exit={{ opacity: 0, y: 10 }}
@@ -277,7 +238,7 @@ const MD_Header: React.FC = () => {
                           Robotik
                         </motion.div>
                         <motion.div
-                          className=" col-start-1 col-span-2 row-start-5 row-span-2 flex items-center justify-center border-l-acc dark:border-d-acc border-2 rounded-md p-2"
+                          className="col-start-1 col-span-2 row-start-5 row-span-2 flex items-center justify-center border-l-acc dark:border-d-acc border-2 rounded-md p-2"
                           initial={{ opacity: 0, x: 10, y: -10 }}
                           animate={{ opacity: 1, x: 0, y: 0 }}
                           exit={{ opacity: 0, y: 10 }}
@@ -286,7 +247,7 @@ const MD_Header: React.FC = () => {
                           Öffnungszeiten
                         </motion.div>
                         <motion.div
-                          className=" col-start-3 col-span-3 row-start-5 row-span-2 flex items-center justify-center border-l-acc dark:border-d-acc border-2 rounded-md p-2"
+                          className="col-start-3 col-span-3 row-start-5 row-span-2 flex items-center justify-center border-l-acc dark:border-d-acc border-2 rounded-md p-2"
                           initial={{ opacity: 0, x: -10, y: -10 }}
                           animate={{ opacity: 1, x: 0, y: 0 }}
                           exit={{ opacity: 0, y: 10 }}
