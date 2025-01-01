@@ -102,7 +102,11 @@ const LG_Header: React.FC = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.75, duration: 0.5 }}
         >
-          <Link href="https://athenetz.de/iserv" prefetch>
+          <Link
+            href="https://athenetz.de/iserv"
+            prefetch
+            className="flex items-center justify-center"
+          >
             <ArrowLeft /> Athenetz
           </Link>
         </motion.p>
@@ -112,8 +116,12 @@ const LG_Header: React.FC = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 1, duration: 0.5 }}
         >
-          <Link href="/poll" prefetch>
-            <a>Wahlen</a>
+          <Link
+            href="/wahlen"
+            prefetch
+            className="flex items-center justify-center"
+          >
+            Wahlen
           </Link>
         </motion.p>
         <motion.p
@@ -122,8 +130,26 @@ const LG_Header: React.FC = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 1.25, duration: 0.5 }}
         >
-          <Link href="/sv" prefetch>
-            <a>Über Uns</a>
+          <Link
+            href="/sv"
+            prefetch
+            className="flex items-center justify-center"
+          >
+            Über Uns
+          </Link>
+        </motion.p>
+        <motion.p
+          className="font-xl nscience"
+          initial={{ y: -10, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 1.5, duration: 0.5 }}
+        >
+          <Link
+            href="/kontakt"
+            prefetch
+            className="flex items-center justify-center"
+          >
+            Kontakt
           </Link>
         </motion.p>
       </section>
@@ -224,8 +250,12 @@ const MD_Header: React.FC = () => {
                           exit={{ opacity: 0, y: 10 }}
                           transition={{ delay: 0.3, duration: 0.5 }}
                         >
-                          <Link href="https://athenetz.de/iserv">
-                            Startseite
+                          <Link
+                            href="https://athenetz.de/iserv"
+                            prefetch
+                            className="flex items-center justify-center"
+                          >
+                            <ArrowLeft /> Athenetz
                           </Link>
                         </motion.div>
                         <motion.div
@@ -235,7 +265,13 @@ const MD_Header: React.FC = () => {
                           exit={{ opacity: 0, y: 10 }}
                           transition={{ delay: 0.3, duration: 0.5 }}
                         >
-                          Robotik
+                          <Link
+                            href="/wahlen"
+                            prefetch
+                            className="flex items-center justify-center"
+                          >
+                            Wahlen
+                          </Link>
                         </motion.div>
                         <motion.div
                           className="col-start-1 col-span-2 row-start-5 row-span-2 flex items-center justify-center border-l-acc dark:border-d-acc border-2 rounded-md p-2"
@@ -244,7 +280,13 @@ const MD_Header: React.FC = () => {
                           exit={{ opacity: 0, y: 10 }}
                           transition={{ delay: 0.5, duration: 0.5 }}
                         >
-                          Öffnungszeiten
+                          <Link
+                            href="/sv"
+                            prefetch
+                            className="flex items-center justify-center"
+                          >
+                            Über Uns
+                          </Link>
                         </motion.div>
                         <motion.div
                           className="col-start-3 col-span-3 row-start-5 row-span-2 flex items-center justify-center border-l-acc dark:border-d-acc border-2 rounded-md p-2"
@@ -253,7 +295,13 @@ const MD_Header: React.FC = () => {
                           exit={{ opacity: 0, y: 10 }}
                           transition={{ delay: 0.5, duration: 0.5 }}
                         >
-                          Über Uns
+                          <Link
+                            href="/kontakt"
+                            prefetch
+                            className="flex items-center justify-center"
+                          >
+                            Kontakt
+                          </Link>
                         </motion.div>
                       </>
                     )}
@@ -270,7 +318,6 @@ const MD_Header: React.FC = () => {
 
 const SM_Header: React.FC = () => {
   const [isOpen, setOpen] = useState(false);
-  const userData = useUserData();
 
   return (
     <motion.header
@@ -282,7 +329,8 @@ const SM_Header: React.FC = () => {
     >
       <section className=" top-0">
         <motion.div className="h-20 top-0 flex items-center justify-between w-screen">
-          <motion.a
+          <Link
+            prefetch
             href="/"
             className=" flex items-center top-0 p-1 duration-500"
           >
@@ -319,7 +367,7 @@ const SM_Header: React.FC = () => {
               transition={{ delay: 0.5, duration: 0.5 }}
               priority
             />
-          </motion.a>
+          </Link>
           <AnimatePresence>
             <motion.div
               initial={{ opacity: 0 }}
@@ -343,46 +391,6 @@ const SM_Header: React.FC = () => {
             transition={{ duration: 0.5 }}
           >
             <AnimatePresence>
-              {userData?.pulled && (
-                <motion.section
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -50 }}
-                  transition={{ duration: 2 }}
-                  className="flex items-center justify-between p-3"
-                >
-                  <div className="">
-                    <motion.h2
-                      className="px-1 oxanium text-xl"
-                      initial={{ y: -10, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ delay: 0.1, duration: 0.5 }}
-                    >
-                      Welcome back,{" "}
-                    </motion.h2>
-                    <motion.h2
-                      className="px-1 oxanium text-xl"
-                      initial={{ y: -10, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ delay: 0.25, duration: 0.5 }}
-                    >
-                      {userData.displayName}
-                    </motion.h2>
-                  </div>
-                  <motion.div
-                    initial={{ x: 20, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                  >
-                    <div
-                      style={{
-                        height: "50px",
-                        width: "50px",
-                        backgroundColor: "white",
-                        borderRadius: "50%",
-                      }}
-                    ></div>
-                  </motion.div>
-                </motion.section>
-              )}
               <motion.div
                 initial={{ y: -10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -402,7 +410,13 @@ const SM_Header: React.FC = () => {
                           exit={{ opacity: 0, y: 10 }}
                           transition={{ delay: 0.3, duration: 0.5 }}
                         >
-                          Startseite
+                          <Link
+                            href="https://athenetz.de/iserv"
+                            prefetch
+                            className="flex items-center justify-center"
+                          >
+                            <ArrowLeft /> Athenetz
+                          </Link>
                         </motion.div>
                         <motion.div
                           className=" col-start-4 col-span-2 row-start-1 row-span-4 flex items-center justify-center border-l-acc dark:border-d-acc border-2 rounded-md p-2"
@@ -411,7 +425,13 @@ const SM_Header: React.FC = () => {
                           exit={{ opacity: 0, y: 10 }}
                           transition={{ delay: 0.3, duration: 0.5 }}
                         >
-                          Robotik
+                          <Link
+                            href="/wahlen"
+                            prefetch
+                            className="flex items-center justify-center"
+                          >
+                            Wahlen
+                          </Link>
                         </motion.div>
                         <motion.div
                           className=" col-start-1 col-span-2 row-start-5 row-span-2 flex items-center justify-center border-l-acc dark:border-d-acc border-2 rounded-md p-2"
@@ -420,7 +440,13 @@ const SM_Header: React.FC = () => {
                           exit={{ opacity: 0, y: 10 }}
                           transition={{ delay: 0.5, duration: 0.5 }}
                         >
-                          Öffnungszeiten
+                          <Link
+                            href="/sv"
+                            prefetch
+                            className="flex items-center justify-center"
+                          >
+                            Über Uns
+                          </Link>
                         </motion.div>
                         <motion.div
                           className=" col-start-3 col-span-3 row-start-5 row-span-2 flex items-center justify-center border-l-acc dark:border-d-acc border-2 rounded-md p-2"
@@ -429,7 +455,13 @@ const SM_Header: React.FC = () => {
                           exit={{ opacity: 0, y: 10 }}
                           transition={{ delay: 0.5, duration: 0.5 }}
                         >
-                          Über Uns
+                          <Link
+                            href="/kontakt"
+                            prefetch
+                            className="flex items-center justify-center"
+                          >
+                            Kontakt
+                          </Link>
                         </motion.div>
                       </>
                     )}
