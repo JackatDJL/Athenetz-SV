@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { ThemeToggleButton } from ">util/Theme";
 import { motion } from "framer-motion";
@@ -7,7 +6,6 @@ import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "react-feather";
 import { toast } from "sonner";
-import { useEffect } from "react";
 import { account } from ">api/appwrite/init";
 import { navigate } from ">api/navigate";
 import { Button } from ">/button";
@@ -93,12 +91,6 @@ export default function VerifyPage() {
       }
     );
   }
-  // useEffect(()=>{
-  //   if (!userid && secret) {
-  //     navigate("/")
-  //     return
-  //   }
-  // })
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();

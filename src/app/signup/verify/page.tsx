@@ -10,7 +10,7 @@ import { account } from ">api/appwrite/init";
 import { navigate } from ">api/navigate";
 import { SkewLoader } from "react-spinners";
 
-export default function VerifyPage() {
+export default function Page() {
   const params = useSearchParams();
 
   const userid = params.get("userId");
