@@ -15,7 +15,6 @@ export async function POST(request: Request) {
     .setJWT(data.get("token") || "");
   console.log("Client initialized with JWT token");
   const teams = new Teams(client);
-  let quit = false;
 
   const accessCheckPromise = teams.list();
   console.log("Access check promise initiated");
@@ -44,7 +43,7 @@ export async function POST(request: Request) {
 
           if (!name || !date) {
             console.log("Required data is missing");
-            quit = true;
+
             return Response.json(
               {},
               { status: 400, statusText: "Required Data is Missing" }
@@ -81,7 +80,6 @@ export async function POST(request: Request) {
                         console.log(
                           "Update promise resolved for document type"
                         );
-                        quit = true;
                         return Response.json(data, { status: 201 });
                       },
                       (reason) => {
@@ -101,7 +99,6 @@ export async function POST(request: Request) {
                     });
                 } else {
                   console.log("No type provided, skipping update");
-                  quit = true;
                   return Response.json(data, { status: 201 });
                 }
               },
@@ -122,7 +119,6 @@ export async function POST(request: Request) {
             });
         } else {
           console.log("User is not part of admin or committee team");
-          quit = true;
           return Response.json({}, { status: 401 });
         }
       },
@@ -130,7 +126,6 @@ export async function POST(request: Request) {
         console.error("Access check promise rejected", reason);
         if (reason.type == "user_jwt_invalid") {
           console.log("JWT token is invalid");
-          quit = true;
           return Response.json({}, { status: 401 });
         } else {
           console.error("Unknown error in access check promise", reason);
@@ -138,13 +133,8 @@ export async function POST(request: Request) {
         }
       }
     )
-    .catch(() => {
-      console.error("Access check promise caught error");
-      quit = true;
+    .catch((error) => {
+      console.error("Access check promise caught error", error);
       return Response.json({}, { status: 501 });
     });
-  if (!quit) {
-    console.log("Quit flag is false, returning default response");
-    return Response.json({}, { status: 245 });
-  }
 }
