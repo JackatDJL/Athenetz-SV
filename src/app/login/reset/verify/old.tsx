@@ -1,7 +1,7 @@
 "use client";
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { ThemeToggleButton } from ">util/Theme";
-import { motion } from "framer-motion";
-import { grid } from "ldrs";
+import { motion } from "motion/react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "react-feather";
@@ -11,8 +11,7 @@ import { navigate } from ">api/navigate";
 import { Button } from ">/button";
 import * as Inputs from ">/inputs";
 
-export default function VerifyPage() {
-  grid.register();
+export default function Page() {
   const params = useSearchParams();
 
   const userid = params.get("userId");
@@ -104,45 +103,41 @@ export default function VerifyPage() {
       return;
     }
   };
+
   return (
-    <>
-      <div className="absolute top-0 left-0 w-full h-screen flex flex-col">
-        <section className="flex items-start p-4 h-0">
-          <Link className="flex items-center" href="/" prefetch>
-            <ArrowLeft />
-            <p className="ml-1 flex items-center justify-center">Back</p>
-          </Link>
-        </section>
-        <main className="flex-1 flex items-center justify-center">
-          <motion.section className="border-2 rounded-xl border-accent bg-card w-3/4 lg:w-1/2 xl:w-1/3 h-4/5 lg:h-3/4 duration-200 flex items-center justify-center">
-            <form
-              className="flex flex-col items-center justify-center gap-4"
-              onSubmit={handleSubmit}
-            >
-              <h2 className="bdefault text-3xl">Passwort Zurücksetzen</h2>
-              <Inputs.Password
-                placeholder="Neues Passwort"
-                className="w-full"
-              />
-              <Inputs.Password
-                placeholder="Passwort Wiederhohlen"
-                className="w-full"
-              />
-              <Button type="submit">Zurücksetzen</Button>
-            </form>
-          </motion.section>
-        </main>
-        <motion.section className="flex items-end justify-start p-2">
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1.1, x: 4, y: 0 }}
-            whileHover={{ scale: 1.5, x: 5, y: 1 }}
-            whileTap={{ scale: 1.25 }}
+    <div className="absolute top-0 left-0 w-full h-screen flex flex-col">
+      {/* <section className="flex items-start p-4 h-0">
+        <Link className="flex items-center" href="/" prefetch>
+          <ArrowLeft />
+          <p className="ml-1 flex items-center justify-center">Back</p>
+        </Link>
+      </section>
+      <main className="flex-1 flex items-center justify-center">
+        <motion.section className="border-2 rounded-xl border-accent bg-card w-3/4 lg:w-1/2 xl:w-1/3 h-4/5 lg:h-3/4 duration-200 flex items-center justify-center">
+          <form
+            className="flex flex-col items-center justify-center gap-4"
+            onSubmit={handleSubmit}
           >
-            <ThemeToggleButton />
-          </motion.div>
+            <h2 className="bdefault text-3xl">Passwort Zurücksetzen</h2>
+            <Inputs.Password placeholder="Neues Passwort" className="w-full" />
+            <Inputs.Password
+              placeholder="Passwort Wiederhohlen"
+              className="w-full"
+            />
+            <Button type="submit">Zurücksetzen</Button>
+          </form>
         </motion.section>
-      </div>
-    </>
+      </main>
+      <motion.section className="flex items-end justify-start p-2">
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1.1, x: 4, y: 0 }}
+          whileHover={{ scale: 1.5, x: 5, y: 1 }}
+          whileTap={{ scale: 1.25 }}
+        >
+          <ThemeToggleButton />
+        </motion.div>
+      </motion.section> */}
+    </div>
   );
 }
